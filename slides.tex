@@ -1,0 +1,74 @@
+\documentclass{beamer}
+\usepackage{ctex, hyperref}
+\usepackage[T1]{fontenc}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,pstricks,listings,stackengine,cite}
+
+\setbeamertemplate{bibliography item}[text]
+% \bibliographystyle{plain}
+% 如果参考文献太多的话，可以像下面这样调整字体：
+% \tiny\bibliographystyle{plain}
+
+\author{夏海淞}
+\title{线性代数习题课}
+\subtitle{第三章}
+% \institute{School of Computer Science, Fudan University}
+\date{\today}
+\usepackage{College}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\renewcommand{\proofname}{解}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+\begin{document}
+
+\fangsong
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+        \begin{center}
+            \vspace*{-0.5cm}
+            \includegraphics[width=0.1\linewidth]{pic/FDU.jpeg}
+        \end{center}
+    \end{figure}
+
+\end{frame}
+
+% \begin{frame}
+%     \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+% \end{frame}
+
+\begin{frame}
+    \frametitle{3.1}
+    \begin{proof}
+        \(x^4\)由\((-1)^{\tau(1234)}a_{11}a_{22}a_{33}a_{44}\)得到，所以其系数为\(1\times2\times1\times1\times1=2\)。\\
+        \(x^3\)由\((-1)^{\tau(2134)}a_{12}a_{21}a_{33}a_{44}\)得到，所以其系数为\(-1\times1\times1\times1\times1=-1\)。\\
+    \end{proof}
+
+\end{frame}
+
+% \begin{frame}[allowframebreaks]
+%     \nocite{*}
+%     \bibliography{ref}
+% \end{frame}
+
+\end{document}
