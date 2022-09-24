@@ -11,6 +11,10 @@
 \ctexset { section = { name={第,章} } }
 \ctexset { section = { number={\chinese {section}} } }
 
+\newtheorem{problem}{习题}[section]
+
+\renewcommand{\labelenumi}{(\theenumi)}
+
 \input{headers.tex}
 
 \begin{document}
@@ -128,9 +132,7 @@
 
 必要性显然成立。下面证明充分性。
 
-设\(\mata\in\rea^{m\times n}\)，\(\entry{\mata}{i}{j}=a_{ij}\)。
-
-由\(\mata^\top\mata=\mato\)和定义1.2.5，有
+设矩阵\(\mata=\mat{a_{ij}}_{m\times n}\)。由\(\mata^\top\mata=\mato\)和定义1.2.5，有
 
 \begin{equation*}
     \mat{\mata^\top\mata}_{ii}=\sum_{k=1}^m\mat{\mata^\top}_{ik}\mat{\mata}_{ki}=\sum_{k=1}^ma_{ki}^2=0
@@ -248,7 +250,7 @@
 \begin{enumerate}
     \item
           {
-          设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。则有
+          设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)为对角阵，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。则有
           \begin{equation*}
               \begin{array}{lll}
                   \mat{\mata\matb}_{ij}=\sum_{k=1}^na_{ik}b_{kj}=a_{ii}b_{ij} \\
@@ -263,9 +265,7 @@
           {
           由(1)知，满足要求的矩阵为对角阵。
 
-          设\(\mata\in\rea^{n\times n}\)为对角阵，\(\entry{\mata}{i}{j}=a_{ij}\)；
-
-          设\(\matb\in\rea^{n\times n}\)，\(\entry{\matb}{i}{j}=b_{ij}\)。
+          设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)为对角阵，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。
 
           同(1)理，可得\(a_{ii}b_{ij}=a_{jj}b_{ij}\)对任意\(i,j\in\setof{1,2,\dots,n}\)成立。由\(\matb\)的任意性可知\(a_{ii}=a_{jj}\)对任意\(i,j\in\setof{1,2,\dots,n}\)成立，即\(\mata\)为纯量阵。
           }
