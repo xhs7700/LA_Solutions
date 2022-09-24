@@ -164,12 +164,32 @@
 \end{problem}
 
 % 1.7
-\begin{problem}
+\begin{problem}\
+
+计算矩阵乘法，由等式可得
+
+\begin{equation*}
+    \begin{cases}
+        3a+a-3=b       \\
+        9+0\cdot a-3=6 \\
+        2a+3=b
+    \end{cases}
+\end{equation*}
+
+解线性方程组得\(a=3,b=9\)。
 
 \end{problem}
 
 % 1.8
-\begin{problem}
+\begin{problem}\
+
+因为\(\mata^n=\mato\)，我们得到
+
+\begin{align*}
+      & \mypar{\mati_n-\mata}\mypar{\mati_n+\sum_{i=1}^{n-1}\mata^i} \\
+    = & \mati_n+\sum_{i=1}^{n-1}\mata^i-\sum_{i=1}^n\mata^i          \\
+    = & \mati_n-\mata^n=\mati_n
+\end{align*}
 
 \end{problem}
 
@@ -177,70 +197,341 @@
 \begin{problem}\
 
 \begin{enumerate}
+
     \item[(3)]
+        {
+        容易发现
+        \begin{equation*}
+            \matc^2=
+            \begin{bmatrix}
+                4 & 0 & 0 & 0 \\
+                0 & 4 & 0 & 0 \\
+                0 & 0 & 4 & 0 \\
+                0 & 0 & 0 & 4
+            \end{bmatrix}=4\mati_4
+        \end{equation*}
+        因此根据奇偶性讨论，有
+        \begin{equation*}
+            \matc^n=
+            \begin{cases}
+                2^{n-1}\matc & n=2k-1 \\
+                2^n\mati_4   & n=2k
+            \end{cases}
+            (k\in N^+)
+        \end{equation*}
+        }
+
     \item[(4)]
+        {
+        记\(\matd'=\begin{bmatrix}0&1&0\\0&0&1\\0&0&0\end{bmatrix}\)，容易发现
+        \begin{equation*}
+            \matd'^2=\begin{bmatrix}0&0&1\\0&0&0\\0&0&0\end{bmatrix},\matd'^n=\mato(n\ge3)
+        \end{equation*}
+        因此有
+        \begin{align*}
+            \matd^n & =\mypar{\mati+\matd'}^n                 \\
+                    & =\mati+\sum_{i=1}^n\binom{n}{i}\matd'^i \\
+                    & =\mati+n\matd'+\binom{n}{2}\matd'^2     \\
+                    & =\begin{bmatrix}
+                           1 & n & n(n-1)/2 \\
+                           0 & 1 & n        \\
+                           0 & 0 & 1
+                       \end{bmatrix}
+        \end{align*}
+        }
 \end{enumerate}
 \end{problem}
 
 % 1.10
-\begin{problem}
+\begin{problem}\
+
+\begin{enumerate}
+    \item
+          {
+          设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。则有
+          \begin{equation*}
+              \begin{array}{lll}
+                  \mat{\mata\matb}_{ij}=\sum_{k=1}^na_{ik}b_{kj}=a_{ii}b_{ij} \\
+                  \mat{\matb\mata}_{ij}=\sum_{k=1}^nb_{ik}a_{kj}=a_{jj}b_{ij}
+              \end{array}
+          \end{equation*}
+          由题设知\(\mat{\mata\matb}_{ij}=\mat{\matb\mata}_{ij}\)对任意\(i,j\in\setof{1,2,\dots,n}\)成立。
+
+          当\(i=j\)时，等式成立；当\(i\neq j\)时，由\(\mata\)的任意性知\(b_{ij}=0\)，即\(\matb\)为对角阵。
+          }
+    \item
+          {
+          由(1)知，满足要求的矩阵为对角阵。
+
+          设\(\mata\in\rea^{n\times n}\)为对角阵，\(\entry{\mata}{i}{j}=a_{ij}\)；
+
+          设\(\matb\in\rea^{n\times n}\)，\(\entry{\matb}{i}{j}=b_{ij}\)。
+
+          同(1)理，可得\(a_{ii}b_{ij}=a_{jj}b_{ij}\)对任意\(i,j\in\setof{1,2,\dots,n}\)成立。由\(\matb\)的任意性可知\(a_{ii}=a_{jj}\)对任意\(i,j\in\setof{1,2,\dots,n}\)成立，即\(\mata\)为纯量阵。
+          }
+\end{enumerate}
 
 \end{problem}
 
 % 1.11
-\begin{problem}
+\begin{problem}\
+
+设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。则有\(\mat{\mata\matb}_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\sum_{k=1}^{i-1}a_{ik}b_{kj}+a_{ii}b_{ij}+\sum_{t=i+1}^na_{it}b_{tj}\)。
+
+当\(i>j\)时，因为\(\mata,\matb\)均为上三角矩阵，因此有\(a_{ik}=b_{tj}=0(k<i,t>=i)\)，代入上式可得\(\mat{\mata\matb}_{ij}=0\)；
+
+当\(i=j\)时，因为\(\mata,\matb\)均为对角元为\(1\)的上三角矩阵，因此有\(a_{ik}=b_{tj}=0(k<i,t>i)\)，代入上式可得\(\mat{\mata\matb}_{ij}=a_{ii}b_{ij}=1\)。
+
+综上，\(\mata\matb\)为对角元为\(1\)的上三角矩阵。
 
 \end{problem}
 
 % 1.12
-\begin{problem}
+\begin{problem}\
+
+
+\begin{equation*}
+    \begin{array}{lll}
+        \mata=\vecy\vecx^\top=
+        \begin{bmatrix}
+            x_1y_1 & x_2y_1 & \cdots & x_ny_1 \\
+            x_1y_2 & x_2y_2 & \cdots & x_ny_2 \\
+            \vdots & \vdots & \ddots & \vdots \\
+            x_1y_n & x_2y_n & \cdots & x_ny_n \\
+        \end{bmatrix}  \\
+        \vecx^\top\vecy=\sum_{i=1}^nx_iy_i \\
+    \end{array}
+\end{equation*}
+
+因此有
+\begin{align*}
+    \mata^k & =\underbrace{\mypar{\vecy\vecx^\top}\mypar{\vecy\vecx^\top}\cdots\mypar{\vecy\vecx^\top}}_k                    \\
+            & =\vecy\underbrace{\mypar{\vecx^\top\vecy}\mypar{\vecx^\top\vecy}\cdots\mypar{\vecx^\top\vecy}}_{k-1}\vecx^\top \\
+            & =\mypar{\vecx^\top\vecy}^{k-1}\vecy\vecx^\top=\mypar{\sum_{i=1}^nx_iy_i}^{k-1}
+    \begin{bmatrix}
+        x_1y_1 & x_2y_1 & \cdots & x_ny_1 \\
+        x_1y_2 & x_2y_2 & \cdots & x_ny_2 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        x_1y_n & x_2y_n & \cdots & x_ny_n \\
+    \end{bmatrix}
+\end{align*}
 
 \end{problem}
 
 % 1.13
-\begin{problem}
+\begin{problem}\
+
+\begin{align*}
+    \vecx^\top\vecx & =
+    \begin{bmatrix}
+        \frac{1}{2} & 0 & \cdots & 0 & \frac{1}{2}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \frac{1}{2} & 0 & \cdots & 0 & \frac{1}{2}
+    \end{bmatrix}^\top=\frac{1}{2}                                         \\
+    \mata\matb      & =\mypar{\mati_n-\vecx\vecx^\top}\mypar{\mati_n+2\vecx\vecx^\top} \\
+                    & =\mati_n+\vecx\vecx^\top-2\vecx\mypar{\vecx^\top\vecx}\vecx^\top \\
+                    & =\mati_n+\vecx\vecx^\top-\vecx\vecx^\top=\mati_n
+\end{align*}
 
 \end{problem}
 
 % 1.14
-\begin{problem}
+\begin{problem}\
+
+设\(\mata=\begin{bmatrix}\veca_1&\veca_2&\cdots&\veca_n\end{bmatrix}\)，\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。由题设可知
+
+\begin{equation*}
+    \mata\vece_i=\veca_i=\veczero
+\end{equation*}
+
+对\(i=1,2,\dots,n\)均成立。因此有\(\veca_1=\veca_2=\cdots=\veca_n=\veczero\)，即\(\mata=\mato\)。
 
 \end{problem}
 
 % 1.15
-\begin{problem}
+\begin{problem}\
+
+根据\(\mata^2=\mata,\matb^2=\matb\)，可将\(\mypar{\mata+\matb}^2\)展开：
+
+\begin{align*}
+    \mypar{\mata+\matb}^2 & =\mata^2+\matb^2+\mata\matb+\matb\mata \\
+                          & =\mata+\matb+\mata\matb+\matb\mata
+\end{align*}
+
+又因为\(\mypar{\mata+\matb}^2=\mata+\matb\)，可得
+
+\begin{equation}\label{eq-1.15}
+    \mata\matb+\matb\mata=\mato
+\end{equation}
+
+将\eqref{eq-1.15}式左乘\(\mata\)，得到\(\mata\matb+\mata\matb\mata=\mato\)；将\eqref{eq-1.15}式式左右各乘\(\mata\)，得到\(2\mata\matb\mata=\mato\)。将上述两式联立解得\(\mata\matb=\mato\)。
 
 \end{problem}
 
 % 1.16
-\begin{problem}
+\begin{problem}\
+
+因为\(\mata^n-2\mata^{n-1}=\mata^{n-1}(\mata-2\mati)\)，容易发现
+
+\begin{equation*}
+    \mata(\mata-2\mati)=
+    \begin{bmatrix}
+        1 & 0 & 1 \\0&2&0\\1&0&1
+    \end{bmatrix}
+    \begin{bmatrix}
+        -1 & 0 & 1 \\0&0&0\\1&0&-1
+    \end{bmatrix}=\mato
+\end{equation*}
+
+因此当\(n\ge2\)时，\(\mata^n-2\mata^{n-1}=\mata^{n-2}\mata(\mata-2\mati)=\mato\)。
 
 \end{problem}
 
 % 1.17
-\begin{problem}
+\begin{problem}\
+
+根据\(\mata^2=-\mata,\matb^2=-\matb\)，可将\(\mypar{\mata+\matb}^2\)展开：
+
+\begin{align*}
+    \mypar{\mata+\matb}^2 & =\mata^2+\matb^2+\mata\matb+\matb\mata \\
+                          & =-\mata-\matb+\mata\matb+\matb\mata
+\end{align*}
+
+又因为\(\mypar{\mata+\matb}^2=-\mata-\matb\)，可得
+
+\begin{equation}\label{eq-1.17}
+    \mata\matb+\matb\mata=\mato
+\end{equation}
+
+将\eqref{eq-1.17}式左乘\(\mata\)，得到\(\mata\matb+\mata\matb\mata=\mato\)；将\eqref{eq-1.17}式左右各乘\(\mata\)，得到\(2\mata\matb\mata=\mato\)。将上述两式联立解得\(\mata\matb=\mato\)。
 
 \end{problem}
 
 \setcounter{problem}{18}
 % 1.19
-\begin{problem}
+\begin{problem}\
+
+\begin{itemize}
+    \item 首先证明充分性：
+          因为\(\vecal^\top\vecal=1\)，因此有
+          \begin{align*}
+              \mata^2 & =\mypar{\mati-\vecal\vecal^\top}^2                                   \\
+                      & =\mati-2\vecal\vecal^\top+\vecal\mypar{\vecal^\top\vecal}\vecal^\top \\
+                      & =\mati-\vecal\vecal^\top=\mata
+          \end{align*}
+
+          充分性得证。
+
+    \item 随后证明必要性：
+          因为\(\mata^2=\mata\)，因此有
+          \begin{align*}
+              \mata^2-\mata & =\mat{\mati-2\vecal\vecal^\top+\vecal\mypar{\vecal^\top\vecal}\vecal^\top}-\mypar{\mati-\vecal\vecal^\top} \\
+                            & =\mypar{\vecal^\top\vecal-1}\vecal\vecal^\top=\mato
+          \end{align*}
+
+          因为\(\vecal\neq\veczero\)，因此\(\vecal^\top\vecal-1=0\)，即\(\vecal^\top\vecal=1\)。
+\end{itemize}
 
 \end{problem}
 
 \setcounter{problem}{21}
 % 1.22
-\begin{problem}
+\begin{problem}\
+
+\begin{enumerate}
+    \item 记\(\mata'=\begin{bmatrix}0&a&0\\0&0&a\\0&0&0\end{bmatrix}\)，容易发现
+          \begin{equation*}
+              \mata'^2=\begin{bmatrix}0&0&a^2\\0&0&0\\0&0&0\end{bmatrix},\mata'^n=\mato(n\ge3)
+          \end{equation*}
+          因此有
+          \begin{align*}
+              \mata^k & =\mypar{\mati+\mata'}^k                 \\
+                      & =\mati+\sum_{i=1}^k\binom{k}{i}\mata'^i \\
+                      & =\mati+k\mata'+\binom{k}{2}\mata'^2     \\
+                      & =\begin{bmatrix}
+                             1 & ka & \frac{k(k-1)}{2}a^2 \\
+                             0 & 1  & ka                  \\
+                             0 & 0  & 1
+                         \end{bmatrix}
+          \end{align*}
+    \item 记\(\vecal=\begin{bmatrix}1\\2\\3\end{bmatrix}\)，\(\vecbeta=\begin{bmatrix}1\\2\\4\end{bmatrix}\)。容易发现\(\mata=\vecal\vecbeta^\top\)，因此有
+          \begin{align*}
+              \mata^k & =\mypar{\vecal\vecbeta^\top}^k=\vecal\mypar{\vecbeta^\top\vecal}^{k-1}\vecbeta^\top \\
+                      & =\mypar{17}^{k-1}\vecal\vecbeta^\top=\mypar{17}^{k-1}
+              \begin{bmatrix}
+                  1 & 2 & 4 \\2&4&8\\3&6&12
+              \end{bmatrix}
+          \end{align*}
+\end{enumerate}
 
 \end{problem}
 
 % 1.23
-\begin{problem}
+\begin{problem}\
+
+% 记\(\mata_1=\mata\matb\)，\(\mata_2=\matb\mata\)。
+
+令\(\matc=\vece_i\vece_j\)，其中\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。因此有
+\begin{align*}
+    \mat{\mata\matb\matc}_{tt} & =\sum_{k=1}^n\mat{\mata\matb}_{tk}\mat{\matc}_{kt}=
+    \begin{cases}
+        \mat{\mata\matb}_{ji} & t=j     \\
+        0                     & t\neq j
+    \end{cases}                                                  \\
+    \mat{\matc\matb\mata}_{tt} & =\sum_{k=1}^n\mat{\matc}_{tk}\mat{\matb\mata}_{kt}=
+    \begin{cases}
+        \mat{\matb\mata}_{ji} & t=i     \\
+        0                     & t\neq i
+    \end{cases}
+\end{align*}
+
+因为\(\trace{\mata\matb\matc}=\trace{\matc\matb\mata}\)，因此有\(\mat{\mata\matb}_{ji}=\mat{\matb\mata}_{ji}\)对\(i,j\in\setof{1,2,\dots,n}\)成立，即\(\mata\matb=\matb\mata\)。
 
 \end{problem}
 
 % 1.24
-\begin{problem}
+\begin{problem}\
+
+定义子矩阵如下：
+\begin{equation*}
+    \mata_3=
+    \begin{bmatrix}
+        -1 & 2 \\1&1
+    \end{bmatrix},
+    \matb_1=
+    \begin{bmatrix}
+        1 & 0 \\-1&2
+    \end{bmatrix},
+    \matb_3=
+    \begin{bmatrix}
+        1 & 0 \\-1&-1
+    \end{bmatrix},
+    \matb_4=
+    \begin{bmatrix}
+        4 & 1 \\2&0
+    \end{bmatrix}
+\end{equation*}
+
+则有
+\begin{align*}
+    \mata\matb & =
+    \begin{bmatrix}
+        \mati & \mato \\\mata_3&\mati
+    \end{bmatrix}
+    \begin{bmatrix}
+        \matb_1 & \mati \\\matb_3&\matb_4
+    \end{bmatrix}                        \\&=
+    \begin{bmatrix}
+        \matb_1 & \mati \\\mata_3\matb_1+\matb_3&\mata_3+\matb_4
+    \end{bmatrix} \\&=
+    \begin{bmatrix}
+        1  & 0 & 1 & 0 \\
+        -1 & 2 & 0 & 1 \\
+        -2 & 4 & 3 & 3 \\
+        -1 & 1 & 3 & 1
+    \end{bmatrix}
+\end{align*}
 
 \end{problem}
 
