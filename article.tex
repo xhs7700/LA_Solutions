@@ -12,6 +12,7 @@
 \ctexset { section = { number={\chinese {section}} } }
 
 \newtheorem{problem}{习题}[section]
+\newtheorem{extraprob}{附加习题}[section]
 
 \renewcommand{\labelenumi}{(\theenumi)}
 
@@ -36,8 +37,8 @@
     \item[(5)]
         \begin{align*}
               & \begin{bmatrix}
-                    x_1 & x_2 & x_3
-                \end{bmatrix}
+                x_1 & x_2 & x_3
+            \end{bmatrix}
             \begin{bmatrix}
                 a_{11} & a_{12} & a_{13} \\
                 a_{12} & a_{22} & a_{23} \\
@@ -45,9 +46,9 @@
             \end{bmatrix}
             \begin{bmatrix}
                 x_1 \\x_2\\x_3
-            \end{bmatrix}                                                                                    \\
+            \end{bmatrix}                                                 \\
             = & \begin{bmatrix}\sum_{i=1}^3a_{1i}x_i+\sum_{i=1}^3a_{2i}x_i+\sum_{i=1}^3a_{3i}x_i\end{bmatrix}
-            \begin{bmatrix}x_1 \\x_2 \\x_3\end{bmatrix}                                                       \\
+            \begin{bmatrix}x_1 \\x_2 \\x_3\end{bmatrix}                                                 \\
             = & \sum_{1 \leq i<j \leq 3} 2 a_{i j} x_i x_j+\sum_{k=1}^3 a_{k k} x_k^2
         \end{align*}
 
@@ -60,36 +61,36 @@
 \begin{align*}
      & \mata\matb           =
     \left[\begin{array}{ccc}
-                  1 & 1  & 1  \\
-                  1 & 1  & -1 \\
-                  1 & -1 & 1
-              \end{array}\right]
+            1 & 1  & 1  \\
+            1 & 1  & -1 \\
+            1 & -1 & 1
+        \end{array}\right]
     \left[\begin{array}{ccc}
-                  1  & 2  & 3 \\
-                  -1 & -2 & 4 \\
-                  0  & 5  & 1
-              \end{array}\right]=
+            1  & 2  & 3 \\
+            -1 & -2 & 4 \\
+            0  & 5  & 1
+        \end{array}\right]=
     \left[\begin{array}{ccc}
-                  0 & 5  & 8 \\
-                  0 & -5 & 6 \\
-                  2 & 9  & 0
-              \end{array}\right]  \\
+            0 & 5  & 8 \\
+            0 & -5 & 6 \\
+            2 & 9  & 0
+        \end{array}\right] \\
      & 3\mata\matb-2 \mata  =
     3\left[\begin{array}{ccc}
-                   0 & 5  & 8 \\
-                   0 & -5 & 6 \\
-                   2 & 9  & 0
-               \end{array}\right]
+            0 & 5  & 8 \\
+            0 & -5 & 6 \\
+            2 & 9  & 0
+        \end{array}\right]
     -2\left[\begin{array}{ccc}
-                    1 & 1  & 1  \\
-                    1 & 1  & -1 \\
-                    1 & -1 & 1
-                \end{array}\right]
+            1 & 1  & 1  \\
+            1 & 1  & -1 \\
+            1 & -1 & 1
+        \end{array}\right]
     =\left[\begin{array}{ccc}
-                   -2 & 13  & 22 \\
-                   -2 & -17 & 20 \\
-                   4  & 29  & -2
-               \end{array}\right]
+            -2 & 13  & 22 \\
+            -2 & -17 & 20 \\
+            4  & 29  & -2
+        \end{array}\right]
 \end{align*}
 \end{problem}
 
@@ -235,10 +236,10 @@
                     & =\mati+\sum_{i=1}^n\binom{n}{i}\matd'^i \\
                     & =\mati+n\matd'+\binom{n}{2}\matd'^2     \\
                     & =\begin{bmatrix}
-                           1 & n & n(n-1)/2 \\
-                           0 & 1 & n        \\
-                           0 & 0 & 1
-                       \end{bmatrix}
+                1 & n & n(n-1)/2 \\
+                0 & 1 & n        \\
+                0 & 0 & 1
+            \end{bmatrix}
         \end{align*}
         }
 \end{enumerate}
@@ -298,7 +299,7 @@
             x_1y_2 & x_2y_2 & \cdots & x_ny_2 \\
             \vdots & \vdots & \ddots & \vdots \\
             x_1y_n & x_2y_n & \cdots & x_ny_n \\
-        \end{bmatrix}  \\
+        \end{bmatrix}         \\
         \vecx^\top\vecy=\sum_{i=1}^nx_iy_i \\
     \end{array}
 \end{equation*}
@@ -328,7 +329,7 @@
     \end{bmatrix}
     \begin{bmatrix}
         \frac{1}{2} & 0 & \cdots & 0 & \frac{1}{2}
-    \end{bmatrix}^\top=\frac{1}{2}                                         \\
+    \end{bmatrix}^\top=\frac{1}{2}                                        \\
     \mata\matb      & =\mypar{\mati_n-\vecx\vecx^\top}\mypar{\mati_n+2\vecx\vecx^\top} \\
                     & =\mati_n+\vecx\vecx^\top-2\vecx\mypar{\vecx^\top\vecx}\vecx^\top \\
                     & =\mati_n+\vecx\vecx^\top-\vecx\vecx^\top=\mati_n
@@ -450,10 +451,10 @@
                       & =\mati+\sum_{i=1}^k\binom{k}{i}\mata'^i \\
                       & =\mati+k\mata'+\binom{k}{2}\mata'^2     \\
                       & =\begin{bmatrix}
-                             1 & ka & \frac{k(k-1)}{2}a^2 \\
-                             0 & 1  & ka                  \\
-                             0 & 0  & 1
-                         \end{bmatrix}
+                  1 & ka & \frac{k(k-1)}{2}a^2 \\
+                  0 & 1  & ka                  \\
+                  0 & 0  & 1
+              \end{bmatrix}
           \end{align*}
     \item 记\(\vecal=\begin{bmatrix}1\\2\\3\end{bmatrix}\)，\(\vecbeta=\begin{bmatrix}1\\2\\4\end{bmatrix}\)。容易发现\(\mata=\vecal\vecbeta^\top\)，因此有
           \begin{align*}
@@ -478,7 +479,7 @@
     \begin{cases}
         \mat{\mata\matb}_{ji} & t=j     \\
         0                     & t\neq j
-    \end{cases}                                                  \\
+    \end{cases}                                                       \\
     \mat{\matc\matb\mata}_{tt} & =\sum_{k=1}^n\mat{\matc}_{tk}\mat{\matb\mata}_{kt}=
     \begin{cases}
         \mat{\matb\mata}_{ji} & t=i     \\
@@ -521,7 +522,7 @@
     \end{bmatrix}
     \begin{bmatrix}
         \matb_1 & \mati \\\matb_3&\matb_4
-    \end{bmatrix}                        \\&=
+    \end{bmatrix} \\&=
     \begin{bmatrix}
         \matb_1 & \mati \\\mata_3\matb_1+\matb_3&\mata_3+\matb_4
     \end{bmatrix} \\&=
