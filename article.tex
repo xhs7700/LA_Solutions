@@ -629,6 +629,69 @@
     因此\(\mata\matb=\sum_{k=1}^l\col{\mata}{k}\row{\matb}{k}\)。
 \end{proof}
 
+% 附加1.3
+\begin{extraprob}
+    设\(\mata,\matb\)是数域\(P\)上的\(n\)级矩阵，则\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
+
+    提示：使用性质\(\col{\mata\matb}{j}=\mata\col{\matb}{j}=\sum_{k=1}^lb_{kj}\col{\mata}{k}\)。
+\end{extraprob}
+\begin{proof}
+
+\end{proof}
+
+% 附加1.4
+\begin{extraprob}
+    证明：
+    \begin{enumerate}
+        \item \(\matc\mypar{\mata+\matb}=\matc\mata+\matc\matb\)
+        \item \(\mypar{\mata+\matb}\matc=\mata\matc+\matb\matc\)
+        \item \(k\mypar{\mata\matb}=\mypar{k\mata}\matb=\mata\mypar{k\matb}\)
+    \end{enumerate}
+    其中\(k\)为数，矩阵\(\mata,\matb,\matc\)的阶数使上述各式有意义。
+\end{extraprob}
+\begin{proof}
+    \begin{enumerate}
+        \item
+              {
+              设\(\matc=\mat{c_{ij}}_{m\times l}\)，\(\mata=\mat{a_{ij}}_{l\times n}\)，\(\matb=\mat{b_{ij}}_{l\times n}\)。则有
+              \begin{align*}
+                  \entry{\matc\mypar{\mata+\matb}}{i}{j} & =\row{\matc}{i}\col{\mata+\matb}{j}                        \\
+                                                         & =\sum_{k=1}^lc_{ik}\mypar{a_{kj}+b_{kj}}                   \\
+                                                         & =\sum_{k=1}^lc_{ik}a_{kj}+\sum_{k=1}^lc_{ik}b_{kj}         \\
+                                                         & =\row{\matc}{i}\col{\mata}{j}+\row{\matc}{i}\col{\matb}{j} \\
+                                                         & =\entry{\matc\mata}{i}{j}+\entry{\matc\matb}{i}{j}
+              \end{align*}
+              因此\(\matc\mypar{\mata+\matb}=\matc\mata+\matc\matb\)成立。
+              }
+
+        \item
+              {
+              设\(\mata=\mat{a_{ij}}_{m\times l}\)，\(\matb=\mat{b_{ij}}_{m\times l}\)，\(\matc=\mat{c_{ij}}_{l\times n}\)。则有
+              \begin{align*}
+                  \entry{\mypar{\mata+\matb}\matc}{i}{j} & =\row{\mata+\matb}{i}\col{\matc}{j}                        \\
+                                                         & =\sum_{k=1}^l\mypar{a_{ik}+b_{ik}}c_{kj}                   \\
+                                                         & =\sum_{k=1}^la_{ik}c_{kj}+\sum_{k=1}^lb_{ik}c_{kj}         \\
+                                                         & =\row{\mata}{i}\col{\matc}{j}+\row{\matb}{i}\col{\matc}{j} \\
+                                                         & =\entry{\mata\matc}{i}{j}+\entry{\matb\matc}{i}{j}
+              \end{align*}
+              因此\(\mypar{\mata+\matb}\matc=\mata\matc+\matb\matc\)成立。
+              }
+
+        \item
+              {
+              设\(\mata=\mat{a_{ij}}_{m\times l}\)，\(\matb=\mat{b_{ij}}_{l\times n}\)。则有
+              \begin{align*}
+                  \entry{\mypar{k\mata}\matb}{i}{j} & =\row{k\mata}{i}\col{\matb}{j}     \\
+                                                    & =\sum_{t=1}^l\mypar{ka_{it}}b_{tj} \\
+                                                    & =k\sum_{t=1}^la_{it}b_{tj}         \\
+                                                    & =k\row{\mata}{i}\col{\matb}{j}     \\
+                                                    & =k\entry{\mata\matb}{i}{j}
+              \end{align*}
+              因此\(\mypar{k\mata}\matb=k\mypar{\mata\matb}\)成立。同理可得\(\mata\mypar{k\matb}=k\mypar{\mata\matb}\)成立。
+              }
+    \end{enumerate}
+\end{proof}
+
 \clearpage
 \section{线性方程组}
 
