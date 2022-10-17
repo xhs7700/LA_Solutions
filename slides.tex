@@ -281,6 +281,7 @@
                     0 & 0 & 1
                 \end{bmatrix}
             \end{align*}
+同样也可以使用数学归纳法，注意格式。
             }
     \end{enumerate}
 
@@ -375,6 +376,7 @@
                         & =\mati_n+\vecx\vecx^\top-2\vecx\mypar{\vecx^\top\vecx}\vecx^\top \\
                         & =\mati_n+\vecx\vecx^\top-\vecx\vecx^\top=\mati_n
     \end{align*}
+没有必要计算出\(\vecx\vecx^\top\)的值。
 
 \end{frame}
 
@@ -388,6 +390,8 @@
     \end{equation*}
 
     对\(i=1,2,\dots,n\)均成立。因此有\(\veca_1=\veca_2=\cdots=\veca_n=\veczero\)，即\(\mata=\mato\)。
+
+% 不能仅通过\(\sum_{j=1}^n\mata_{ij}x_j=0\)对任意\(x_j\)均成立直接得出\(\mata_{ij}=0\)的结论。
 
 \end{frame}
 
@@ -408,6 +412,24 @@
     \end{equation}
 
     将\eqref{eq-1.15}式左乘\(\mata\)，得到\(\mata\matb+\mata\matb\mata=\mato\)；将\eqref{eq-1.15}式式左右各乘\(\mata\)，得到\(2\mata\matb\mata=\mato\)。将上述两式联立解得\(\mata\matb=\mato\)。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{1.15易错点}
+
+    \begin{itemize}
+        \item {
+              \(\mypar{\mata+\matb}^2=\mata^2+\matb^2+2\mata\matb\)：
+
+              \(\mata\matb\neq\matb\mata\)。
+              }
+        \item {
+              \(\mata^2=\mata\Rightarrow\mata\mypar{\mata-\mati}=\mato\Rightarrow\mata\in\setof{\mati,\mato}\)：
+
+              \(\mata\matb=\mato\not\Rightarrow\mato\in\setof{\mata,\matb}\)。
+              }
+    \end{itemize}
 
 \end{frame}
 
@@ -495,6 +517,7 @@
                       0 & 0  & 1
                   \end{bmatrix}
               \end{align*}
+同样也可以使用数学归纳法，注意格式。
               \pause
         \item 记\(\vecal=\begin{bmatrix}1\\2\\3\end{bmatrix}\)，\(\vecbeta=\begin{bmatrix}1\\2\\4\end{bmatrix}\)。容易发现\(\mata=\vecal\vecbeta^\top\)，因此有
               \begin{align*}
