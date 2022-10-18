@@ -636,6 +636,22 @@
     提示：使用性质\(\col{\mata\matb}{j}=\mata\col{\matb}{j}=\sum_{k=1}^lb_{kj}\col{\mata}{k}\)。
 \end{extraprob}
 \begin{proof}
+设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。构造\(2n\)阶方阵\(\matf\)：
+\begin{equation*}
+    \matf=
+    \begin{bmatrix}
+        \mata & \mato \\\matd&\matb
+    \end{bmatrix},\matd=\diag{\mat{-1,-1,\dots,-1}}
+\end{equation*}
+
+对\(\matf\)作初等列变换，设变换后的矩阵\(\matfstar\)形如：
+\begin{equation*}
+    \matfstar=\begin{bmatrix}\mata&\matc\\\matd&\mato\end{bmatrix}
+\end{equation*}
+
+则容易发现\(\col{\matc}{j}=\sum_{k=1}^nb_{kj}\col{\mata}{k}=\col{\mata\matb}{j}\)，即\(\matc=\mata\matb\)。
+
+又由Laplace定理可知，\(\abs{\matf}=\abs{\mata}\abs{\matb}\)，\(\abs{\matfstar}=-\abs{\matc}\abs{\matd}=\abs{\mata\matb}\)，配合行列式性质即可得\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
 
 \end{proof}
 
