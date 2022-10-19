@@ -28,6 +28,26 @@
 
 % 1.1
 \begin{problem}
+计算下列矩阵的乘积：
+
+\begin{enumerate}
+    \item[(1)] \(\begin{bmatrix}
+            4 & 3 & 1 \\1&-2&3\\5&7&0
+        \end{bmatrix}\begin{bmatrix}
+            7 \\2\\1
+        \end{bmatrix}\)
+    \item[(5)] \(\begin{bmatrix}
+            x_1 & x_2 & x_3
+        \end{bmatrix}
+        \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} \\
+            a_{12} & a_{22} & a_{23} \\
+            a_{13} & a_{23} & a_{33}
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1 \\x_2\\x_3
+        \end{bmatrix}\)
+\end{enumerate}
 \end{problem}
 \begin{proof}
     \begin{enumerate}
@@ -61,6 +81,15 @@
 
 % 1.2
 \begin{problem}
+设\(\mata=\begin{bmatrix}
+    1 & 1  & 1  \\
+    1 & 1  & -1 \\
+    1 & -1 & 1
+\end{bmatrix}\)，\(\matb=\begin{bmatrix}
+    1  & 2  & 3 \\
+    -1 & -2 & 4 \\
+    0  & 5  & 1
+\end{bmatrix}\)，求\(3\mata\matb-2\mata\)。
 \end{problem}
 \begin{proof}
     \begin{align*}
@@ -101,6 +130,7 @@
 
 % 1.3
 \begin{problem}
+设\(\mata=\begin{bmatrix}3&1\\1&-3\end{bmatrix}\)，求\(\mata^{50}\)和\(\mata^{51}\)。
 \end{problem}
 \begin{proof}
     \begin{equation*}
@@ -114,6 +144,10 @@
 
 % 1.4
 \begin{problem}
+\begin{enumerate}
+    \item 设\(\mata,\matb\)为\(n\)阶矩阵，且\(\mata\)为对称矩阵，证明\(\matb^\top\mata\matb\)也是对称矩阵；
+    \item 设\(\mata,\matb\)为\(n\)阶对称矩阵，证明\(\mata\matb\)是对称矩阵的充要条件是\(\mata\matb=\matb\mata\)。
+\end{enumerate}
 \end{problem}
 \begin{proof}
     \begin{enumerate}
@@ -137,6 +171,7 @@
 
 % 1.5
 \begin{problem}
+证明矩阵\(\mata=\mato\)的充分必要条件是方阵\(\mata^\top\mata=\mato\)。
 \end{problem}
 \begin{proof}
     必要性显然成立。下面证明充分性。
@@ -152,6 +187,15 @@
 
 % 1.6
 \begin{problem}
+设
+
+\begin{equation*}
+    \mata=\begin{bmatrix}a&0&0\\0&b&0\\0&0&c\end{bmatrix},
+    \matb=\begin{bmatrix}0&1&0\\0&0&1\\0&0&0\end{bmatrix},
+    \matc=\begin{bmatrix}\cos \theta&\sin \theta\\-\sin \theta&\cos \theta\end{bmatrix}
+\end{equation*}
+
+求\(\mata^5,\matb^3,\matc^n\)。
 \end{problem}
 \begin{proof}
     \begin{equation*}
@@ -175,6 +219,7 @@
 
 % 1.7
 \begin{problem}
+已知\(\begin{bmatrix}a&1&1\\3&0&1\\0&2&-1\end{bmatrix}\begin{bmatrix}3\\a\\-3\end{bmatrix}=\begin{bmatrix}b\\6\\b\end{bmatrix}\)，求\(a\)和\(b\)。
 \end{problem}
 \begin{proof}
     计算矩阵乘法，由等式可得
@@ -192,6 +237,11 @@
 
 % 1.8
 \begin{problem}
+若\(\mata\)是\(n\)阶方阵且\(\mata^n=\mato\)，试证：
+
+\begin{equation*}
+    \mypar{\mati_n-\mata}\mypar{\mati_n+\sum_{i=1}^{n-1}\mata^i}
+\end{equation*}
 \end{problem}
 \begin{proof}
     因为\(\mata^n=\mato\)，我们得到
@@ -205,6 +255,12 @@
 
 % 1.9
 \begin{problem}
+计算下列矩阵的\(n\)次方幂：
+
+\begin{enumerate}
+    \item[(3)] 设\(\matc=\begin{bmatrix}1&-1&-1&-1\\-1&1&-1&-1\\-1&-1&1&-1\\-1&-1&-1&1\end{bmatrix}\)，求\(\matc^n\)；
+    \item[(4)] 设\(\matd=\begin{bmatrix}1&1&0\\0&1&1\\0&0&1\end{bmatrix}\)，求\(\matd^n\)。
+\end{enumerate}
 \end{problem}
 \begin{proof}
     \begin{enumerate}
@@ -255,6 +311,11 @@
 
 % 1.10
 \begin{problem}
+试证：
+\begin{enumerate}
+    \item 与所有\(n\)阶对角阵乘法可交换的矩阵也必是\(n\)阶对角阵；
+    \item 与所有\(n\)阶矩阵乘法可交换的矩阵是纯量阵。
+\end{enumerate}
 \end{problem}
 \begin{proof}
     \begin{enumerate}
@@ -284,6 +345,7 @@
 
 % 1.11
 \begin{problem}
+证明：两个对角元为\(1\)的上三角阵乘积仍是对角元为\(1\)的上三角阵。
 \end{problem}
 \begin{proof}
     设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。则有\(\mat{\mata\matb}_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\sum_{k=1}^{i-1}a_{ik}b_{kj}+a_{ii}b_{ij}+\sum_{t=i+1}^na_{it}b_{tj}\)。
@@ -297,6 +359,7 @@
 
 % 1.12
 \begin{problem}
+设\(n\)元向量\(\vecx=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}\)，\(\vecy=\begin{bmatrix}y_1\\y_2\\\vdots\\y_n\end{bmatrix}\)。若\(\mata=\vecy\vecx^\top\)，求\(\mata^k\mypar{k \in N^+}\)。
 \end{problem}
 \begin{proof}
     \begin{equation*}
@@ -328,6 +391,7 @@
 
 % 1.13
 \begin{problem}
+设\(n\mypar{n\ge2}\)元向量\(\vecx=\begin{bmatrix}\frac12\\0\\\vdots\\0\\\frac12\end{bmatrix}\)，\(\mata=\mati_n-\vecx\vecx^\top\)，\(\matb=\mati_n+2\vecx\vecx^\top\)，求\(\mata\matb\)。
 \end{problem}
 \begin{proof}
     \begin{align*}
@@ -346,6 +410,7 @@
 
 % 1.14
 \begin{problem}
+设\(\mata\)是\(m\times n\)矩阵。证明：若对于任何\(n\)元列向量\(\vecx\)成立\(\mata\vecx=\veczero\)，则\(\mata=\mato_{m\times n}\)。
 \end{problem}
 \begin{proof}
     设\(\mata=\begin{bmatrix}\veca_1&\veca_2&\cdots&\veca_n\end{bmatrix}\)，\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。由题设可知
@@ -359,6 +424,7 @@
 
 % 1.15
 \begin{problem}
+设\(n\)阶方阵\(\mata,\matb\)满足\(\mata^2=\mata\)，\(\matb^2=\matb\)，且\(\mypar{\mata+\matb}^2=\mata+\matb\)，证明：\(\mata\matb=\mato\)。
 \end{problem}
 \begin{proof}
     根据\(\mata^2=\mata,\matb^2=\matb\)，可将\(\mypar{\mata+\matb}^2\)展开：
@@ -379,6 +445,7 @@
 
 % 1.16
 \begin{problem}
+设\(\mata=\begin{bmatrix}1&0&1\\0&2&0\\1&0&1\end{bmatrix}\)，求\(\mata^n-2\mata^{n-1}\)。
 \end{problem}
 \begin{proof}
     因为\(\mata^n-2\mata^{n-1}=\mata^{n-1}(\mata-2\mati)\)，容易发现
@@ -398,6 +465,7 @@
 
 % 1.17
 \begin{problem}
+设\(n\)阶方阵\(\mata,\matb\)满足\(\mata^2=-\mata\)，\(\matb^2=-\matb\)，且\(\mypar{\mata+\matb}^2=-\mata-\matb\)，证明：\(\mata\matb=\mato\)。
 \end{problem}
 \begin{proof}
     根据\(\mata^2=-\mata,\matb^2=-\matb\)，可将\(\mypar{\mata+\matb}^2\)展开：
@@ -419,6 +487,7 @@
 \setcounter{problem}{18}
 % 1.19
 \begin{problem}
+设\(\mata=\mati-\vecal\vecal^\top\)，其中\(\vecal\)为非零\(n\times1\)矩阵，试证：\(\mata^2=\mata\)的充要条件是\(\vecal^\top\vecal=1\)。
 \end{problem}
 \begin{proof}
     \begin{itemize}
@@ -446,6 +515,12 @@
 \setcounter{problem}{21}
 % 1.22
 \begin{problem}
+计算下列矩阵的\(k\)次幂，其中\(k\)为正整数：
+
+\begin{enumerate}
+    \item \(\mata=\begin{bmatrix}1&a&0\\0&1&a\\0&0&1\end{bmatrix}\)；
+    \item \(\mata=\begin{bmatrix}1&2&4\\2&4&8\\3&6&12\end{bmatrix}\)。
+\end{enumerate}
 \end{problem}
 \begin{proof}
     \begin{enumerate}
@@ -477,6 +552,7 @@
 
 % 1.23
 \begin{problem}
+设\(\mata,\matb\)是两个\(n\)阶矩阵，若\(\trace{\mata\matb\matc}=\trace{\matc\matb\mata}\)对任意\(n\)阶矩阵\(\matc\)成立，求证\(\mata\matb=\matb\mata\)。
 \end{problem}
 \begin{proof}
 令\(\matc=\vece_i\vece_j^\top\)，其中\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。因此有
@@ -498,6 +574,14 @@
 
 % 1.24
 \begin{problem}
+设
+
+\begin{equation*}
+    \mata=\begin{bmatrix}1&0&0&0\\0&1&0&0\\-1&2&1&0\\1&1&0&1\end{bmatrix},
+    \matb=\begin{bmatrix}1&0&1&0\\-1&2&0&1\\1&0&4&1\\-1&-1&2&0\end{bmatrix}
+\end{equation*}
+
+利用分块矩阵求\(\mata\matb\)。
 \end{problem}
 \begin{proof}
     定义子矩阵如下：

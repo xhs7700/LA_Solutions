@@ -63,8 +63,36 @@
 %     \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
 % \end{frame}
 
+\subsection*{1.1}
+
 \begin{frame}
-    \frametitle{1.1}
+\frametitle{题面}
+
+计算下列矩阵的乘积：
+
+\begin{enumerate}
+    \item[(1)] \(\begin{bmatrix}
+            4 & 3 & 1 \\1&-2&3\\5&7&0
+        \end{bmatrix}\begin{bmatrix}
+            7 \\2\\1
+        \end{bmatrix}\)
+    \item[(5)] \(\begin{bmatrix}
+            x_1 & x_2 & x_3
+        \end{bmatrix}
+        \begin{bmatrix}
+            a_{11} & a_{12} & a_{13} \\
+            a_{12} & a_{22} & a_{23} \\
+            a_{13} & a_{23} & a_{33}
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1 \\x_2\\x_3
+        \end{bmatrix}\)
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
     \begin{enumerate}
         \item[(1)] \(\begin{bmatrix}
                 4 & 3 & 1 \\1&-2&3\\5&7&0
@@ -95,8 +123,25 @@
     \end{enumerate}
 \end{frame}
 
+\subsection*{1.2}
+
 \begin{frame}
-    \frametitle{1.2}
+\frametitle{题面}
+
+设\(\mata=\begin{bmatrix}
+    1 & 1  & 1  \\
+    1 & 1  & -1 \\
+    1 & -1 & 1
+\end{bmatrix}\)，\(\matb=\begin{bmatrix}
+    1  & 2  & 3 \\
+    -1 & -2 & 4 \\
+    0  & 5  & 1
+\end{bmatrix}\)，求\(3\mata\matb-2\mata\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
     \begin{equation*}
         \mata\matb           =
         \begin{bmatrix}
@@ -137,8 +182,17 @@
 
 \end{frame}
 
+\subsection*{1.3}
+
 \begin{frame}
-    \frametitle{1.3}
+\frametitle{题面}
+
+设\(\mata=\begin{bmatrix}3&1\\1&-3\end{bmatrix}\)，求\(\mata^{50}\)和\(\mata^{51}\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{equation*}
         \begin{array}{lll}
@@ -150,8 +204,20 @@
 
 \end{frame}
 
+\subsection*{1.4}
+
 \begin{frame}
-    \frametitle{1.4}
+\frametitle{题面}
+
+\begin{enumerate}
+    \item 设\(\mata,\matb\)为\(n\)阶矩阵，且\(\mata\)为对称矩阵，证明\(\matb^\top\mata\matb\)也是对称矩阵；
+    \item 设\(\mata,\matb\)为\(n\)阶对称矩阵，证明\(\mata\matb\)是对称矩阵的充要条件是\(\mata\matb=\matb\mata\)。
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{enumerate}
         \item {\begin{equation*}
@@ -174,8 +240,17 @@
 
 \end{frame}
 
+\subsection*{1.5}
+
 \begin{frame}
-    \frametitle{1.5}
+\frametitle{题面}
+
+证明矩阵\(\mata=\mato\)的充分必要条件是方阵\(\mata^\top\mata=\mato\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     必要性显然成立。下面证明充分性。
 
@@ -189,8 +264,25 @@
 
 \end{frame}
 
+\subsection*{1.6}
+
+\begin{frame}
+    \frametitle{题面}
+
+    设
+
+    \begin{equation*}
+        \mata=\begin{bmatrix}a&0&0\\0&b&0\\0&0&c\end{bmatrix},
+        \matb=\begin{bmatrix}0&1&0\\0&0&1\\0&0&0\end{bmatrix},
+        \matc=\begin{bmatrix}\cos \theta&\sin \theta\\-\sin \theta&\cos \theta\end{bmatrix}
+    \end{equation*}
+
+    求\(\mata^5,\matb^3,\matc^n\)。
+
+\end{frame}
+
 \begin{frame}[allowframebreaks]
-    \frametitle{1.6}
+\frametitle{解答}
 
     \begin{equation*}
 \mata^5=\begin{bmatrix}a^5&0&0\\0&b^5&0\\0&0&c^5\end{bmatrix},\matb^3=\begin{bmatrix}0&0&0\\0&0&0\\0&0&0\end{bmatrix},\matc^n=\begin{bmatrix}\cos n\theta&\sin n\theta\\-\sin n\theta&\cos n\theta\end{bmatrix}
@@ -212,8 +304,17 @@
 
 \end{frame}
 
+\subsection*{1.7}
+
 \begin{frame}
-    \frametitle{1.7}
+\frametitle{题面}
+
+已知\(\begin{bmatrix}a&1&1\\3&0&1\\0&2&-1\end{bmatrix}\begin{bmatrix}3\\a\\-3\end{bmatrix}=\begin{bmatrix}b\\6\\b\end{bmatrix}\)，求\(a\)和\(b\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     计算矩阵乘法，由等式可得
 
@@ -229,8 +330,21 @@
 
 \end{frame}
 
+\subsection*{1.8}
+
 \begin{frame}
-    \frametitle{1.8}
+\frametitle{题面}
+
+若\(\mata\)是\(n\)阶方阵且\(\mata^n=\mato\)，试证：
+
+\begin{equation*}
+    \mypar{\mati_n-\mata}\mypar{\mati_n+\sum_{i=1}^{n-1}\mata^i}
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     因为\(\mata^n=\mato\)，我们得到
 
@@ -242,8 +356,22 @@
 
 \end{frame}
 
+\subsection*{1.9}
+
+\begin{frame}
+    \frametitle{题面}
+
+    计算下列矩阵的\(n\)次方幂：
+
+    \begin{enumerate}
+        \item[(3)] 设\(\matc=\begin{bmatrix}1&-1&-1&-1\\-1&1&-1&-1\\-1&-1&1&-1\\-1&-1&-1&1\end{bmatrix}\)，求\(\matc^n\)；
+        \item[(4)] 设\(\matd=\begin{bmatrix}1&1&0\\0&1&1\\0&0&1\end{bmatrix}\)，求\(\matd^n\)。
+    \end{enumerate}
+
+\end{frame}
+
 \begin{frame}[allowframebreaks]
-    \frametitle{1.9}
+\frametitle{解答}
 
     \begin{enumerate}
 
@@ -287,8 +415,21 @@
 
 \end{frame}
 
+\subsection*{1.10}
+
 \begin{frame}
-    \frametitle{1.10}
+\frametitle{题面}
+
+试证：
+\begin{enumerate}
+    \item 与所有\(n\)阶对角阵乘法可交换的矩阵也必是\(n\)阶对角阵；
+    \item 与所有\(n\)阶矩阵乘法可交换的矩阵是纯量阵。
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{enumerate}
         \item
@@ -317,8 +458,17 @@
 
 \end{frame}
 
+\subsection*{1.11}
+
 \begin{frame}
-    \frametitle{1.11}
+\frametitle{题面}
+
+证明：两个对角元为\(1\)的上三角阵乘积仍是对角元为\(1\)的上三角阵。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。则有\(\mat{\mata\matb}_{ij}=\sum_{k=1}^na_{ik}b_{kj}=\sum_{k=1}^{i-1}a_{ik}b_{kj}+a_{ii}b_{ij}+\sum_{t=i+1}^na_{it}b_{tj}\)。
 
@@ -330,8 +480,17 @@
 
 \end{frame}
 
+\subsection*{1.12}
+
+\begin{frame}
+    \frametitle{题面}
+
+    设\(n\)元向量\(\vecx=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}\)，\(\vecy=\begin{bmatrix}y_1\\y_2\\\vdots\\y_n\end{bmatrix}\)。若\(\mata=\vecy\vecx^\top\)，求\(\mata^k\mypar{k\in\mathbb{N}^+}\)。
+
+\end{frame}
+
 \begin{frame}[allowframebreaks]
-    \frametitle{1.12}
+\frametitle{解答}
 
     \begin{equation*}
         \begin{array}{lll}
@@ -361,8 +520,17 @@
 
 \end{frame}
 
+\subsection*{1.13}
+
 \begin{frame}
-    \frametitle{1.13}
+\frametitle{题面}
+
+设\(n\mypar{n\ge2}\)元向量\(\vecx=\begin{bmatrix}\frac12\\0\\\vdots\\0\\\frac12\end{bmatrix}\)，\(\mata=\mati_n-\vecx\vecx^\top\)，\(\matb=\mati_n+2\vecx\vecx^\top\)，求\(\mata\matb\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{align*}
         \vecx^\top\vecx & =
@@ -380,8 +548,17 @@
 
 \end{frame}
 
+\subsection*{1.14}
+
 \begin{frame}
-    \frametitle{1.14}
+\frametitle{题面}
+
+设\(\mata\)是\(m\times n\)矩阵。证明：若对于任何\(n\)元列向量\(\vecx\)成立\(\mata\vecx=\veczero\)，则\(\mata=\mato_{m\times n}\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     设\(\mata=\begin{bmatrix}\veca_1&\veca_2&\cdots&\veca_n\end{bmatrix}\)，\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。由题设可知
 
@@ -395,8 +572,17 @@
 
 \end{frame}
 
+\subsection*{1.15}
+
 \begin{frame}
-    \frametitle{1.15}
+\frametitle{题面}
+
+设\(n\)阶方阵\(\mata,\matb\)满足\(\mata^2=\mata\)，\(\matb^2=\matb\)，且\(\mypar{\mata+\matb}^2=\mata+\matb\)，证明：\(\mata\matb=\mato\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     根据\(\mata^2=\mata,\matb^2=\matb\)，可将\(\mypar{\mata+\matb}^2\)展开：
 
@@ -416,7 +602,7 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{1.15易错点}
+\frametitle{易错点}
 
     \begin{itemize}
         \item {
@@ -433,8 +619,17 @@
 
 \end{frame}
 
+\subsection*{1.16}
+
 \begin{frame}
-    \frametitle{1.16}
+\frametitle{题面}
+
+设\(\mata=\begin{bmatrix}1&0&1\\0&2&0\\1&0&1\end{bmatrix}\)，求\(\mata^n-2\mata^{n-1}\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     因为\(\mata^n-2\mata^{n-1}=\mata^{n-1}(\mata-2\mati)\)，容易发现
 
@@ -452,8 +647,17 @@
 
 \end{frame}
 
+\subsection*{1.17}
+
 \begin{frame}
-    \frametitle{1.17}
+\frametitle{题面}
+
+设\(n\)阶方阵\(\mata,\matb\)满足\(\mata^2=-\mata\)，\(\matb^2=-\matb\)，且\(\mypar{\mata+\matb}^2=-\mata-\matb\)，证明：\(\mata\matb=\mato\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     根据\(\mata^2=-\mata,\matb^2=-\matb\)，可将\(\mypar{\mata+\matb}^2\)展开：
 
@@ -472,8 +676,17 @@
 
 \end{frame}
 
+\subsection*{1.19}
+
 \begin{frame}
-    \frametitle{1.19}
+\frametitle{题面}
+
+设\(\mata=\mati-\vecal\vecal^\top\)，其中\(\vecal\)为非零\(n\times1\)矩阵，试证：\(\mata^2=\mata\)的充要条件是\(\vecal^\top\vecal=1\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{itemize}
         \item 首先证明充分性：
@@ -498,8 +711,22 @@
 
 \end{frame}
 
+\subsection*{1.22}
+
+\begin{frame}
+    \frametitle{题面}
+
+    计算下列矩阵的\(k\)次幂，其中\(k\)为正整数：
+
+    \begin{enumerate}
+        \item \(\mata=\begin{bmatrix}1&a&0\\0&1&a\\0&0&1\end{bmatrix}\)；
+        \item \(\mata=\begin{bmatrix}1&2&4\\2&4&8\\3&6&12\end{bmatrix}\)。
+    \end{enumerate}
+
+\end{frame}
+
 \begin{frame}[allowframebreaks]
-    \frametitle{1.22}
+\frametitle{解答}
 
     \begin{enumerate}
         \item 记\(\mata'=\begin{bmatrix}0&a&0\\0&0&a\\0&0&0\end{bmatrix}\)，容易发现
@@ -531,8 +758,17 @@
 
 \end{frame}
 
+\subsection*{1.23}
+
 \begin{frame}
-    \frametitle{1.23}
+\frametitle{题面}
+
+设\(\mata,\matb\)是两个\(n\)阶矩阵，若\(\trace{\mata\matb\matc}=\trace{\matc\matb\mata}\)对任意\(n\)阶矩阵\(\matc\)成立，求证\(\mata\matb=\matb\mata\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     令\(\matc=\vece_i\vece_j^\top\)，其中\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。因此有
     \begin{align*}
@@ -552,8 +788,24 @@
 
 \end{frame}
 
+\subsection*{1.24}
+
 \begin{frame}
-    \frametitle{1.24}
+\frametitle{题面}
+
+设
+
+\begin{equation*}
+    \mata=\begin{bmatrix}1&0&0&0\\0&1&0&0\\-1&2&1&0\\1&1&0&1\end{bmatrix},
+    \matb=\begin{bmatrix}1&0&1&0\\-1&2&0&1\\1&0&4&1\\-1&-1&2&0\end{bmatrix}
+\end{equation*}
+
+利用分块矩阵求\(\mata\matb\)。
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     定义子矩阵如下：
     \begin{equation*}
@@ -597,12 +849,17 @@
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]
-    \frametitle{附加1.1}
+\subsection*{附加1.1}
+
+\begin{frame}
+\frametitle{题面}
 
     证明\(\row{\mata\matb}{i}=\row{\mata}{i}\matb=\sum_{k=1}^la_{ik}\row{\matb}{k}\)。
 
-    解：
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{解答}
 
     设\(\mata=\normmat{bmatrix}{a}{m}{l}\)，\(\matb=\normmat{bmatrix}{b}{l}{n}\)。
     \begin{equation*}
@@ -637,7 +894,7 @@
         \end{bmatrix}                             \\
                                          & =
         \begin{bmatrix}
-            \sum_{k=1}^la_{ik}b_{k1} & \sum_{k=1}^la_{ik}b_{k2} & \cdots\sum_{k=1}^la_{ik}b_{kn}
+\sum_{k=1}^la_{ik}b_{k1} & \sum_{k=1}^la_{ik}b_{k2} &\cdots&\sum_{k=1}^la_{ik}b_{kn}
         \end{bmatrix}
     \end{align*}
 
@@ -645,12 +902,19 @@
 
 \end{frame}
 
+\subsection*{附加1.2}
+
+\begin{frame}
+\frametitle{题面}
+
+证明\(\mata\matb=\sum_{k=1}^l\col{\mata}{k}\row{\matb}{k}\)。
+
+\end{frame}
+
 \begin{frame}[allowframebreaks]
-    \frametitle{附加1.2}
+\frametitle{解答}
 
-    解：
-
-    解法类似，定义矩阵\(\mata=\mat{a_ij}_{m\times l}\)，\(\matb=\mat{b_{ij}}_{l\times n}\)。
+解法类似，定义矩阵\(\mata=\mat{a_{ij}}_{m\times l}\)，\(\matb=\mat{b_{ij}}_{l\times n}\)。
     \begin{equation*}
         \mata\matb=
         \begin{bmatrix}
@@ -691,14 +955,19 @@
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]
-    \frametitle{附加1.3}
+\subsection*{附加1.3}
+
+\begin{frame}
+\frametitle{题面}
 
     设\(\mata,\matb\)是数域\(P\)上的\(n\)级矩阵，证明\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
 
     提示：使用性质\(\col{\mata\matb}{j}=\mata\col{\matb}{j}=\sum_{k=1}^lb_{kj}\col{\mata}{k}\)。
 
-    解：
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
 设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。构造\(2n\)阶方阵\(\matf\)：
 \begin{equation*}
@@ -719,8 +988,10 @@
 
 \end{frame}
 
-\begin{frame}[allowframebreaks]
-    \frametitle{附加1.4}
+\subsection*{附加1.4}
+
+\begin{frame}
+\frametitle{题面}
 
     证明：
     \begin{enumerate}
@@ -730,7 +1001,11 @@
     \end{enumerate}
     其中\(k\)为数，矩阵\(\mata,\matb,\matc\)的阶数使上述各式有意义。
 
-    解：
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+\frametitle{解答}
+
     \begin{enumerate}
         \item
               {
@@ -774,16 +1049,21 @@
 
 \end{frame}
 
+\subsection*{补充1.1}
+
 \begin{frame}
-    \frametitle{补充1.1}
+\frametitle{题面}
 
     设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata\matb=\mata+\matb\)。证明：
     \begin{enumerate}
         \item \(\mata-\mati\)可逆；
         \item \(\mata\matb=\matb\mata\)。
     \end{enumerate}
-    \pause
-    解：
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{enumerate}
         \item
@@ -801,15 +1081,20 @@
 
 \end{frame}
 
+\subsection*{补充1.2}
+
 \begin{frame}
-    \frametitle{补充1.2}
+\frametitle{题面}
 
     设\(\mata,\matb\)为\(n\)阶方阵，\(\mata\)对称且可逆，且\(\mypar{\mata-\matb}^2=\mati\)。化简：
     \begin{equation*}
         \mypar{\mati+\inv{\mata}\matb^\top}^\top\inv{\mypar{\mati-\matb\inv{\mata}}}
     \end{equation*}
-    \pause
-    解：
+
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{align*}
           & \mypar{\mati+\inv{\mata}\matb^\top}^\top\inv{\mypar{\mati-\matb\inv{\mata}}}          \\
@@ -821,13 +1106,17 @@
 
 \end{frame}
 
+\subsection*{补充1.3}
+
 \begin{frame}
-    \frametitle{补充1.3}
+\frametitle{题面}
 
     设\(\mata,\matb,\mata+\matb\)均为\(n\)阶可逆矩阵，证明\(\inv{\mata}+\inv{\matb}\)同样可逆，并且给出其逆矩阵形式。
 
-    \pause
-    解：
+\end{frame}
+
+\begin{frame}
+\frametitle{解答}
 
     \begin{align*}
           & \inv{\mata}+\inv{\matb}                                 \\
