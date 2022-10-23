@@ -13,6 +13,7 @@
 
 \newtheorem{problem}{习题}[section]
 \newtheorem{extraprob}{附加习题}[section]
+\newtheorem{suplprob}{补充习题}[section]
 
 \renewcommand{\labelenumi}{(\theenumi)}
 \renewcommand{\proofname}{解}
@@ -790,6 +791,46 @@
               因此\(\mypar{k\mata}\matb=k\mypar{\mata\matb}\)成立。同理可得\(\mata\mypar{k\matb}=k\mypar{\mata\matb}\)成立。
               }
     \end{enumerate}
+\end{proof}
+
+% 补充1.1
+\begin{suplprob}
+    设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata\matb=\mata+\matb\)。证明：
+    \begin{enumerate}
+        \item \(\mata-\mati\)可逆；
+        \item \(\mata\matb=\matb\mata\)。
+    \end{enumerate}
+\end{suplprob}
+\begin{proof}
+    \begin{enumerate}
+        \item
+              {
+              由\(\mata\matb=\mata+\matb\)可得\(\mata\matb-\mata-\matb+\mati=\mati\)，即\(\mypar{\mata-\mati}\mypar{\matb-\mati}=\mati\)。由可逆矩阵定义知\(\mata-\mati\)可逆。
+              }
+        \item
+              {
+              由可逆矩阵定义可知\(\mypar{\mata-\mati}\mypar{\matb-\mati}=\mypar{\matb-\mati}\mypar{\mata-\mati}\)。
+
+              等式两边展开化简后即得证。
+              }
+    \end{enumerate}
+\end{proof}
+
+% 补充1.2
+\begin{suplprob}
+    设\(\mata,\matb\)为\(n\)阶方阵，\(\mata\)对称且可逆，且\(\mypar{\mata-\matb}^2=\mati\)。化简：
+    \begin{equation*}
+        \mypar{\mati+\inv{\mata}\matb^\top}^\top\inv{\mypar{\mati-\matb\inv{\mata}}}
+    \end{equation*}
+\end{suplprob}
+\begin{proof}
+    \begin{align*}
+          & \mypar{\mati+\inv{\mata}\matb^\top}^\top\inv{\mypar{\mati-\matb\inv{\mata}}}          \\
+        = & \mypar{\mati+\matb\inv{\mata}}\inv{\mypar{\mata\inv{\mata}-\matb\inv{\mata}}}         \\
+        = & \mypar{\mata\inv{\mata}+\matb\inv{\mata}}\inv{\mypar{\mypar{\mata-\matb}\inv{\mata}}} \\
+        = & \mypar{\mypar{\mata+\matb}\inv{\mata}}\mata\inv{\mypar{\mata-\matb}}                  \\
+        = & \mypar{\mata+\matb}\mypar{\mata-\matb}
+    \end{align*}
 \end{proof}
 
 \clearpage
