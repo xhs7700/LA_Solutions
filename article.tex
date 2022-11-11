@@ -71,9 +71,9 @@
                 \end{bmatrix}
                 \begin{bmatrix}
                     x_1 \\x_2\\x_3
-                \end{bmatrix}                                                 \\
+                \end{bmatrix}                                                \\
                 = & \begin{bmatrix}\sum_{i=1}^3a_{1i}x_i+\sum_{i=1}^3a_{2i}x_i+\sum_{i=1}^3a_{3i}x_i\end{bmatrix}
-                \begin{bmatrix}x_1 \\x_2 \\x_3\end{bmatrix}                                                 \\
+                \begin{bmatrix}x_1 \\x_2 \\x_3\end{bmatrix}                                                \\
                 = & \sum_{1 \leq i<j \leq 3} 2 a_{i j} x_i x_j+\sum_{k=1}^3 a_{k k} x_k^2
             \end{align*}
 
@@ -200,7 +200,7 @@
 \end{problem}
 \begin{proof}
     \begin{equation*}
-\mata^5=\begin{bmatrix}a^5&0&0\\0&b^5&0\\0&0&c^5\end{bmatrix},\matb^3=\begin{bmatrix}0&0&0\\0&0&0\\0&0&0\end{bmatrix},\matc^n=\begin{bmatrix}\cos n\theta&\sin n\theta\\-\sin n\theta&\cos n\theta\end{bmatrix}
+        \mata^5=\begin{bmatrix}a^5&0&0\\0&b^5&0\\0&0&c^5\end{bmatrix},\matb^3=\begin{bmatrix}0&0&0\\0&0&0\\0&0&0\end{bmatrix},\matc^n=\begin{bmatrix}\cos n\theta&\sin n\theta\\-\sin n\theta&\cos n\theta\end{bmatrix}
     \end{equation*}
 
     数学归纳法格式：
@@ -556,7 +556,7 @@
 设\(\mata,\matb\)是两个\(n\)阶矩阵，若\(\trace{\mata\matb\matc}=\trace{\matc\matb\mata}\)对任意\(n\)阶矩阵\(\matc\)成立，求证\(\mata\matb=\matb\mata\)。
 \end{problem}
 \begin{proof}
-令\(\matc=\vece_i\vece_j^\top\)，其中\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。因此有
+    令\(\matc=\vece_i\vece_j^\top\)，其中\(\vece_i\)表示第\(i\)个分量为\(1\)，其余分量为\(0\)的\(n\)阶列向量。因此有
     \begin{align*}
         \mat{\mata\matb\matc}_{tt} & =\sum_{k=1}^n\mat{\mata\matb}_{tk}\mat{\matc}_{kt}=
         \begin{cases}
@@ -721,22 +721,22 @@
     提示：使用性质\(\col{\mata\matb}{j}=\mata\col{\matb}{j}=\sum_{k=1}^lb_{kj}\col{\mata}{k}\)。
 \end{extraprob}
 \begin{proof}
-设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。构造\(2n\)阶方阵\(\matf\)：
-\begin{equation*}
-    \matf=
-    \begin{bmatrix}
-        \mata & \mato \\\matd&\matb
-    \end{bmatrix},\matd=\diag{\mat{-1,-1,\dots,-1}}
-\end{equation*}
+    设矩阵\(\mata=\mat{a_{ij}}_{n\times n}\)，矩阵\(\matb=\mat{b_{ij}}_{n\times n}\)。构造\(2n\)阶方阵\(\matf\)：
+    \begin{equation*}
+        \matf=
+        \begin{bmatrix}
+            \mata & \mato \\\matd&\matb
+        \end{bmatrix},\matd=\diag{\mat{-1,-1,\dots,-1}}
+    \end{equation*}
 
-对\(\matf\)作初等列变换，设变换后的矩阵\(\matfstar\)形如：
-\begin{equation*}
-    \matfstar=\begin{bmatrix}\mata&\matc\\\matd&\mato\end{bmatrix}
-\end{equation*}
+    对\(\matf\)作初等列变换，设变换后的矩阵\(\matfstar\)形如：
+    \begin{equation*}
+        \matfstar=\begin{bmatrix}\mata&\matc\\\matd&\mato\end{bmatrix}
+    \end{equation*}
 
-则容易发现\(\col{\matc}{j}=\sum_{k=1}^nb_{kj}\col{\mata}{k}=\col{\mata\matb}{j}\)，即\(\matc=\mata\matb\)。
+    则容易发现\(\col{\matc}{j}=\sum_{k=1}^nb_{kj}\col{\mata}{k}=\col{\mata\matb}{j}\)，即\(\matc=\mata\matb\)。
 
-又由Laplace定理可知，\(\abs{\matf}=\abs{\mata}\abs{\matb}\)，\(\abs{\matfstar}=-\abs{\matc}\abs{\matd}=\abs{\mata\matb}\)，配合行列式性质即可得\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
+    又由Laplace定理可知，\(\abs{\matf}=\abs{\mata}\abs{\matb}\)，\(\abs{\matfstar}=-\abs{\matc}\abs{\matd}=\abs{\mata\matb}\)，配合行列式性质即可得\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
 
 \end{proof}
 
@@ -1283,7 +1283,9 @@
 
 % 4.10
 \begin{problem}
-设\(\enums{\vecal}{n}\)是\(n\)维线性空间\(V\)的一组基，又\(V\)中向量\(\vecal_{n+1}\)在这组基下坐标\(\mypar{\enums{x}{n}}\)全都不为零。证明\(\enums{\vecal}{n},\vecal_{n+1}\)中任意\(n\)个向量必构成\(V\)的一组基，并求\(\vecal_1\)在基\(\vecal_2,\dots,\vecal_n,\vecal_{n+1}\)下的坐标。
+设\(\enums{\vecal}{n}\)是\(n\)维线性空间\(V\)的一组基，又\(V\)中向量\(\vecal_{n+1}\)在这组基下坐标\(\mypar{\enums{x}{n}}\)全都不为零。
+
+证明\(\enums{\vecal}{n},\vecal_{n+1}\)中任意\(n\)个向量必构成\(V\)的一组基，并求\(\vecal_1\)在基\(\vecal_2,\dots,\vecal_n,\vecal_{n+1}\)下的坐标。
 \end{problem}
 \begin{proof}
 
@@ -1329,6 +1331,12 @@
 
 % 4.17
 \begin{problem}
+设\(V\)是内积空间，试证明：
+\begin{enumerate}
+    \item 对\(\forall\vecal\in V\)，都有\(\indot{\veczero}{\vecdelta}=\veczero\)；
+    \item 若对\(\forall\vecal\in V\)，恒有\(\indot{\vecal}{\vecbeta}=\veczero\)，则\(\vecbeta=\veczero\)；
+    \item 已知\(\vecal,\vecbeta\in V\)，如对\(\forall\vecgamma\in V\)，都有\(\indot{\vecal}{\vecgamma}=\indot{\vecbeta}{\vecgamma}\)。试证明\(\vecal=\vecbeta\)。
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -1337,6 +1345,17 @@
 \setcounter{problem}{19}
 % 4.20
 \begin{problem}
+设\(\enums{\vecal}{n}\)是内积空间的\(n\)个向量，行列式
+\begin{equation*}
+    \gram{\enums{\vecal}{n}}=
+    \begin{vmatrix}
+        \indot{\vecal_1}{\vecal_1} & \indot{\vecal_1}{\vecal_2} & \cdots & \indot{\vecal_1}{\vecal_n} \\
+        \indot{\vecal_2}{\vecal_1} & \indot{\vecal_2}{\vecal_2} & \cdots & \indot{\vecal_2}{\vecal_n} \\
+        \vdots                     & \vdots                     &        & \vdots                     \\
+        \indot{\vecal_n}{\vecal_1} & \indot{\vecal_n}{\vecal_2} & \cdots & \indot{\vecal_n}{\vecal_n}
+    \end{vmatrix}
+\end{equation*}
+称为\(\enums{\vecal}{n}\)的Gram行列式。证明\(\gram{\enums{\vecal}{n}}=0\)的充分必要条件是\(\enums{\vecal}{n}\)线性相关。
 \end{problem}
 \begin{proof}
 
@@ -1344,6 +1363,7 @@
 
 % 4.21
 \begin{problem}
+设\(\enums{\vecal}{r}\)线性无关，\(\vecbeta_1,\vecbeta_2\)也线性无关，且后者与前者中的每个向量都正交，证明：\(\vecbeta_1,\vecbeta_2,\enums{\vecal}{r}\)也线性相关。
 \end{problem}
 \begin{proof}
 
@@ -1351,6 +1371,7 @@
 
 % 4.22
 \begin{problem}
+试把\(\mat{1,0,1,0}^\top\)，\(\mat{0,1,0,2}^\top\)扩充成为\(\rea^4\)的一组标准正交基。
 \end{problem}
 \begin{proof}
 
@@ -1358,6 +1379,11 @@
 
 % 4.23
 \begin{problem}
+已知\(f_1=1\)，\(f_2=x-1\)，\(f_3=\mypar{x-1}^2\)为三维内积空间\(C\mat{0,1}\)的一组基，内积定义为
+\begin{equation*}
+    \indot{f}{g}=\int_0^1f(x)g(x)\mathrm{d}x
+\end{equation*}
+利用Schmidt正交化方法，求与\(f_1,f_2,f_3\)等价的一组标准正交基（两个向量组可相互线性表出称为等价）。
 \end{problem}
 \begin{proof}
 
@@ -1365,6 +1391,7 @@
 
 % 4.24
 \begin{problem}
+设\(\enums{\vecal}{n}\)与\(\enums{\vecbeta}{n}\)为\(n\)维欧氏空间的两组基，其中\(\enums{\vecal}{n}\)为标准正交基，又若由\(\enums{\vecal}{n}\)到\(\enums{\vecbeta}{n}\)的过渡矩阵为\(\matm\)，证明：\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基的充分必要条件是\(\matm\)为正交矩阵。
 \end{problem}
 \begin{proof}
 
@@ -1373,6 +1400,18 @@
 \setcounter{problem}{25}
 % 4.26
 \begin{problem}
+设
+\begin{equation*}
+    \mata=
+    \begin{bmatrix}
+        1 & 2  & -1 \\
+        2 & 0  & 1  \\
+        2 & -4 & 2  \\
+        4 & 0  & 0
+    \end{bmatrix},
+    \vecb=\begin{bmatrix}-1\\1\\1\\-2\end{bmatrix}
+\end{equation*}
+问线性方程组\(\mata\vecx=\vecb\)是否有解？如果无解，求其最小二乘解。
 \end{problem}
 \begin{proof}
 
@@ -1380,6 +1419,17 @@
 
 % 4.27
 \begin{problem}
+求向量\(\vecb\)在矩阵\(\mata\)的列空间中的正交投影。
+\begin{equation*}
+    \mata=
+    \begin{bmatrix}
+        1 & -2 \\
+        1 & 0  \\
+        1 & 1  \\
+        1 & 3
+    \end{bmatrix},
+    \vecb=\begin{bmatrix}-4\\-3\\3\\0\end{bmatrix}
+\end{equation*}
 \end{problem}
 \begin{proof}
 
@@ -1387,6 +1437,17 @@
 
 % 4.28
 \begin{problem}
+设齐次线性方程组
+\begin{equation*}
+    \begin{cases}
+        2x_1+x_2-x_3+x_4-3x_5=0 \\
+        x_1+x_2-x_3+x_5=0
+    \end{cases}
+\end{equation*}
+\begin{enumerate}
+    \item 求解空间的标准正交基；
+    \item 求解空间的正交补空间的标准正交基。
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -1394,6 +1455,13 @@
 
 % 4.29
 \begin{problem}
+设\(\vecal_1,\vecal_2\)和\(\vecal\)是Euclid空间\(\rea^3\)中的向量，
+\begin{equation*}
+    \vecal_1=\begin{bmatrix}1\\1\\2\end{bmatrix},
+    \vecal_2=\begin{bmatrix}1\\0\\1\end{bmatrix},
+    \vecal=\begin{bmatrix}3\\2\\1\end{bmatrix}
+\end{equation*}
+求\(\myspan{\vecal_1,\vecal_2}\)的正交补空间以及向量\(\vecal\)分别在\(\myspan{\vecal_1,\vecal_2}\)及其正交补空间中的正交投影。
 \end{problem}
 \begin{proof}
 
@@ -1402,6 +1470,28 @@
 \setcounter{problem}{30}
 % 4.31
 \begin{problem}
+已知在\(\rea^3\)中，线性变换\(T\)在基
+\begin{equation*}
+    \vecveps_1=\begin{bmatrix}8\\-6\\7\end{bmatrix},
+    \vecveps_2=\begin{bmatrix}-16\\7\\-13\end{bmatrix},
+    \vecveps_3=\begin{bmatrix}9\\-3\\7\end{bmatrix}
+\end{equation*}
+下的表示矩阵
+\begin{equation*}
+    \mata=
+    \begin{bmatrix}
+        1  & -18 & 15 \\
+        -1 & -22 & 20 \\
+        1  & -25 & 22
+    \end{bmatrix}
+\end{equation*}
+求\(T\)在基
+\begin{equation*}
+    \veceta_1=\begin{bmatrix}1\\-2\\1\end{bmatrix},
+    \veceta_2=\begin{bmatrix}3\\-1\\2\end{bmatrix},
+    \veceta_3=\begin{bmatrix}2\\1\\2\end{bmatrix}
+\end{equation*}
+下的表示矩阵。
 \end{problem}
 \begin{proof}
 
@@ -1410,6 +1500,19 @@
 \setcounter{problem}{32}
 % 4.33
 \begin{problem}
+给定\(\rea^3\)的两组基：
+\begin{equation*}
+    \vecveps_1=\begin{bmatrix}1\\0\\1\end{bmatrix},
+    \vecveps_2=\begin{bmatrix}2\\1\\0\end{bmatrix},
+    \vecveps_3=\begin{bmatrix}1\\1\\1\end{bmatrix}
+\end{equation*}
+和
+\begin{equation*}
+    \veceta_1=\begin{bmatrix}1\\2\\-1\end{bmatrix},
+    \veceta_2=\begin{bmatrix}2\\2\\-1\end{bmatrix},
+    \veceta_3=\begin{bmatrix}2\\-1\\-1\end{bmatrix}
+\end{equation*}
+定义线性变换：\(T\mypar{\vecveps_i}=\veceta_i\)，\(i\in\setof{1,2,3}\)。分别求\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)与\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵。
 \end{problem}
 \begin{proof}
 

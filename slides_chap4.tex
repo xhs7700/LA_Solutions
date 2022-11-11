@@ -1,0 +1,629 @@
+\documentclass{beamer}
+\usepackage{ctex}
+\usepackage[T1]{fontenc}
+
+% other packages
+\usepackage{latexsym,xcolor,multicol,booktabs,calligra}
+\usepackage{pstricks,listings,stackengine,cite}
+\usepackage{anyfontsize}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath,amsthm}
+
+\setbeamertemplate{bibliography item}[text]
+% \bibliographystyle{plain}
+% 如果参考文献太多的话，可以像下面这样调整字体：
+% \tiny\bibliographystyle{plain}
+
+% \usefonttheme[onlymath]{serif}
+
+\input{headers.tex}
+
+\author{夏海淞}
+\title{线性代数习题课}
+\subtitle{第四章}
+% \institute{School of Computer Science, Fudan University}
+\date{\today}
+\usepackage{College}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+\begin{document}
+\setlength{\parskip}{0.45\baselineskip}
+
+\begin{frame}
+    \titlepage
+    \begin{figure}[htpb]
+        \begin{center}
+            \vspace*{-0.5cm}
+            \includegraphics[width=0.1\linewidth]{pic/FDU.jpeg}
+        \end{center}
+    \end{figure}
+
+\end{frame}
+
+\subsection*{4.1}
+\begin{frame}
+    \frametitle{题面}
+
+    在次数不大于\(2\)的多项式线性空间\(P_2[x]\)中，试证：\(f_1=1\)，\(f_2=x-1\)，\(f_3=\mypar{x-2}\mypar{x-1}\)线性无关。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.2}
+\begin{frame}
+    \frametitle{题面}
+
+    证明：以下三个多项式为\(P_2[x]\)的一组基：
+    \begin{equation*}
+        f_1=1,f_2=x-1,f_3=\mypar{x-1}^2
+    \end{equation*}
+    再求\(g(x)=5x^2+x+3\)在此基下的坐标。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.3}
+\begin{frame}
+    \frametitle{题面}
+
+    在次数不大于\(3\)的多项式空间\(P_3[x]\)中，
+    \begin{enumerate}
+        \item 求由基\(1,x,x^2,x^3\)到基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)的过渡矩阵；
+        \item 求\(f(x)=a_0+a_1x+a_2x^2+a_3x^3\)在基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)下的坐标。
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.4}
+\begin{frame}
+    \frametitle{题面}
+
+    在\(P_3[x]\)的多项式空间中，旧基为\(1,x,x^2,x^3\)；新基为\(1\)，\(1+x\)，\(1+x+x^2\)，\(1+x+x^2+x^3\)。
+    \begin{enumerate}
+        \item 求旧基到新基的过渡矩阵；
+        \item 求多项式\(1+2x+3x^2+4x^3\)在新基下的坐标；
+        \item 若多项式\(f(x)\)在新基下的坐标为\(\mat{1,2,3,4}^\top\)，求它在旧基下的坐标。
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.5}
+\begin{frame}
+    \frametitle{题面}
+
+    已知\(\vecxi\)在基\(\matb_1=\setof{\vecal_1,\vecal_2,\vecal_3}\)下的坐标为\(\vecxi_{\matb_1}=\mat{1,-2,2}^\top\)，求\(\vecxi\)在基\(\matb_2=\setof{\vecbeta_1,\vecbeta_2,\vecbeta_3}\)下的坐标\(\vecxi_{\matb_2}\)，其中\(\vecbeta_1=\vecal_1+\vecal_2\)，\(\vecbeta_2=\vecal_2+\vecal_3\)，\(\vecbeta_3=\vecal_3+\vecal_1\)。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.6}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(\vecveps_1,\vecveps_2,\vecveps_3\)是线性空间\(V\)的一组基，且
+    \begin{equation*}
+        \begin{cases}
+            \vecxi_1=\vecveps_1+\vecveps_3 \\
+            \vecxi_2=\vecveps_2            \\
+            \vecxi_3=\vecveps_1+2\vecveps_2+2\vecveps_3
+        \end{cases}
+    \end{equation*}
+    \begin{equation*}
+        \begin{cases}
+            \veceta_1=\vecveps_1            \\
+            \veceta_2=\vecveps_1+\vecveps_2 \\
+            \veceta_3=\vecveps_1+\vecveps_2+\vecveps_3
+        \end{cases}
+    \end{equation*}
+    \begin{enumerate}
+        \item 试证\(\vecxi_1,\vecxi_2,\vecxi_3\)及\(\veceta_1,\veceta_2,\veceta_3\)都是\(V\)的一组基；
+        \item 求由基\(\vecxi_1,\vecxi_2,\vecxi_3\)到基\(\veceta_1,\veceta_2,\veceta_3\)的过渡矩阵。
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.7}
+\begin{frame}[allowframebreaks]
+    \frametitle{题面}
+
+    在线性空间\(\rea^{2\times2}\)中，已知
+    \begin{equation*}
+        \vecal_1=\begin{bmatrix}1&0\\0&0\end{bmatrix},
+        \vecal_2=\begin{bmatrix}0&1\\0&0\end{bmatrix},
+        \vecal_3=\begin{bmatrix}0&0\\1&0\end{bmatrix},
+        \vecal_4=\begin{bmatrix}0&0\\0&1\end{bmatrix}
+    \end{equation*}
+    为其一组基，若\(\rea^{2\times2}\)的另一组基为\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)，由\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)到\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)的过渡矩阵为
+    \begin{equation*}
+        \mata=
+        \begin{bmatrix}
+            0 & 1 & 1 & 1 \\
+            1 & 0 & 1 & 1 \\
+            1 & 1 & 0 & 1 \\
+            1 & 1 & 1 & 0
+        \end{bmatrix}
+    \end{equation*}
+    求：
+    \begin{enumerate}
+        \item 基\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)；
+        \item 矩阵\begin{equation*}\begin{bmatrix}0&1\\2&-3\end{bmatrix}\end{equation*}在基\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)下的坐标。
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.8}
+\begin{frame}
+    \frametitle{题面}
+
+    已知实数域\(\rea\)上的所有\(2\)阶矩阵，对于矩阵的加法和数乘，构成\(\rea\)上的四维线性空间，记作\(V=\rea^{2\times2}\)。
+    \begin{enumerate}
+        \item {
+              分别证明
+              \begin{equation*}
+                  \vecal_1=\begin{bmatrix}1&0\\0&0\end{bmatrix},
+                  \vecal_2=\begin{bmatrix}1&1\\0&0\end{bmatrix},
+                  \vecal_3=\begin{bmatrix}1&1\\1&0\end{bmatrix},
+                  \vecal_4=\begin{bmatrix}1&1\\1&1\end{bmatrix}
+              \end{equation*}
+              与
+              \begin{equation*}
+                  \vecbeta_1=\begin{bmatrix}-1&1\\1&1\end{bmatrix},
+                  \vecbeta_2=\begin{bmatrix}1&-1\\1&1\end{bmatrix},
+                  \vecbeta_3=\begin{bmatrix}1&1\\-1&1\end{bmatrix},
+                  \vecbeta_4=\begin{bmatrix}1&1\\1&-1\end{bmatrix}
+              \end{equation*}
+              均为\(\rea^{2\times2}\)的基；}
+        \item 对于\(\rea^{2\times2}\)中的任意元素\(\vecal\)，求\(\vecal\)在基\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)下的坐标；
+        \item 求由基\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)到\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)的过渡矩阵。
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.9}
+\begin{frame}
+    \frametitle{题面}
+
+    求下列两个齐次线性方程组的解空间的基和维数：
+    \begin{enumerate}
+        \item \(x_1+x_2+\cdots+x_n=0\)；
+        \item \begin{equation*}
+                  \begin{cases}
+                      2x_1-4x_2+5x_3+3x_4=0 \\
+                      3x_1-6x_2+4x_3+2x_4=0 \\
+                      4x_1-8x_2+17x_3+11x_4=0
+                  \end{cases}
+              \end{equation*}
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.10}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(\enums{\vecal}{n}\)是\(n\)维线性空间\(V\)的一组基，又\(V\)中向量\(\vecal_{n+1}\)在这组基下坐标\(\mypar{\enums{x}{n}}\)全都不为零。
+
+    证明\(\enums{\vecal}{n},\vecal_{n+1}\)中任意\(n\)个向量必构成\(V\)的一组基，并求\(\vecal_1\)在基\(\vecal_2,\dots,\vecal_n,\vecal_{n+1}\)下的坐标。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.12}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(V_1,V_2\)是\(\rea^n\)的两个非平凡子空间，证明：在\(\rea^n\)中存在向量\(\vecal\)，使\(\vecal\notin V_1\)，且\(\vecal\notin V_2\)，并在\(\rea^3\)中举例说明此结论。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.13}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(\vecal,\vecbeta,\vecgamma\in\rea^n\)，\(c_1,c_2,c_3\in\rea\)，且\(c_1c_3\neq0\)，证明：若\(c_1\vecal+c_2\vecbeta+c_3\vecgamma=\veczero\)，则\(\myspan{\vecal,\vecbeta}=\myspan{\vecbeta,\vecgamma}\)。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.14}
+\begin{frame}
+    \frametitle{题面}
+
+    若
+    \begin{equation*}
+        \mata=\begin{bmatrix}1&1&1&0\\2&1&0&1\end{bmatrix}
+    \end{equation*}
+    求\(\mata\)的零空间\(\nullsp{\mata}\)的一组基。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.16}
+\begin{frame}
+    \frametitle{题面}
+
+    已知向量组\(\vecal_1=\mat{2,0,1,3,-1}^\top\)，\(\vecal_2=\mat{0,-2,1,5,-3}^\top\)，\(\vecbeta_1=\mat{1,1,0,-1,1}^\top\)，\(\vecbeta_2=\mat{1,-3,2,0,5}^\top\)，且\(W_1=\myspan{\vecal_1,\vecal_2}\)，\(W_2=\myspan{\vecbeta_1,\vecbeta_2}\)。试求\(W_1\cap W_2\)与\(W_1+W_2\)的维数以及各自的一组基。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.17}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(V\)是内积空间，试证明：
+    \begin{enumerate}
+        \item 对\(\forall\vecal\in V\)，都有\(\indot{\veczero}{\vecdelta}=\veczero\)；
+        \item 若对\(\forall\vecal\in V\)，恒有\(\indot{\vecal}{\vecbeta}=\veczero\)，则\(\vecbeta=\veczero\)；
+        \item 已知\(\vecal,\vecbeta\in V\)，如对\(\forall\vecgamma\in V\)，都有\(\indot{\vecal}{\vecgamma}=\indot{\vecbeta}{\vecgamma}\)。试证明\(\vecal=\vecbeta\)。
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.20}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(\enums{\vecal}{n}\)是内积空间的\(n\)个向量，行列式
+    \begin{equation*}
+        \gram{\enums{\vecal}{n}}=
+        \begin{vmatrix}
+            \indot{\vecal_1}{\vecal_1} & \indot{\vecal_1}{\vecal_2} & \cdots & \indot{\vecal_1}{\vecal_n} \\
+            \indot{\vecal_2}{\vecal_1} & \indot{\vecal_2}{\vecal_2} & \cdots & \indot{\vecal_2}{\vecal_n} \\
+            \vdots                     & \vdots                     &        & \vdots                     \\
+            \indot{\vecal_n}{\vecal_1} & \indot{\vecal_n}{\vecal_2} & \cdots & \indot{\vecal_n}{\vecal_n}
+        \end{vmatrix}
+    \end{equation*}
+    称为\(\enums{\vecal}{n}\)的Gram行列式。证明\(\gram{\enums{\vecal}{n}}=0\)的充分必要条件是\(\enums{\vecal}{n}\)线性相关。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.21}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(\enums{\vecal}{r}\)线性无关，\(\vecbeta_1,\vecbeta_2\)也线性无关，且后者与前者中的每个向量都正交，证明：\(\vecbeta_1,\vecbeta_2,\enums{\vecal}{r}\)也线性相关。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.22}
+\begin{frame}
+    \frametitle{题面}
+
+    试把\(\mat{1,0,1,0}^\top\)，\(\mat{0,1,0,2}^\top\)扩充成为\(\rea^4\)的一组标准正交基。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.23}
+\begin{frame}
+    \frametitle{题面}
+
+    已知\(f_1=1\)，\(f_2=x-1\)，\(f_3=\mypar{x-1}^2\)为三维内积空间\(C\mat{0,1}\)的一组基，内积定义为
+    \begin{equation*}
+        \indot{f}{g}=\int_0^1f(x)g(x)\mathrm{d}x
+    \end{equation*}
+    利用Schmidt正交化方法，求与\(f_1,f_2,f_3\)等价的一组标准正交基（两个向量组可相互线性表出称为等价）。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.24}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(\enums{\vecal}{n}\)与\(\enums{\vecbeta}{n}\)为\(n\)维欧氏空间的两组基，其中\(\enums{\vecal}{n}\)为标准正交基，又若由\(\enums{\vecal}{n}\)到\(\enums{\vecbeta}{n}\)的过渡矩阵为\(\matm\)，证明：\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基的充分必要条件是\(\matm\)为正交矩阵。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.26}
+\begin{frame}
+    \frametitle{题面}
+
+    设
+    \begin{equation*}
+        \mata=
+        \begin{bmatrix}
+            1 & 2  & -1 \\
+            2 & 0  & 1  \\
+            2 & -4 & 2  \\
+            4 & 0  & 0
+        \end{bmatrix},
+        \vecb=\begin{bmatrix}-1\\1\\1\\-2\end{bmatrix}
+    \end{equation*}
+    问线性方程组\(\mata\vecx=\vecb\)是否有解？如果无解，求其最小二乘解。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.27}
+\begin{frame}
+    \frametitle{题面}
+
+    求向量\(\vecb\)在矩阵\(\mata\)的列空间中的正交投影。
+    \begin{equation*}
+        \mata=
+        \begin{bmatrix}
+            1 & -2 \\
+            1 & 0  \\
+            1 & 1  \\
+            1 & 3
+        \end{bmatrix},
+        \vecb=\begin{bmatrix}-4\\-3\\3\\0\end{bmatrix}
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.28}
+\begin{frame}
+    \frametitle{题面}
+
+    设齐次线性方程组
+    \begin{equation*}
+        \begin{cases}
+            2x_1+x_2-x_3+x_4-3x_5=0 \\
+            x_1+x_2-x_3+x_5=0
+        \end{cases}
+    \end{equation*}
+    \begin{enumerate}
+        \item 求解空间的标准正交基；
+        \item 求解空间的正交补空间的标准正交基。
+    \end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.29}
+\begin{frame}
+    \frametitle{题面}
+
+    设\(\vecal_1,\vecal_2\)和\(\vecal\)是Euclid空间\(\rea^3\)中的向量，
+    \begin{equation*}
+        \vecal_1=\begin{bmatrix}1\\1\\2\end{bmatrix},
+        \vecal_2=\begin{bmatrix}1\\0\\1\end{bmatrix},
+        \vecal=\begin{bmatrix}3\\2\\1\end{bmatrix}
+    \end{equation*}
+    求\(\myspan{\vecal_1,\vecal_2}\)的正交补空间以及向量\(\vecal\)分别在\(\myspan{\vecal_1,\vecal_2}\)及其正交补空间中的正交投影。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\subsection*{4.31}
+\begin{frame}
+    \frametitle{题面}
+
+    已知在\(\rea^3\)中，线性变换\(T\)在基
+    \begin{equation*}
+        \vecveps_1=\begin{bmatrix}8\\-6\\7\end{bmatrix},
+        \vecveps_2=\begin{bmatrix}-16\\7\\-13\end{bmatrix},
+        \vecveps_3=\begin{bmatrix}9\\-3\\7\end{bmatrix}
+    \end{equation*}
+    下的表示矩阵
+    \begin{equation*}
+        \mata=
+        \begin{bmatrix}
+            1  & -18 & 15 \\
+            -1 & -22 & 20 \\
+            1  & -25 & 22
+        \end{bmatrix}
+    \end{equation*}
+    求\(T\)在基
+    \begin{equation*}
+        \veceta_1=\begin{bmatrix}1\\-2\\1\end{bmatrix},
+        \veceta_2=\begin{bmatrix}3\\-1\\2\end{bmatrix},
+        \veceta_3=\begin{bmatrix}2\\1\\2\end{bmatrix}
+    \end{equation*}
+    下的表示矩阵。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
+
+\end{document}
+
+\subsection*{4.33}
+\begin{frame}
+    \frametitle{题面}
+
+    给定\(\rea^3\)的两组基：
+    \begin{equation*}
+        \vecveps_1=\begin{bmatrix}1\\0\\1\end{bmatrix},
+        \vecveps_2=\begin{bmatrix}2\\1\\0\end{bmatrix},
+        \vecveps_3=\begin{bmatrix}1\\1\\1\end{bmatrix}
+    \end{equation*}
+    和
+    \begin{equation*}
+        \veceta_1=\begin{bmatrix}1\\2\\-1\end{bmatrix},
+        \veceta_2=\begin{bmatrix}2\\2\\-1\end{bmatrix},
+        \veceta_3=\begin{bmatrix}2\\-1\\-1\end{bmatrix}
+    \end{equation*}
+    定义线性变换：\(T\mypar{\vecveps_i}=\veceta_i\)，\(i\in\setof{1,2,3}\)。分别求\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)与\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵。
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{解答}
+
+
+
+\end{frame}
