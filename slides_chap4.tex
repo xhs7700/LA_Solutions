@@ -70,7 +70,26 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    由例4.2.2可知，\(\vecveps_1=1\)，\(\vecveps_2=x\)，\(\vecveps_3=x^2\)是\(P_2[x]\)的一组基。又因为
+    \begin{align*}
+        \begin{bmatrix}
+            \vecf_1 & \vecf_2 & \vecf_3
+        \end{bmatrix}
+         & =
+        \begin{bmatrix}
+            \vecveps_1 & \vecveps_2 & \vecveps_3
+        \end{bmatrix}
+        \begin{bmatrix}
+            1 & -1 & 2  \\
+            0 & 1  & -3 \\
+            0 & 0  & 1
+        \end{bmatrix} \\
+         & =
+        \begin{bmatrix}
+            \vecveps_1 & \vecveps_2 & \vecveps_3
+        \end{bmatrix}\mata
+    \end{align*}
+    其中\(\rank{\mata}=3\)。由例4.2.4可知\(\vecf_1,\vecf_2,\vecf_3\)线性无关。
 
 \end{frame}
 
@@ -89,7 +108,42 @@
 \begin{frame}
     \frametitle{解答}
 
+    和习题4.1类似，令\(\vecveps_1=1\)，\(\vecveps_2=x\)，\(\vecveps_3=x^2\)表示\(P_2[x]\)的一组基。则有
+    \begin{align*}
+        \begin{bmatrix}
+            \vecf_1 & \vecf_2 & \vecf_3
+        \end{bmatrix}
+         & =
+        \begin{bmatrix}
+            \vecveps_1 & \vecveps_2 & \vecveps_3
+        \end{bmatrix}
+        \begin{bmatrix}
+            1 & -1 & 1  \\
+            0 & 1  & -2 \\
+            0 & 0  & 1
+        \end{bmatrix} \\
+         & =
+        \begin{bmatrix}
+            \vecveps_1 & \vecveps_2 & \vecveps_3
+        \end{bmatrix}\mata
+    \end{align*}
+    其中\(\rank{\mata}=3\)，因此\(\mata\)可逆，\(\vecf_1,\vecf_2,\vecf_3\)线性无关。
 
+    \pause
+
+    对\(\forall\vecf\in P_2[x]\)，设其坐标为\(\vecx\)。则有
+    \begin{equation*}
+        \vecf=
+        \begin{bmatrix}
+            \vecveps_1 & \vecveps_2 & \vecveps_3
+        \end{bmatrix}\vecx=
+        \begin{bmatrix}
+            \vecf_1 & \vecf_2 & \vecf_3
+        \end{bmatrix}\inv{\mata}\vecx
+    \end{equation*}
+    因此\(P_2[x]\)中的任意向量可由\(\vecf_1,\vecf_2,\vecf_3\)线性表出。
+
+    综上，\(\vecf_1,\vecf_2,\vecf_3\)为\(P_2[x]\)的一组基。
 
 \end{frame}
 
@@ -105,10 +159,59 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
-
+    \begin{enumerate}
+        \item {
+              容易发现
+              \begin{equation*}
+                  \begin{bmatrix}
+                      1 & 1+x & \mypar{1+x}^2 & \mypar{1+x}^3
+                  \end{bmatrix}=
+                  \begin{bmatrix}
+                      1 \\ x \\ x^2 \\ x^3
+                  \end{bmatrix}^\top
+                  \begin{bmatrix}
+                      1 & 1 & 1 & 1 \\
+                      0 & 1 & 2 & 3 \\
+                      0 & 0 & 1 & 3 \\
+                      0 & 0 & 0 & 1
+                  \end{bmatrix}
+              \end{equation*}
+              因此过渡矩阵为\(\matm=
+              \begin{bmatrix}
+                  1 & 1 & 1 & 1 \\
+                  0 & 1 & 2 & 3 \\
+                  0 & 0 & 1 & 3 \\
+                  0 & 0 & 0 & 1
+              \end{bmatrix}\)；
+              }
+        \item {
+              令\(\veca=\begin{bmatrix}a_0&a_1&a_2&a_3\end{bmatrix}^\top\)，则有
+              \begin{align*}
+                  f\mypar{x}
+                   & =
+                  \begin{bmatrix}
+                      1 & x & x^2 & x^3
+                  \end{bmatrix}\veca \\
+                   & =
+                  \begin{bmatrix}
+                      1 & 1+x & \mypar{1+x}^2 & \mypar{1+x}^3
+                  \end{bmatrix}\inv{\matm}\veca
+              \end{align*}
+              因此\(f\mypar{x}\)在基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)下的坐标为
+              \begin{equation*}
+                  \inv{\matm}\veca=
+                  \begin{bmatrix}
+                      a_0-a_1+a_2-a_3 \\
+                      a_1-2a_2+3a_3   \\
+                      a_2-3a_3        \\
+                      a_3
+                  \end{bmatrix}
+              \end{equation*}
+              }
+    \end{enumerate}
 
 \end{frame}
 
@@ -128,7 +231,11 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    \begin{enumerate}
+        \item 过渡矩阵为\(\matm=\begin{bmatrix}1&1&1&1\\0&1&1&1\\0&0&1&1\\0&0&0&1\end{bmatrix}\)；\pause
+        \item 因为该多项式在旧基下的坐标为\(\vecx=\begin{bmatrix}1&2&3&4\end{bmatrix}^\top\)，因此该多项式在新基下的坐标为\(\inv{\matm}\vecx=\begin{bmatrix}-1&-1&-1&4\end{bmatrix}^\top\)；\pause
+        \item 同理可得该多项式在旧基下的坐标为\(\matm\vecx=\begin{bmatrix}10&9&7&4\end{bmatrix}^\top\)。
+    \end{enumerate}
 
 \end{frame}
 
@@ -143,7 +250,21 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    由题设可知
+    \begin{equation*}
+        \begin{bmatrix}\vecbeta_1&\vecbeta_2&\vecbeta_3\end{bmatrix}=
+        \begin{bmatrix}\vecal_1&\vecal_2&\vecal_3\end{bmatrix}
+        \begin{bmatrix}
+            1 & 0 & 1 \\
+            1 & 1 & 0 \\
+            0 & 1 & 1
+        \end{bmatrix}
+    \end{equation*}
+    因此从基\(\matb_1\)到基\(\matb_2\)的过渡矩阵为\(\matm=\begin{bmatrix}1&0&1\\1&1&0\\0&1&1\end{bmatrix}\)。
+    因此有
+    \begin{equation*}
+        \vecxi_{\matb_2}=\inv{\matm}\vecxi_{\matb_1}=\begin{bmatrix}-1.5&-0.5&2.5\end{bmatrix}^\top
+    \end{equation*}
 
 \end{frame}
 
@@ -173,10 +294,55 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
-
+    \begin{enumerate}
+        \item {
+              容易发现
+              \begin{align*}
+                  \begin{bmatrix}\vecxi_1&\vecxi_2&\vecxi_3\end{bmatrix}
+                   & =
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}
+                  \begin{bmatrix}
+                      1 & 0 & 1 \\
+                      0 & 1 & 2 \\
+                      1 & 0 & 2
+                  \end{bmatrix}                                                        \\
+                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
+              \end{align*}
+              \begin{align*}
+                  \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}
+                   & =
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}
+                  \begin{bmatrix}
+                      1 & 1 & 1 \\
+                      0 & 1 & 1 \\
+                      0 & 0 & 1
+                  \end{bmatrix}                                                        \\
+                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb
+              \end{align*}
+              又因为\(\rank{\mata}=\rank{\matb}=3\)，由习题4.2可知\(\vecxi_1,\vecxi_2,\vecxi_3\)和\(\veceta_1,\veceta_2,\veceta_3\)均线性无关，且任意\(V\)中的向量均可由上述两个向量组线性表出。所以\(\vecxi_1,\vecxi_2,\vecxi_3\)和\(\veceta_1,\veceta_2,\veceta_3\)都是\(V\)的一组基；
+              }
+        \item {
+              由(1)可得
+              \begin{align*}
+                  \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}
+                   & =
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb          \\
+                   & =\begin{bmatrix}\vecxi_1&\vecxi_2&\vecxi_3\end{bmatrix}\inv{\mata}\matb
+              \end{align*}
+              因此由基\(\vecxi_1,\vecxi_2,\vecxi_3\)到基\(\veceta_1,\veceta_2,\veceta_3\)的过渡矩阵为
+              \begin{equation*}
+                  \inv{\mata}\matb=
+                  \begin{bmatrix}
+                      2  & 2  & 1 \\
+                      2  & 3  & 1 \\
+                      -1 & -1 & 0
+                  \end{bmatrix}
+              \end{equation*}
+              }
+    \end{enumerate}
 
 \end{frame}
 
@@ -212,7 +378,23 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    \begin{enumerate}
+        \item {
+              由题设可知
+              \begin{align*}
+                  \vecbeta_1 & =\vecal_2+\vecal_3+\vecal_4=\begin{bmatrix}0&1\\1&1\end{bmatrix},
+                  \vecbeta_2=\vecal_1+\vecal_3+\vecal_4=\begin{bmatrix}1&0\\1&1\end{bmatrix}     \\
+                  \vecbeta_3 & =\vecal_1+\vecal_2+\vecal_4=\begin{bmatrix}1&1\\0&1\end{bmatrix},
+                  \vecbeta_4=\vecal_1+\vecal_2+\vecal_3=\begin{bmatrix}1&1\\1&0\end{bmatrix}
+              \end{align*}
+              }\pause
+        \item {
+              容易得到该矩阵在基\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)下的坐标为\(\begin{bmatrix}0&1&2&-3\end{bmatrix}^\top\)。因此该矩阵在基\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)下的坐标为
+              \begin{equation*}
+                  \inv{\mata}\begin{bmatrix}0&1&2&-3\end{bmatrix}^\top=\begin{bmatrix}0&-1&-2&3\end{bmatrix}^\top
+              \end{equation*}
+              }
+    \end{enumerate}
 
 \end{frame}
 
@@ -244,10 +426,72 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
-
+    \begin{enumerate}
+        \item {
+              由习题4.7可知，
+              \begin{equation*}
+                  \vecveps_1=\begin{bmatrix}1&0\\0&0\end{bmatrix},
+                  \vecveps_2=\begin{bmatrix}0&1\\0&0\end{bmatrix},
+                  \vecveps_3=\begin{bmatrix}0&0\\1&0\end{bmatrix},
+                  \vecveps_4=\begin{bmatrix}0&0\\0&1\end{bmatrix}
+              \end{equation*}
+              为\(\rea^{2\times2}\)的一组基。又因为
+              \begin{align*}
+                  \begin{bmatrix}\vecal_1&\vecal_2&\vecal_3&\vecal_4\end{bmatrix}
+                   & =
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}
+                  \begin{bmatrix}
+                      1 & 1 & 1 & 1 \\
+                      0 & 1 & 1 & 1 \\
+                      0 & 0 & 1 & 1 \\
+                      0 & 0 & 0 & 1
+                  \end{bmatrix} \\
+                   & =
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\mata
+              \end{align*}
+              \begin{align*}
+                  \begin{bmatrix}\vecbeta_1&\vecbeta_2&\vecbeta_3&\vecbeta_4\end{bmatrix}
+                   & =
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}
+                  \begin{bmatrix}
+                      -1 & 1  & 1  & 1  \\
+                      1  & -1 & 1  & 1  \\
+                      1  & 1  & -1 & 1  \\
+                      1  & 1  & 1  & -1
+                  \end{bmatrix}                                                                \\
+                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb
+              \end{align*}
+              其中\(\rank{\mata}=\rank{\matb}=4\)，所以\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)和\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)均为\(\rea^{2\times2}\)的基；
+              }
+        \item {
+              设\(\vecal=\begin{bmatrix}\alpha_{11}&\alpha_{12}\\\alpha_{21}&\alpha_{22}\end{bmatrix}\)，则\(\vecal\)在基\(\vecveps_1,\vecveps_2,\vecveps_3,\vecveps_4\)下的坐标为\(\begin{bmatrix}\alpha_{11}&\alpha_{12}&\alpha_{21}&\alpha_{22}\end{bmatrix}^\top\)。由(1)可得\(\vecal\)在基\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)下的坐标为
+              \begin{equation*}
+                  \inv{\mata}\begin{bmatrix}\alpha_{11}\\\alpha_{12}\\\alpha_{21}\\\alpha_{22}\end{bmatrix}=
+                  \begin{bmatrix}\alpha_{11}-\alpha_{12}\\\alpha_{12}-\alpha_{21}\\\alpha_{21}-\alpha_{22}\\\alpha_{22}\end{bmatrix}
+              \end{equation*}
+              }
+        \item {
+              由(1)可得
+              \begin{align*}
+                  \begin{bmatrix}\vecbeta_1&\vecbeta_2&\vecbeta_3&\vecbeta_4\end{bmatrix}
+                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb    \\
+                   & =\begin{bmatrix}\vecal_1&\vecal_2&\vecal_3&\vecal_4\end{bmatrix}\inv{\mata}\matb
+              \end{align*}
+              所以由基\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)到\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)的过渡矩阵为
+              \begin{equation*}
+                  \inv{\mata}\matb=
+                  \begin{bmatrix}
+                      -2 & 2  & 0  & 0  \\
+                      0  & -2 & 2  & 0  \\
+                      0  & 0  & -2 & 2  \\
+                      1  & 1  & 1  & -1
+                  \end{bmatrix}
+              \end{equation*}
+              }
+    \end{enumerate}
 
 \end{frame}
 
@@ -269,10 +513,31 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
-
+    \begin{enumerate}
+        \item {
+              方程组对应的系数矩阵的最简阶梯型矩阵为\(\begin{bmatrix}1&1&\cdots&1\end{bmatrix}\)，因此解空间的基为
+              \begin{equation*}
+                  \begin{bmatrix}-1\\1\\0\\0\\\vdots\\0\\0\end{bmatrix},
+                  \begin{bmatrix}-1\\0\\1\\0\\\vdots\\0\\0\end{bmatrix},\cdots
+                  \begin{bmatrix}-1\\0\\0\\0\\\vdots\\0\\1\end{bmatrix}
+              \end{equation*}
+              维数为\(n-1\)；
+              }
+        \item {
+              方程组对应的系数矩阵的最简阶梯型矩阵为
+              \begin{equation*}
+                  \begin{bmatrix}
+                      1 & -2 & 0 & -\frac{2}{7} \\
+                      0 & 0  & 1 & \frac{5}{7}  \\
+                      0 & 0  & 0 & 0
+                  \end{bmatrix}
+              \end{equation*}
+              因此解空间的基为\(\begin{bmatrix}2&1&0&0\end{bmatrix}^\top\)，\(\begin{bmatrix}2&0&-5&7\end{bmatrix}^\top\)，维数为\(2\)。
+              }
+    \end{enumerate}
 
 \end{frame}
 
@@ -286,10 +551,41 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
+    因为\(\enums{\vecal}{n}\)是\(V\)的一组基，下面证明对\(\forall i=1,2,\dots,n\)，
+    \begin{equation*}
+        \mata_i=\setof{\vecal_1,\dots,\vecal_{i-1},\vecal_{i+1},\dots,\vecal_{n+1}}
+    \end{equation*}
+    都是\(V\)的一组基。
 
+    由题设可知
+    \begin{align*}
+        \begin{bmatrix}\vecal_1\\\vdots\\\vecal_{i+1}\\\vdots\\\vecal_{n+1}\end{bmatrix}^\top
+         & =
+        \begin{bmatrix}\vecal_1\\\vecal_2\\\vdots\\\vecal_n\end{bmatrix}^\top
+        \begin{bmatrix}
+            1      & \cdots & 0      & 0      & \cdots & 0      & x_1     \\
+            \vdots & \ddots & \vdots & \vdots & \cdots & \vdots & \vdots  \\
+            0      & \cdots & 1      & 0      & \cdots & 0      & x_{i-1} \\
+            0      & \cdots & 0      & 0      & \cdots & 0      & x_i     \\
+            0      & \cdots & 0      & 1      & \cdots & 0      & x_{i+1} \\
+            \vdots &        & \vdots & \vdots & \ddots & \vdots & \vdots  \\
+            0      & \cdots & 0      & 0      & \cdots & 1      & x_n
+        \end{bmatrix} \\
+         & =
+        \begin{bmatrix}\vecal_1\\\vecal_2\\\vdots\\\vecal_n\end{bmatrix}^\top\matm_i
+    \end{align*}
+    容易发现\(\rank{\matm}=n\)，所以\(\mata_i\)线性无关，且\(V\)中任意向量可由\(\mata_i\)线性表出。
+
+    因此\(\enums{\vecal}{n},\vecal_{n+1}\)中任意\(n\)个向量必构成\(V\)的一组基。
+
+    同时，由等式\(\vecal_{n+1}=x_1\vecal_1+x_2\vecal_2+\cdots+x_n\vecal_n\)可得
+    \begin{equation*}
+        \vecal_1=-\frac{x_2}{x_1}\vecal_2-\cdots-\frac{x_n}{x_1}\vecal_n+\frac{1}{x_1}\vecal_{n+1}
+    \end{equation*}
+    所以\(\vecal_1\)在在基\(\vecal_2,\dots,\vecal_n,\vecal_{n+1}\)下的坐标为\(\begin{bmatrix}-\frac{x_2}{x_1}&\cdots&-\frac{x_n}{x_1}&\frac{1}{x_1}\end{bmatrix}^\top\)。
 
 \end{frame}
 
@@ -304,7 +600,22 @@
 \begin{frame}
     \frametitle{解答}
 
+    \begin{enumerate}
+        \item {
+              若\(V_1,V_2\)其中一个是另一个的子空间，则不妨设\(V_1\subseteq V_2\)。
 
+              因为\(V_2\)非平凡，存在\(\vecal\in\rea^n\)满足\(\vecal\notin V_2\)，从而\(\vecal\notin V_1\)；
+              }\pause
+        \item {
+              若\(V_1,V_2\)中任意空间都不是另一个的子空间，则存在\(\vecal_1\in V_1\cap\overline{V_2}\)，\(\vecal_2\in V_2\cap\overline{V_1}\)。此时构造\(\vecal=\vecal_1+\vecal_2\)：
+
+              若\(\vecal\in V_1\)，则有\(\vecal_2=\vecal-\vecal_1\in V_1\)，与假设矛盾。因此\(\vecal\notin V_1\)。
+
+              同理可得\(\vecal\notin V_2\)，结论得证。
+
+              举例：\(V_1=\myspan{\mat{1,0,0}^\top,\mat{0,1,0}^\top}\)，\(V_2=\myspan{\mat{0,1,0}^\top,\mat{0,0,1}^\top}\)，\(\vecal=\mat{1,0,1}^\top\)。
+              }
+    \end{enumerate}
 
 \end{frame}
 
@@ -319,7 +630,16 @@
 \begin{frame}
     \frametitle{解答}
 
+    因为\(c_1\vecal+c_2\vecbeta+c_3\vecgamma=\veczero\)，且\(c_1c_3\neq0\)，所以有\(\vecal=-\frac{c_2}{c_1}\vecbeta-\frac{c_3}{c_1}\vecgamma\)。
 
+    因此对\(\forall\veceta\in\myspan{\vecal,\vecbeta}\)，不妨设\(\veceta=\lambda_1\vecal+\lambda_2\vecbeta\)，则有
+    \begin{align*}
+        \veceta & =\lambda_1\mypar{-\frac{c_2}{c_1}\vecbeta-\frac{c_3}{c_1}\vecgamma}+\lambda_2\vecbeta \\
+                & =\mypar{\lambda_2-\frac{c_2\lambda_1}{c_1}}\vecbeta-\frac{c_3\lambda_1}{c_1}\vecgamma
+    \end{align*}
+    所以\(\veceta\in\myspan{\vecbeta,\vecgamma}\)，即\(\myspan{\vecal,\vecbeta}\subseteq\myspan{\vecbeta,\vecgamma}\)。
+
+    同理可得\(\myspan{\vecbeta,\vecgamma}\subseteq\myspan{\vecal,\vecbeta}\)。因此\(\myspan{\vecal,\vecbeta}=\myspan{\vecbeta,\vecgamma}\)。
 
 \end{frame}
 
@@ -338,7 +658,14 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    对\(A\)使用初等变换，将其化为最简阶梯型矩阵：
+    \begin{equation*}
+        \begin{bmatrix}
+            1 & 0 & -1 & 1  \\
+            0 & 1 & 2  & -1
+        \end{bmatrix}
+    \end{equation*}
+    因此得到\(\nullsp{\mata}\)的一组基为\(\mat{1,-2,1,0}^\top\)，\(\mat{-1,1,0,1}^\top\)。
 
 \end{frame}
 
@@ -353,7 +680,26 @@
 \begin{frame}
     \frametitle{解答}
 
+    因为\(W_1+W_2=\myspan{\vecal_1,\vecal_2,\vecbeta_1,\vecbeta_2}\)，因此考虑对\(\mat{\vecal_1,\vecal_2,\vecbeta_1,\vecbeta_2}\)作初等行变换，化为最简阶梯型矩阵：
+    \begin{equation*}
+        \begin{bmatrix}
+            2  & 0  & 1  & 1  \\
+            0  & -2 & 1  & -3 \\
+            1  & 1  & 0  & 2  \\
+            3  & 5  & -1 & 0  \\
+            -1 & -3 & 1  & 5
+        \end{bmatrix}\Rightarrow
+        \begin{bmatrix}
+            1 & 0 & \frac{1}{2}  & 0 \\
+            0 & 1 & -\frac{1}{2} & 0 \\
+            0 & 0 & 0            & 1 \\
+            0 & 0 & 0            & 0 \\
+            0 & 0 & 0            & 0
+        \end{bmatrix}
+    \end{equation*}
+    所以\(W_1+W_2\)的维数为\(3\)，一组基为\(\vecal_1,\vecal_2,\vecbeta_2\)。
 
+    由维数公式可知\(W_1\cap W_2\)的维数为\(1\)，又因为\(\vecbeta_1=\frac{1}{2}\vecal_1-\frac{1}{2}\vecal_2\in W_1\)，所以\(\vecbeta_1\in W_1\cap W_2\)为其一组基。
 
 \end{frame}
 
@@ -373,7 +719,16 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    \begin{enumerate}
+        \item {
+              对\(\forall\vecbeta\in V\)，有
+              \begin{equation*}
+                  \indot{\veczero}{\vecal}=\indot{\vecbeta+\mypar{-\vecbeta}}{\vecal}=\indot{\vecbeta}{\vecal}-\indot{\vecbeta}{\vecal}=0
+              \end{equation*}
+              }\pause
+        \item 令\(\vecal=\vecbeta\)，得到\(\indot{\vecbeta}{\vecbeta}=0\)，由内积定义知\(\vecbeta=\veczero\)；\pause
+        \item 由\(\indot{\vecal}{\vecgamma}=\indot{\vecbeta}{\vecgamma}\)可得\(\indot{\vecal-\vecbeta}{\vecgamma}=0\)。由\(\vecgamma\)的任意性及(2)结论可知\(\vecal-\vecbeta=\veczero\)，即\(\vecal=\vecbeta\)。
+    \end{enumerate}
 
 \end{frame}
 
@@ -395,10 +750,32 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
+    \begin{itemize}
+        \item {
+              首先证明充分性。
 
+              若\(\enums{\vecal}{n}\)线性相关，则有\(\sum_{i=1}^nk_i\vecal_i=\veczero\)，其中\(k_i\)不全为零。
+              因此对\(\forall j=1,2,\dots,n\)，有
+              \begin{equation*}
+                  \indot{\vecal_j}{\sum_{i=1}^nk_i\vecal_i}=\sum_{i=1}^nk_i\indot{\vecal_j}{\vecal_i}=0
+              \end{equation*}
+              所以\(\gram{\enums{\vecal}{n}}\)对应矩阵的列线性相关，进一步得到
+              \begin{equation*}
+                  \gram{\enums{\vecal}{n}}=0
+              \end{equation*}
+              }
+        \item {
+              随后证明必要性。
+              若\(\gram{\enums{\vecal}{n}}=0\)，则其对应矩阵的列线性相关。因此对\(\forall j=1,2,\dots,n\)，有\(\sum_{i=1}^nk_i\indot{\vecal_j}{\vecal_i}=0\)，其中\(k_i\)不全为零，从而进一步得到\(\indot{\vecal_j}{\sum_{i=1}^nk_i\vecal_i}=0\)。由内积性质得到
+              \begin{equation*}
+                  \indot{\sum_{i=1}^nk_i\vecal_i}{\sum_{i=1}^nk_i\vecal_i}=0
+              \end{equation*}
+              因此\(\sum_{i=1}^nk_i\vecal_i=\veczero\)，\(\enums{\vecal}{n}\)线性相关。
+              }
+    \end{itemize}
 
 \end{frame}
 
@@ -410,10 +787,22 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
-
+    反设结论不成立，则存在一组不全为零的数\(l_1,l_2,k_1,k_2,\dots,k_r\)满足
+    \begin{equation*}
+        l_1\vecbeta_1+l_2\vecbeta_2+\sum_{i=1}^rk_i\vecal_i=\veczero
+    \end{equation*}
+    此时\(l_1,l_2\)不全为零，否则\(\enums{\vecal}{r}\)线性相关，与题设矛盾。
+    又因为\(\vecbeta_1,\vecbeta_2\)和\(\enums{\vecal}{r}\)中的每个向量正交，因此有
+    \begin{align*}
+          & \indot{l_1\vecbeta_1+l_2\vecbeta_2+\sum_{i=1}^rk_i\vecal_i}{l_1\vecbeta_1+l_2\vecbeta_2}   \\
+        = & \indot{l_1\vecbeta_1+l_2\vecbeta_2}{l_1\vecbeta_1+l_2\vecbeta_2}
+        +l_1\sum_{i=1}^r\indot{k_i\vecal_i}{\vecbeta_1}+l_2\sum_{i=1}^r\indot{k_i\vecal_i}{\vecbeta_1} \\
+        = & \indot{l_1\vecbeta_1+l_2\vecbeta_2}{l_1\vecbeta_1+l_2\vecbeta_2}=0
+    \end{align*}
+    由内积定义知\(l_1\vecbeta_1+l_2\vecbeta_2=\veczero\)，即\(\vecbeta_1,\vecbeta_2\)线性相关。这与题设矛盾，因此结论成立。
 
 \end{frame}
 
@@ -428,7 +817,25 @@
 \begin{frame}
     \frametitle{解答}
 
+    设\(\vecal_1=\mat{1,0,1,0}^\top\)，\(\vecal_2=\mat{0,1,0,2}^\top\)。容易发现\(\vecal_1,\vecal_2\)正交。
 
+    设\(\rea^4\)的剩余正交基为\(\vecx\)，则有\(\begin{bmatrix}\vecal_1^\top\\\vecal_2^\top\end{bmatrix}\vecx=\veczero\)。
+
+    对该齐次线性方程组求解，得到基础解系：\(\vecal_3=\mat{-1,0,1,0}^\top\)，\(\vecal_4=\mat{0,-2,0,1}^\top\)。
+
+    将上述正交基标准化，得到\(\rea^4\)的一组标准正交基：
+
+    \begin{equation*}
+        \begin{bmatrix}
+            \vecq_1 & \vecq_2 & \vecq_3 & \vecq_4
+        \end{bmatrix}=
+        \begin{bmatrix}
+            \frac{\sqrt{2}}{2} & 0                   & -\frac{\sqrt{2}}{2} & 0                    \\
+            0                  & \frac{\sqrt{5}}{5}  & 0                   & -\frac{2\sqrt{5}}{5} \\
+            \frac{\sqrt{2}}{2} & 0                   & \frac{\sqrt{2}}{2}  & 0                    \\
+            0                  & \frac{2\sqrt{5}}{5} & 0                   & \frac{\sqrt{5}}{5}
+        \end{bmatrix}
+    \end{equation*}
 
 \end{frame}
 
@@ -447,7 +854,13 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    \begin{align*}
+        \vecg_1 & =\frac{\vecf_1}{\Abs{\vecf_1}}=\frac{\vecf_1}{\indot{\vecf_1}{\vecf_1}}=1                                                                                      \\
+        \vecg_2 & =\frac{\vecf_2-\indot{\vecg_1}{\vecf_2}\vecg_1}{\Abs{\vecf_2-\indot{\vecg_1}{\vecf_2}\vecg_1}}                                                                 \\
+                & =\frac{x-\frac{1}{2}}{\sqrt{\frac{1}{12}}}=\sqrt3\mypar{2x-1}                                                                                                  \\
+        \vecg_3 & =\frac{\vecf_3-\indot{\vecg_1}{\vecf_3}\vecg_1-\indot{\vecg_2}{\vecf_3}\vecg_2}{\Abs{\vecf_3-\indot{\vecg_1}{\vecf_3}\vecg_1-\indot{\vecg_2}{\vecf_3}\vecg_2}} \\
+                & =\frac{x^2-x+\frac{1}{6}}{\sqrt{\frac{1}{180}}}=\sqrt5\mypar{6x^2-6x+1}
+    \end{align*}
 
 \end{frame}
 
@@ -462,7 +875,18 @@
 \begin{frame}
     \frametitle{解答}
 
+    设\(\mata=\mat{\enums{\vecal}{n}}\)，\(\matb=\mat{\enums{\matb}{n}}\)。
 
+    因为\(\enums{\vecal}{n}\)为标准正交基，所以\(\mata\)满足\(\mata^\top\mata=\mati\)。
+
+    又由过渡矩阵的定义知\(\matb=\mata\matm\)，因此有
+
+    \begin{align*}
+        \matb^\top\matb & =\mypar{\mata\matm}^\top\mata\matm      \\
+                        & =\matm^\top\mypar{\mata^\top\mata}\matm \\
+                        & =\matm^\top\matm
+    \end{align*}
+    因此\(\matm\)为正交矩阵等价于\(\matb\)为正交矩阵。又因为\(\matb\)为正交矩阵等价于\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基，所以\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基的充分必要条件是\(\matm\)为正交矩阵。
 
 \end{frame}
 
@@ -488,7 +912,27 @@
 \begin{frame}
     \frametitle{解答}
 
+    分别对\(\mata\)和\(\mat{\mata,\vecb}\)作初等行变换，可得\(\rank{\mata}=3\)，\(\rank{\mat{\mata,\vecb}}=4\)。所以线性方程组\(\mata\vecx=\vecb\)无解。
 
+    下面考虑求方程的最小二乘解：令
+    \begin{equation*}
+        \mata'=\mata^\top\mata=
+        \begin{bmatrix}
+            25 & -6  & 5   \\
+            -6 & 20  & -10 \\
+            5  & -10 & 6
+        \end{bmatrix}
+    \end{equation*}
+    \begin{equation*}
+        \vecb'=\mata^\top\vecb=\begin{bmatrix}-5&6&4\end{bmatrix}^\top
+    \end{equation*}
+    解线性方程组\(\mata'\hat{\vecx}=\vecb'\)，得到最小二乘解为
+    \begin{equation*}
+        \hat{\vecx}=
+        \begin{bmatrix}
+            -\frac{11}{24} & \frac{25}{48} & \frac{23}{12}
+        \end{bmatrix}^\top
+    \end{equation*}
 
 \end{frame}
 
@@ -513,7 +957,15 @@
 \begin{frame}
     \frametitle{解答}
 
+    分别对\(\mata\)和\(\mat{\mata,\vecb}\)作初等行变换，可得\(\rank{\mata}=2\)，\(\rank{\mat{\mata,\vecb}}=3\)。所以\(\vecb\notin\colsp{\mata}\)。
 
+    由例4.4.11可知\(\vecb\)在\(\colsp{\mata}\)上的正交投影为
+    \begin{equation*}
+        \hat{\vecb}=\mata\inv{\mypar{\mata^\top\mata}}\mata^\top\vecb=
+        \begin{bmatrix}
+            -\frac{7}{2} & -\frac{3}{2} & -\frac{1}{2} & \frac{3}{2}
+        \end{bmatrix}^\top
+    \end{equation*}
 
 \end{frame}
 
@@ -535,10 +987,48 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
+    记该方程组为\(\mata\vecx=\veczero\)，其中\(\mata\)为系数矩阵。
+    \begin{enumerate}
+        \item {
+              将\(\mata\)通过初等行变换化为最简阶梯型矩阵：
+              \begin{equation*}
+                  \begin{bmatrix}
+                      1 & 0 & 0  & 1  & -4 \\
+                      0 & 1 & -1 & -1 & 5
+                  \end{bmatrix}
+              \end{equation*}
+              从而求得\(\nullsp{\mata}\)的一组基为
+              \begin{equation*}
+                  \vecal_1=\begin{bmatrix}0\\1\\1\\0\\0\end{bmatrix},
+                  \vecal_2=\begin{bmatrix}-1\\1\\0\\1\\0\end{bmatrix},
+                  \vecal_3=\begin{bmatrix}4\\-5\\0\\0\\1\end{bmatrix}
+              \end{equation*}
+              将\(\vecal_1,\vecal_2,\vecal_3\) Schmidt正交化：
+              \begin{align*}
+                  \vecq_1 & =\frac{\vecal_1}{\Abs{\vecal_1}}=\frac{1}{\sqrt2}\begin{bmatrix}0&1&1&0&0\end{bmatrix}^\top                                                                                                                      \\
+                  \vecq_2 & =\frac{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}{\Abs{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}}=\frac{1}{\sqrt{10}}\begin{bmatrix}-2&1&-1&2&0\end{bmatrix}^\top                                                         \\
+                  \vecq_3 & =\frac{\vecal_3-\vecq_1\vecq_1^\top\vecal_3-\vecq_2\vecq_2^\top\vecal_3}{\Abs{\vecal_3-\vecq_1\vecq_1^\top\vecal_3-\vecq_2\vecq_2^\top\vecal_3}}=\frac{1}{3\sqrt{35}}\begin{bmatrix}4&-5&0&0&1\end{bmatrix}^\top
+              \end{align*}
+              \(\vecq_1,\vecq_2,\vecq_3\)构成\(\nullsp{\mata}\)的一组标准正交基。
+              }
+        \item {
+              由推论4.4.1可知\(\nullsp{\mata}\)的正交补空间为\(\colsp{\mata^\top}\)，即\(\mata\)的行空间。
 
+              由(1)可知\(\dim\mypar{\colsp{\mata^\top}}=2\)，因此\(\colsp{\mata^\top}\)的一组基为
+              \begin{equation*}
+                  \vecbeta_1=\begin{bmatrix}2&1&-1&1&-3\end{bmatrix}^\top,
+                  \vecbeta_2=\begin{bmatrix}1&1&-1&0&1\end{bmatrix}^\top
+              \end{equation*}
+              同(1)理，将\(\vecbeta_1,\vecbeta_2\) Schmidt正交化后得到\(\colsp{\mata^\top}\)的标准正交基为
+              \begin{align*}
+                  \vecp_1 & =\frac{1}{4}\begin{bmatrix}2&1&-1&1&-3\end{bmatrix}^\top              \\
+                  \vecp_2 & =\frac{1}{12\sqrt{7}}\begin{bmatrix}14&15&-15&-1&19\end{bmatrix}^\top
+              \end{align*}
+              }
+    \end{enumerate}
 
 \end{frame}
 
@@ -559,7 +1049,27 @@
 \begin{frame}
     \frametitle{解答}
 
+    记\(\mata=\mat{\vecal_1,\vecal_2}\)。
+    \begin{itemize}
+        \item {
+              容易发现\(\vecal_1,\vecal_2\)线性无关，因此它们构成\(\myspan{\vecal_1,\vecal_2}\)的一组基。
 
+              由例4.4.11可知\(\vecal\)在\(\myspan{\vecal_1,\vecal_2}\)中的正交投影为
+              \begin{equation*}
+                  \mata\inv{\mypar{\mata^\top\mata}}\mata^\top\vecal=\begin{bmatrix}\frac{5}{3}&\frac{2}{3}&\frac{7}{3}\end{bmatrix}^\top
+              \end{equation*}
+              }
+        \item {
+              由推论4.4.1可知\(\myspan{\vecal_1,\vecal_2}\)的正交补空间为\(\nullsp{\mata^\top}\)。
+
+              将\(\mata^\top\)通过初等行变换化为最简阶梯型矩阵\(\begin{bmatrix}1 & 0 & 1 \\0 & 1 & 1\end{bmatrix}\)，从而求得\(\nullsp{\mata^\top}\)的基\(\vecbeta_1=\mat{-1,-1,1}^\top\)。
+
+              所以\(\vecal\)在\(\nullsp{\mata^\top}\)中的正交投影为
+              \begin{equation*}
+                  \frac{\vecbeta\vecbeta^\top}{\vecbeta^\top\vecbeta}\vecal=\begin{bmatrix}\frac{4}{3}&\frac{4}{3}&-\frac{4}{3}\end{bmatrix}^\top
+              \end{equation*}
+              }
+    \end{itemize}
 
 \end{frame}
 
@@ -595,11 +1105,30 @@
 \begin{frame}
     \frametitle{解答}
 
-
+    设从基\(\vecveps_1,\vecveps_2,\vecveps_3\)到基\(\veceta_1,\veceta_2,\veceta_3\)的过渡矩阵为\(\matm\)，则有
+    \begin{equation*}
+        \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=
+        \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matm
+    \end{equation*}
+    \begin{equation*}
+        \matm=\inv{\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}}\begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=
+        \begin{bmatrix}
+            1 & 1 & -3 \\
+            1 & 2 & -5 \\
+            1 & 3 & -6
+        \end{bmatrix}
+    \end{equation*}
+    由定理4.5.4知\(T\)在基\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵为
+    \begin{equation*}
+        \inv{\matm}\mata\matm=
+        \begin{bmatrix}
+            1 & 2  & 2  \\
+            3 & -1 & -2 \\
+            2 & -3 & 1
+        \end{bmatrix}
+    \end{equation*}
 
 \end{frame}
-
-\end{document}
 
 \subsection*{4.33}
 \begin{frame}
@@ -621,9 +1150,38 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}[allowframebreaks]
     \frametitle{解答}
 
+    设从基\(\vecveps_1,\vecveps_2,\vecveps_3\)到基\(\veceta_1,\veceta_2,\veceta_3\)的过渡矩阵为\(\matm\)。则有
+    \begin{equation*}
+        \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=
+        \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matm
+    \end{equation*}
+    \begin{equation*}
+        \matm=\inv{\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}}\begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=
+        \begin{bmatrix}
+            -2 & -\frac{3}{2} & \frac{3}{2}  \\
+            1  & \frac{3}{2}  & \frac{3}{2}  \\
+            1  & \frac{1}{2}  & -\frac{5}{2}
+        \end{bmatrix}
+    \end{equation*}
+    设\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)下的表示矩阵为\(\mata\)。由题设可知
+    \begin{equation*}
+        \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=T\mypar{\vecveps_1,\vecveps_2,\vecveps_3}=\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
+    \end{equation*}
+    因此有\(\mata=\matm\)。由定理4.5.4知由定理4.5.4知\(T\)在基\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵为\(\inv{\matm}\mata\matm=\matm\)。
 
+    综上，\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)与\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵均为
+    \begin{equation*}
+        \matm=
+        \begin{bmatrix}
+            -2 & -\frac{3}{2} & \frac{3}{2}  \\
+            1  & \frac{3}{2}  & \frac{3}{2}  \\
+            1  & \frac{1}{2}  & -\frac{5}{2}
+        \end{bmatrix}
+    \end{equation*}
 
 \end{frame}
+
+\end{document}
