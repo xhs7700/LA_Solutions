@@ -3,6 +3,19 @@
 \setcounter{problem}{3}
 % 2.4(2)
 \begin{problem}
+讨论下列线性方程组，当\(\lambda\)取什么值时方程组有唯一解？取什么值时有无穷多解？取什么值时无解？
+\begin{enumerate}
+    \item[(2)]
+        {
+        \begin{equation*}
+            \begin{cases}
+                x_1+x_2+\lambda x_3=2  \\
+                3x_1+4x_2+2x_3=\lambda \\
+                2x_1+3x_2-x_3=3        \\
+            \end{cases}
+        \end{equation*}
+        }
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -10,6 +23,15 @@
 
 % 2.5
 \begin{problem}
+讨论\(a,b\)为何值时，线性方程组
+\begin{equation*}
+    \begin{cases}
+        x_1-x_2+2x_3=1             \\
+        2x_1-x_2+3x_3-x_4=4        \\
+        x_2+ax_3+bx_4=b            \\
+        x_1-3x_2+\mypar{3-a}x_3=-4 \\
+    \end{cases}
+\end{equation*}
 \end{problem}
 \begin{proof}
 
@@ -17,6 +39,11 @@
 
 % 2.6
 \begin{problem}
+设\(x_1-x_2=a_1\)，\(x_2-x_3=a_2\)，\(x_3-x_4=a_3\)，\(x_4-x_5=a_4\)，\(x_5-x_1=a_5\)。证明：这个方程组有解的充分必要条件为
+\begin{equation*}
+    \sum_{i=1}^5a_i=0
+\end{equation*}
+并在有解的情况下求出它的一般解。
 \end{problem}
 \begin{proof}
 
@@ -24,6 +51,13 @@
 
 % 2.7
 \begin{problem}
+已知平面上三条不同直线的方程分别为：
+\begin{align*}
+    l_1: & ax+2by+3c=0 \\
+    l_2: & bx+2cy+3a=0 \\
+    l_3: & cx+2ay+3b=0
+\end{align*}
+试证这三条直线交于一点的充要条件是\(a+b+c=0\)。
 \end{problem}
 \begin{proof}
 
@@ -31,6 +65,16 @@
 
 % 2.8
 \begin{problem}
+设有\(n\)元齐次线性方程组（\(n\ge2\)）
+\begin{equation*}
+    \begin{cases}
+        \mypar{1+a}x_1+x_2+\cdots+x_n=0   \\
+        2x_1+\mypar{2+a}x_2+\cdots+2x_n=0 \\
+        \vdots                            \\
+        nx_1+nx_2+\cdots+\mypar{n+a}x_n=0
+    \end{cases}
+\end{equation*}
+试问\(a\)取何值时，该方程组有非零解，并求出其通解。
 \end{problem}
 \begin{proof}
 
@@ -39,6 +83,16 @@
 \setcounter{problem}{13}
 % 2.14
 \begin{problem}
+已知\(3\)阶矩阵\(\mata\)的第一行是\(\mat{a,b,c}\)，\(a,b,c\)不全为零，
+\begin{equation*}
+    \matb=
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        2 & 4 & 6 \\
+        3 & 6 & k
+    \end{bmatrix}
+\end{equation*}
+\(k\)为常数，且\(\mata\matb=\mato\)，求线性方程组\(\mata\vecx=\veczero\)的通解。
 \end{problem}
 \begin{proof}
 
@@ -46,6 +100,11 @@
 
 % 2.15
 \begin{problem}
+设\(\vecal,\vecbeta\)为三维列向量，矩阵\(\mata=\vecal\vecal^\top+\vecbeta\vecbeta^\top\)，证明：
+\begin{enumerate}
+    \item 秩\(\rank{\mata}\le2\)；
+    \item 若\(\vecal,\vecbeta\)线性相关，则秩\(\rank{\mata}<2\)。
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -54,6 +113,7 @@
 \setcounter{problem}{20}
 % 2.21
 \begin{problem}
+设\(\mata\)是\(s\times n\)矩阵，\(\matb\)是\(n\times m\)矩阵，\(n<m\)，证明：齐次线性方程组\(\mypar{\mata\matb}\vecx=\veczero\)有非零解。
 \end{problem}
 \begin{proof}
 
@@ -61,6 +121,7 @@
 
 % 2.22
 \begin{problem}
+设\(\mata\)是\(m\times s\)矩阵，\(\matb\)是\(s\times n\)矩阵，\(\vecx\)是\(n\)元列向量。证明：若\(\mypar{\mata\matb}\vecx=\veczero\)与\(\matb\vecx=\veczero\)是同解方程组，则\(\rank{\mata\matb}=\rank{\matb}\)。
 \end{problem}
 \begin{proof}
 
@@ -69,6 +130,10 @@
 \setcounter{problem}{25}
 % 2.26(3)
 \begin{problem}
+求下列向量组的秩和极大线性无关组：
+\begin{enumerate}
+    \item[(3)] \(\vecal_1=\mat{6,4,1,-1,2}^\top\)，\(\vecal_2=\mat{1,0,2,3,-4}^\top\)，\(\vecal_3=\mat{1,4,-9,-16,22}^\top\)，\(\vecal_4=\mat{7,1,0,-1,3}^\top\)
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -77,6 +142,19 @@
 \setcounter{problem}{27}
 % 2.28(1)
 \begin{problem}
+求下列齐次线性方程组的一个基础解系：
+\begin{enumerate}
+    \item
+          {
+          \begin{equation*}
+              \begin{cases}
+                  x_1-2x_2+4x_3-7x_4=0 \\
+                  2x_1+x_2-2x_3+x_4=0  \\
+                  3x_1-x_2+2x_3-4x_4=0 \\
+              \end{cases}
+          \end{equation*}
+          }
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -84,6 +162,20 @@
 
 % 2.29(1)
 \begin{problem}
+求下列线性方程组的通解，并表示成列向量线性组合的形式：
+\begin{enumerate}
+    \item
+          {
+          \begin{equation*}
+              \begin{cases}
+                  x_1-2x_2-x_3-x_4+x_5=0    \\
+                  2x_1+x_2-x_3+2x_4-3x_5=0  \\
+                  3x_1-2x_2-x_3+x_4-2x_5=0  \\
+                  2x_1-5x_2+x_3-2x_4+2x_5=0 \\
+              \end{cases}
+          \end{equation*}
+          }
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -91,6 +183,7 @@
 
 % 2.30
 \begin{problem}
+已知：向量组I可用向量组II线性表出，向量组II可用向量组III线性表出。求证：向量组I可用向量组III线性表出。
 \end{problem}
 \begin{proof}
 
@@ -98,6 +191,7 @@
 
 % 2.31
 \begin{problem}
+设向量组\(\enums{\vecal}{n}\)线性无关。证明：当且仅当\(n\)为奇数时，向量组\(\vecal_1+\vecal_2\)，\(\vecal_2+\vecal_3\)，\(\cdots\)，\(\vecal_{n-1}+\vecal_n\)，\(\vecal_n+\vecal_1\)也线性无关。
 \end{problem}
 \begin{proof}
 
@@ -105,6 +199,7 @@
 
 % 2.32
 \begin{problem}
+设向量组\(\enums{\vecal}{n}\)线性无关，而向量组\(\enums{\vecal}{n},\vecbeta,\vecgamma\)线性相关。证明：或者\(\vecbeta\)与\(\vecgamma\)中至少有一个可由\(\enums{\vecal}{n}\)线性表出，或者向量组\(\enums{\vecal}{n},\vecbeta\)与向量组\(\enums{\vecal}{n},\vecgamma\)可相互线性表出。
 \end{problem}
 \begin{proof}
 
@@ -112,6 +207,7 @@
 
 % 2.33
 \begin{problem}
+设\(\vecbeta_1=\vecal_2+\vecal_3+\cdots+\vecal_{n}\)，\(\vecbeta_2=\vecal_1+\vecal_3+\cdots+\vecal_{n}\)，\(\cdots\)，\(\vecbeta_n=\vecal_1+\vecal_2+\cdots+\vecal_{n-1}\)，其中\(m>1\)。证明：向量组\(\enums{\vecal}{n}\)与向量组\(\enums{\vecbeta}{n}\)可相互线性表出。
 \end{problem}
 \begin{proof}
 
@@ -120,6 +216,13 @@
 \setcounter{problem}{34}
 % 2.35
 \begin{problem}
+给定\(n\)个非零的数\(\enums{a}{n}\)，求下面向量组的秩：
+\begin{align*}
+    \veceta_1 & =\mat{1+a_1,1,\cdots,1} \\
+    \veceta_2 & =\mat{1,1+a_2,\cdots,1} \\
+              & \vdots                  \\
+    \veceta_n & =\mat{1,1,\cdots,1+a_n}
+\end{align*}
 \end{problem}
 \begin{proof}
 
@@ -128,6 +231,7 @@
 \setcounter{problem}{36}
 % 2.37
 \begin{problem}
+设\(\enums{\veceta}{t}\)是某一非齐次线性方程组的解。证明：\(\mu_1\veceta_1+\mu_2\veceta_2+\cdots+\mu_t\veceta_t\)也是该非齐次线性方程组的解的充要条件是\(\mu_1+\mu_2+\cdots+\mu_t=1\)。
 \end{problem}
 \begin{proof}
 
@@ -136,6 +240,10 @@
 \setcounter{problem}{39}
 % 2.40(1)
 \begin{problem}
+解下列矩阵方程：
+\begin{enumerate}
+    \item \(\begin{bmatrix}1&1&1\\0&1&1\\0&0&1\end{bmatrix}\matx=\begin{bmatrix}5&6\\3&4\\1&2\end{bmatrix}\)
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
@@ -143,6 +251,7 @@
 
 % 2.41
 \begin{problem}
+设\(\mata,\matb,\matc\)均为\(n\)阶方阵，若\(\mata\matb\matc=\mati\)，则下列乘积：\(\mata\matc\matb\)，\(\matb\mata\matc\)，\(\matb\matc\mata\)，\(\matc\mata\matb\)，\(\matc\matb\mata\)中哪些必等于单位阵\(\mati\)。
 \end{problem}
 \begin{proof}
 
@@ -151,6 +260,7 @@
 \setcounter{problem}{43}
 % 2.44
 \begin{problem}
+设\(n\)阶可逆矩阵\(\mata\)每行元素之和都等于常数\(c\)。证明：\(c\neq0\)，且\(\inv{\mata}\)中每行元素之和都等于\(\inv{c}\)。
 \end{problem}
 \begin{proof}
 
@@ -159,6 +269,7 @@
 \setcounter{problem}{45}
 % 2.46
 \begin{problem}
+设\(\mata,\matb\)均为\(n\)阶可逆矩阵。证明：如果\(\mata+\matb\)可逆，则\(\inv{\mata}+\inv{\matb}\)也可逆，并求其逆矩阵。
 \end{problem}
 \begin{proof}
 
@@ -166,6 +277,12 @@
 
 % 2.47(2)
 \begin{problem}
+\begin{enumerate}
+    \item[(2)]
+        {
+        设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata-\mati_n\)和\(\matb\)可逆。证明：若\(\inv{\mypar{\mata-\mati_n}}=\mypar{\matb-\mati_n}^\top\)，则\(\mata\)可逆。
+        }
+\end{enumerate}
 \end{problem}
 \begin{proof}
 
