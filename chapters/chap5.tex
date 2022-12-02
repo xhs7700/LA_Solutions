@@ -1,0 +1,346 @@
+\section{特征值与二次型}
+
+% 5.1（2）
+\begin{problem}
+求下列矩阵的特征值和特征向量：
+\begin{enumerate}
+    \item[(2)]{
+                \begin{equation*}
+                    \begin{bmatrix}
+                        -1 & 2  & 2  \\
+                        3  & -1 & 1  \\
+                        2  & 2  & -1
+                    \end{bmatrix}
+                \end{equation*}
+          }
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.2
+\begin{problem}
+设矩阵\(\mata=\begin{bmatrix}a&0&b\\0&2&0\\b&0&-2\end{bmatrix}\)的一个特征值为\(\lambda_1=-3\)，且三个特征值的积为\(-12\)，则求\(a\)，\(b\)，以及\(\mata\)的其他特征值。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.3
+\begin{problem}
+已知\(\vecal=\mat{1,1,-1}^\top\)是矩阵
+\begin{equation*}
+    \mata=
+    \begin{bmatrix}
+        2  & -1 & 2  \\
+        5  & a  & 3  \\
+        -1 & b  & -2
+    \end{bmatrix}
+\end{equation*}
+的一个特征向量，试确定\(a\)，\(b\)的值以及特征向量\(\vecal\)所对应的特征值。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.4
+\begin{problem}
+设\(3\)阶矩阵\(\mata\)的三个特征值为\(\lambda_1=1\)，\(\lambda_2=2\)，\(\lambda_3=3\)，与之对应的特征向量分别为\(\vecal_1=\mat{2,1,-1}^\top\)，\(\vecal_2=\mat{2,-1,2}^\top\)，\(\vecal_=\mat{3,0,1}^\top\)，求矩阵\(\mata\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.5
+\begin{problem}
+设\(\mata^2=\mata\)，证明\(\mata\)的特征值只能是\(0\)或者\(1\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.6
+\begin{problem}
+设\(n\)阶可逆矩阵\(\mata\)的特征值为\(n\)个非零数\(\enums{\lambda}{n}\)，试证\(\mata\)的伴随矩阵的特征值为\(\enums{\det{\mata}\lambda}{n}\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.7
+\begin{problem}
+已知\(3\)阶矩阵的特征值为\(1,2,-1\)，设矩阵\(\matb=\mata^3-5\mata^2\)，试计算行列式\(\det{\matb}\)，\(\det{\mata-5\mati}\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.8
+\begin{problem}
+设\(\mata=\mati-2\vecx\vecx^\top\)，其中\(\vecx=\mat{\enums{x}{n}}^\top\)，\(\mati\)为\(n\)阶单位矩阵。若\(\vecx^\top\vecx=1\)，求证：\(\vecx\)为\(\mata\)的属于特征值\(-1\)的特征向量。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.9
+\begin{problem}
+已知\(n\)阶矩阵\(\mata\)的特征值为\(\lambda_0\)，
+\begin{enumerate}
+    \item 求\(k\mata\)的特征值（\(k\)为任意实数）；
+    \item 若\(\mata\)可逆，求\(\inv{\mata}\)的特征值；
+    \item 求\(\mati+\mata\)的特征值。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.10
+\begin{problem}
+设\(\mata^2-3\mata+\mati=\mato\)，证明\(\mata\)的特征值只能是\(1\)或\(2\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+\setcounter{problem}{11}
+% 5.12
+\begin{problem}
+设非零向量\(\vecal=\mat{\enums{a}{n}}^\top\)，\(\vecbeta=\mat{\enums{b}{n}}^\top\)，且\(\vecal^\top\vecbeta=0\)，\(\mata=\vecal\vecbeta^\top\)，求\(\mata\)的特征值和特征向量。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.13
+\begin{problem}
+已知\(\lambda_1=2\)是\(3\)阶矩阵\(\mata\)的一个特征值，\(\vecal_1=\mat{1,2,0}\)，\(\vecal_2=\mat{1,0,1}\)是\(\mata\)属于特征值\(2\)的两个特征向量，\(\vecbeta=\mat{-1,2,-1}^\top\)，计算\(\mata\vecbeta\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.14
+\begin{problem}
+设矩阵\(\mata=\begin{bmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{bmatrix}\)，且\(\det{\mata}=-1\)，伴随矩阵\(\mata^*\)有特征值\(\lambda_0\)，属于\(\lambda_0\)的特征向量为\(\vecal=\mat{-1,-1,1}^\top\)，求\(a,b,c\)，以及\(\lambda_0\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.15
+\begin{problem}
+若\(n\)阶方阵\(\mata\)的每行元素之和为常数\(c\)，证明：\(c\)是\(\mata\)的一个特征值：\(\forall m\in\mathbf{N}\)，\(\mata^m\)的每行元素之和为\(c^m\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+\setcounter{problem}{17}
+% 5.18
+\begin{problem}
+设\(\enums{\vecx}{n}\)是\(\mata\)的属于\(\lambda_0\)的特征向量，试证\(\enums{\vecx}{n}\)的任一非零线性组合也是\(\mata\)的属于\(\lambda_0\)的特征向量。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.19
+\begin{problem}
+设\(\vecx_1,\vecx_2\)分别是属于\(\lambda_1,\lambda_2\)的特征向量，而且\(\lambda_1\neq\lambda_2\)，试证\(\vecx_1+\vecx_2\)不可能是\(\mata\)的特征向量。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+\setcounter{problem}{23}
+% 5.24
+\begin{problem}
+设\(\mata=\vecu\vecv^\top\)，其中\(\vecu,\vecv\)都是\(n\)元非零列向量，求证：\(\vecu\)是\(\mata\)的特征向量，并求出其对应的特征值。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.25
+\begin{problem}
+设\(\mata=\begin{bmatrix}2&0&0\\0&0&1\\0&1&x\end{bmatrix}\)，\(\matb=\begin{bmatrix}2&&\\&y&\\&&-1\end{bmatrix}\)，已知\(\mata\)与\(\matb\)相似，求\(x,y\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.26
+\begin{problem}
+设\(\mata=\begin{bmatrix}-3&2\\-2&2\end{bmatrix}\)。
+\begin{enumerate}
+    \item 求可逆矩阵\(\matp\)使得\(\inv{\matp}\mata\matp\)为对角矩阵；
+    \item 计算\(\mata^{10}-\mata^6-\mati\)。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.27
+\begin{problem}
+已知方阵\(\mata=\begin{bmatrix}1&-1&1\\x&4&y\\-3&-3&5\end{bmatrix}\)与对角矩阵相似，且\(\lambda=2\)是\(\mata\)的二重特征值。
+\begin{enumerate}
+    \item 求\(x\)与\(y\)的值；
+    \item 求可逆矩阵\(\matp\)使得\(\inv{\matp}\mata\matp\)为对角阵。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.28(2)
+\begin{problem}
+已知矩阵\(\mata\)，求使\(\inv{\matq}\mata\matq\)为对角阵的正交矩阵\(\matq\)。
+\begin{enumerate}
+    \item[(2)]
+        {
+        \begin{equation*}
+            \mata=
+            \begin{bmatrix}
+                3 & 2 & 4 \\
+                2 & 0 & 2 \\
+                4 & 2 & 3
+            \end{bmatrix}
+        \end{equation*}
+        }
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+\setcounter{problem}{29}
+% 5.30
+\begin{problem}
+设矩阵\(\mata=\begin{bmatrix}0&0&1\\a&1&b\\1&0&0\end{bmatrix}\)有三个线性无关的特征向量，求\(a,b\)满足的条件，并求可逆矩阵\(\matp\)，使得\(\inv{\matp}\mata\matp\)为对角阵。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+\setcounter{problem}{31}
+% 5.32
+\begin{problem}
+计算\({\begin{bmatrix}1&2&2\\2&1&2\\2&2&1\end{bmatrix}}^{100}\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+\setcounter{problem}{33}
+% 5.34(2)
+\begin{problem}
+求二次型\(f\)的矩阵：
+\begin{enumerate}
+    \item[(2)] \(f(x_1,x_2,x_3)=\mypar{x_1+x_2}^2+\mypar{x_2+x_3}^2+\mypar{x_3+x_1}^2\)
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.35
+\begin{problem}
+用正交变换法将二次型
+\begin{equation*}
+    f\mypar{x_1,x_2,x_3}=x_1^2+4x_2^2+4x_3^2-4x_1x_2+4x_1x_3-8x_2x_3
+\end{equation*}
+化为标准形，写出所作的正交变换。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.36
+\begin{problem}
+二次型
+\begin{equation*}
+    f\mypar{x_1,x_2,x_3}=\vecx^\top\mata\vecx=ax_1^2+2x_2^2-2x_3^2+2bx_1x_3\mypar{b>0}
+\end{equation*}
+其中二次型\(f\)的矩阵\(\mata\)的特征值之和为\(1\)，特征值之积为\(12\)，求
+\begin{enumerate}
+    \item \(a,b\)的值；
+    \item 用正交变换将\(f\)化为标准形，写出所作的正交变换及对应的正交矩阵。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+\setcounter{problem}{37}
+% 5.38
+\begin{problem}
+已知二次型\(f\mypar{x_1,x_2,x_3}=4x_2^2+4x_3^2+4x_1x_2+ax_1x_3-4x_2x_3\)的秩为\(2\)，
+\begin{enumerate}
+    \item 求\(a\)的值；
+    \item 求正交变换\(\vecx=\matp\vecy\)把\(f\mypar{x_1,x_2,x_3}\)化为标准形；
+    \item 求\(f\mypar{x_1,x_2,x_3}=0\)的解。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.39
+\begin{problem}
+判断二次型的正定性：
+\begin{enumerate}
+    \item \(f\mypar{x_1,x_2,x_3}=5x_1^2+x_2^2+5x_3^2+4x_1x_2-8x_1x_3-4x_2x_3\)；
+    \item \(f\mypar{x_1,x_2,x_3,x_4}=x_1^2+x_2^2+14x_3^2+7x_4^2+6x_1x_3+8x_1x_4-4x_2x_3+2x_2x_4+4x_3x_4\)。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.40
+\begin{problem}
+判断二次型\(f=\sum_{i=0}^nx_i^2+\sum_{1\le i<j\le n}x_ix_j\)的正定性。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.41
+\begin{problem}
+设\(\mata\)为\(3\)阶实对称矩阵，且满足\(\mata^2+2\mata=\mato\)，\(\rank{\mata}=2\)，
+\begin{enumerate}
+    \item 求\(\mata\)的特征值；
+    \item 当\(k\)为何值时，矩阵\(\mata+k\mati\)为正定矩阵？
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.42
+\begin{problem}
+设\(\mata\)是\(n\)阶实对称矩阵，证明\(\rank{\mata}=n\)的充要条件是存在一个\(n\)阶实矩阵\(\matb\)，使得\(\mata\matb+\matb^\top\mata\)正定。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.43
+\begin{problem}
+若\(\mata\)是\(n\)阶实矩阵，证明：\(\trace{\mata\mata^\top}\ge0\)，且等号成立的充要条件是\(\mata=\mato\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 5.44
+\begin{problem}
+设\(\mata\)是\(n\)阶正定矩阵，证明：对任意\(n\)阶矩阵\(\matb\)，\(\rank{\matb^\top\mata\matb}=\rank{\matb}\)。
+\end{problem}
+\begin{proof}
+
+\end{proof}
