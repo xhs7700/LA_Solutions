@@ -1,6 +1,6 @@
 \section{特征值与二次型}
 
-% 5.1（2）
+% 5.1(2)
 \begin{problem}
 求下列矩阵的特征值和特征向量：
 \begin{enumerate}
@@ -16,7 +16,20 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    记上述矩阵为\(\mata\)，则矩阵\(\mata\)的特征多项式为
+    \begin{equation*}
+        \abs{\lambda\mati-\mata} =
+        \begin{vmatrix}
+            \lambda+1 & -2        & -2        \\
+            -3        & \lambda+1 & -1        \\
+            -2        & -2        & \lambda+1
+        \end{vmatrix}=\mypar{\lambda+3}^2\mypar{\lambda-3}
+    \end{equation*}
+    因此\(\mata\)的特征值为\(\lambda_1=\lambda_2=-3,\lambda_3=3\)。
 
+    将\(\lambda_1=\lambda_2=-3\)代入\(\mypar{\lambda\mati-\mata}\vecx=\veczero\)，得到其基础解系为\(\myvec{1,-2,1}\)。因此属于特征值\(-3\)的特征向量为\(k_1\myvec{1,-2,1},k_1\neq0\)。
+
+    将\(\lambda_3=3\)代入\(\mypar{\lambda\mati-\mata}\vecx=\veczero\)，得到其基础解系为\(\myvec{1,1,1}\)。因此属于特征值\(3\)的特征向量为\(k_2\myvec{1,1,1},k_2\neq0\)。
 \end{proof}
 
 % 5.2
@@ -24,7 +37,15 @@
 设矩阵\(\mata=\begin{bmatrix}a&0&b\\0&2&0\\b&0&-2\end{bmatrix}\)的一个特征值为\(\lambda_1=-3\)，且三个特征值的积为\(-12\)，则求\(a\)，\(b\)，以及\(\mata\)的其他特征值。
 \end{problem}
 \begin{proof}
-
+    由特征向量的定义和定理5.1.2，有
+    \begin{equation*}
+        \begin{cases}
+            \lambda_1+\lambda_2+\lambda_3=\trace{\mata}=a        \\
+            \lambda_1\lambda_2\lambda_3=\det{\mata}=-4a-2b^2=-12 \\
+            \det{\lambda_1\mati-\mata}=-5a+5b^2-15=0
+        \end{cases}
+    \end{equation*}
+    解得\(a=1\)，\(b=\pm2\)，\(\lambda_2=\lambda_3=2\)。
 \end{proof}
 
 % 5.3
@@ -41,7 +62,7 @@
 的一个特征向量，试确定\(a\)，\(b\)的值以及特征向量\(\vecal\)所对应的特征值。
 \end{problem}
 \begin{proof}
-
+    设\(\vecal\)对应的特征值为\(\lambda\)，则由特征值和特征向量的定义可知\(\mata\vecal=\lambda\vecal\)。将\(\mata,\vecal\)代入即可解得\(\lambda=-1\)，\(a=-3\)，\(b=0\)。
 \end{proof}
 
 % 5.4
@@ -49,7 +70,19 @@
 设\(3\)阶矩阵\(\mata\)的三个特征值为\(\lambda_1=1\)，\(\lambda_2=2\)，\(\lambda_3=3\)，与之对应的特征向量分别为\(\vecal_1=\myvec{2,1,-1}\)，\(\vecal_2=\myvec{2,-1,2}\)，\(\vecal_=\myvec{3,0,1}\)，求矩阵\(\mata\)。
 \end{problem}
 \begin{proof}
-
+    由特征值和特征向量的定义可知
+    \begin{equation*}
+        \mata\begin{bmatrix}\vecal_1&\vecal_2&\vecal_3\end{bmatrix}=\begin{bmatrix}\lambda_1\vecal_1&\lambda_2\vecal_2&\lambda_3\vecal_3\end{bmatrix}
+    \end{equation*}
+    由定理5.1.5知\(\mat{\vecal_1,\vecal_2,\vecal_3}\)可逆，因此有
+    \begin{equation*}
+        \mata=\begin{bmatrix}\lambda_1\vecal_1&\lambda_2\vecal_2&\lambda_3\vecal_3\end{bmatrix}\inv{\begin{bmatrix}\vecal_1&\vecal_2&\vecal_3\end{bmatrix}}=
+        \begin{bmatrix}
+            -3 & 26 & 18 \\
+            -1 & 6  & 3  \\
+            0  & 2  & 3
+        \end{bmatrix}
+    \end{equation*}
 \end{proof}
 
 % 5.5
@@ -57,23 +90,38 @@
 设\(\mata^2=\mata\)，证明\(\mata\)的特征值只能是\(0\)或者\(1\)。
 \end{problem}
 \begin{proof}
-
+    设\(\mata\)的特征向量为\(\vecal\neq\veczero\)。由题设及特征向量的定义，有
+    \begin{equation*}
+        \lambda\vecal=\mata\vecal=\mata^2\vecal=\lambda^2\vecal
+    \end{equation*}
+    因此可得\(\mypar{\lambda^2-\lambda}\vecal=\veczero\)。由\(\vecal\neq\veczero\)解得\(\lambda=0\)或\(\lambda=1\)。结论成立。
 \end{proof}
 
 % 5.6
 \begin{problem}
-设\(n\)阶可逆矩阵\(\mata\)的特征值为\(n\)个非零数\(\enums{\lambda}{n}\)，试证\(\mata\)的伴随矩阵的特征值为\(\enums{\det{\mata}\lambda}{n}\)。
+记\(\mata\)的伴随矩阵为\(\mata^*\)。设\(n\)阶可逆矩阵\(\mata\)的特征值为\(n\)个非零数\(\enums{\lambda}{n}\)，试证\(\mata\)的伴随矩阵的特征值为\(\det{\mata}\inv{\lambda_1}\)，\(\det{\mata}\inv{\lambda_2}\)，\(\dots\)，\(\det{\mata}\inv{\lambda_n}\)。
 \end{problem}
 \begin{proof}
-
+    对\(\forall i\in\setof{1,2,\dots,n}\)，设\(\vecal_i\)为\(\lambda_i\)对应的一个特征向量。则由定理3.3.1和特征向量的定义，有
+    \begin{equation*}
+        \det{\mata}\vecal=\mata^*\mata\vecal=\lambda_i\mata^*\vecal
+    \end{equation*}
+    所以\(\det{\mata}\inv{\lambda_i}\mypar{i=1,2,\dots,n}\)是\(\mata^*\)的特征值。
 \end{proof}
 
 % 5.7
 \begin{problem}
-已知\(3\)阶矩阵的特征值为\(1,2,-1\)，设矩阵\(\matb=\mata^3-5\mata^2\)，试计算行列式\(\det{\matb}\)，\(\det{\mata-5\mati}\)。
+已知\(3\)阶方阵\(\mata\)的特征值为\(1,2,-1\)，设矩阵\(\matb=\mata^3-5\mata^2\)。试计算行列式\(\det{\matb}\)，\(\det{\mata-5\mati}\)。
 \end{problem}
 \begin{proof}
+    由推论5.2.1可知存在可逆矩阵\(\matp\)，满足\(\mata=\matp\diag{\lambda_1,\lambda_2,\lambda_3}\inv{\matp}\)。因此有
+    \begin{align*}
+        \mata-5\mati & =\matp\diag{\lambda_1,\lambda_2,\lambda_3}\inv{\matp}-5\matp\mati\inv{\matp} \\
+                     & =\matp\diag{\lambda_1-5,\lambda_2-5,\lambda_3-5}\inv{\matp}
+    \end{align*}
+    所以\(\det{\mata-5\mati}=\prod_{i=1}^3\mypar{\lambda_i-5}=-72\)。
 
+    同理可得\(\det{\matb}=\prod_{i=1}^3\mypar{\lambda_i^3-5\lambda_i^2}=-288\)。
 \end{proof}
 
 % 5.8
@@ -81,7 +129,13 @@
 设\(\mata=\mati-2\vecx\vecx^\top\)，其中\(\vecx=\myvec{\enums{x}{n}}\)，\(\mati\)为\(n\)阶单位矩阵。若\(\vecx^\top\vecx=1\)，求证：\(\vecx\)为\(\mata\)的属于特征值\(-1\)的特征向量。
 \end{problem}
 \begin{proof}
-
+    由\(\vecx^\top\vecx=1\)可得
+    \begin{align*}
+        \mata\vecx & =\mypar{\mati-2\vecx\vecx^\top}\vecx \\
+                   & =\mati\vecx-2\vecx\vecx^\top\vecx    \\
+                   & =\vecx-2\vecx=-\vecx
+    \end{align*}
+    由特征值和特征向量的定义可知\(\vecx\)为\(\mata\)的属于特征值\(-1\)的特征向量。
 \end{proof}
 
 % 5.9
@@ -94,15 +148,24 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+    设\(\mata\)的特征值为\(\lambda_0\)对应的特征向量为\(\vecal_0\)。
+    \begin{enumerate}
+        \item 当\(k\neq0\)时，有\(\mata\vecal_0=\lambda_0\vecal_0\iff k\mata\vecal_0=k\lambda_0\vecal_0\)。此时\(k\mata\)的特征值为\(k\lambda_0\)。当\(k=0\)时结论依然成立。
+        \item 因为\(\mata\)可逆，所以\(\lambda_0\neq0\)。因此有\(\mata\vecal_0=\lambda_0\vecal_0\iff\inv{\lambda_0}\vecal_0=\inv{\mata}\vecal_0\)。所以\(\inv{\mata}\)的特征值为\(\inv{\lambda_0}\)。
+        \item 同理，可得\(\mata\vecal_0=\lambda_0\vecal_0\iff\mypar{\mata+\mati}\vecal_0=\mypar{\lambda_0+1}\vecal_0\)。所以\(\mati+\mata\)的特征值为\(\lambda_0+1\)。
+    \end{enumerate}
 \end{proof}
 
 % 5.10
 \begin{problem}
-设\(\mata^2-3\mata+\mati=\mato\)，证明\(\mata\)的特征值只能是\(1\)或\(2\)。
+设\(\mata^2-3\mata+2\mati=\mato\)，证明\(\mata\)的特征值只能是\(1\)或\(2\)。
 \end{problem}
 \begin{proof}
-
+    设\(\mata\)的特征向量为\(\vecal\neq\veczero\)。由题设及特征向量的定义，有
+    \begin{equation*}
+        \mypar{\mata^2-3\mata+2\mati}\vecal=\mypar{\lambda^2-3\lambda+2}\vecal=\veczero
+    \end{equation*}
+    由\(\vecal\neq\veczero\)解得\(\lambda=1\)或\(\lambda=2\)。结论成立。
 \end{proof}
 
 \setcounter{problem}{11}
@@ -111,15 +174,34 @@
 设非零向量\(\vecal=\myvec{\enums{a}{n}}\)，\(\vecbeta=\myvec{\enums{b}{n}}\)，且\(\vecal^\top\vecbeta=0\)，\(\mata=\vecal\vecbeta^\top\)，求\(\mata\)的特征值和特征向量。
 \end{problem}
 \begin{proof}
+    设\(\mata\)的特征值为\(\lambda\)，对应的特征向量为\(\vecx\neq\veczero\)。由\(\vecal^\top\vecbeta=0\)和特征值的定义可得
+    \begin{equation*}
+        \lambda^2\vecx=\mata^2\vecx=\vecal\mypar{\vecbeta^\top\vecal}\vecbeta^\top\vecx=\veczero
+    \end{equation*}
+    解得\(\lambda=0\)，即\(\mata\)的特征值均为\(0\)。
 
+    又因为\(\vecal,\vecbeta\)为非零向量，所以\(\rank{\mata}=\rank{\vecal\vecbeta^\top}=\rank{\vecbeta^\top}\)。因此方程\(\vecal\vecbeta^\top\vecx\)和方程\(\vecbeta^\top\vecx\)同解。所以\(\mata\)的特征向量为方程
+    \begin{equation*}
+        \vecbeta^\top\vecx=b_1x_1+b_2x_2+\dots+b_nx_n=0
+    \end{equation*}
+    的解。不妨设\(b_i\neq0\)，则\(\mata\)线性无关的特征向量分别为
+    \begin{gather*}
+        \begin{bmatrix}b_i&0&\cdots&0&-b_1&0&\cdots&0&0\end{bmatrix}^\top\\
+        \begin{bmatrix}0&b_i&\cdots&0&-b_2&0&\cdots&0&0\end{bmatrix}^\top\\
+        \vdots\\
+        \begin{bmatrix}0&0&\cdots&0&-b_n&0&\cdots&0&b_i\end{bmatrix}^\top
+    \end{gather*}
 \end{proof}
 
 % 5.13
 \begin{problem}
-已知\(\lambda_1=2\)是\(3\)阶矩阵\(\mata\)的一个特征值，\(\vecal_1=\mat{1,2,0}\)，\(\vecal_2=\mat{1,0,1}\)是\(\mata\)属于特征值\(2\)的两个特征向量，\(\vecbeta=\myvec{-1,2,-1}\)，计算\(\mata\vecbeta\)。
+已知\(\lambda_1=2\)是\(3\)阶矩阵\(\mata\)的一个特征值，\(\vecal_1=\mat{1,2,0}\)，\(\vecal_2=\mat{1,0,1}\)是\(\mata\)属于特征值\(2\)的两个特征向量，\(\vecbeta=\myvec{-1,2,-2}\)，计算\(\mata\vecbeta\)。
 \end{problem}
 \begin{proof}
-
+    容易发现\(\vecal_1,\vecal_2,\vecbeta\)线性相关：\(\vecbeta=\vecal_1-2\vecal_2\)。因此由特征值和特征向量的定义，有
+    \begin{equation*}
+        \mata\vecbeta=\mata\mypar{\vecal_1-2\vecal_2}=2\mypar{\vecal_1-2\vecal_2}=\begin{bmatrix}2&4&-4\end{bmatrix}^\top
+    \end{equation*}
 \end{proof}
 
 % 5.14
@@ -127,7 +209,20 @@
 设矩阵\(\mata=\begin{bmatrix}a&-1&c\\5&b&3\\1-c&0&-a\end{bmatrix}\)，且\(\det{\mata}=-1\)，伴随矩阵\(\mata^*\)有特征值\(\lambda_0\)，属于\(\lambda_0\)的特征向量为\(\vecal=\myvec{-1,-1,1}\)，求\(a,b,c\)，以及\(\lambda_0\)。
 \end{problem}
 \begin{proof}
-
+    由题意可得\(\mata^*\vecal=\lambda_0\vecal\)，通过定理3.3.1可转化为
+    \begin{equation*}
+        \mata\vecal=\inv{\lambda_0}\det{\mata}\vecx=-\inv{\lambda_0}\vecx
+    \end{equation*}
+    将其与\(\det{\mata}=-1\)联立可得
+    \begin{equation*}
+        \begin{cases}
+            -a^2b-\mypar{3+bc}\mypar{1-c}-5a=-1 \\
+            -a+1+c=-\inv{\lambda_0}             \\
+            -b-2=-\inv{\lambda_0}               \\
+            c-1-a=-\inv{\lambda_0}
+        \end{cases}
+    \end{equation*}
+    解得\(a=c=2,b=-3,\lambda_0=1\)。
 \end{proof}
 
 % 5.15
@@ -135,7 +230,9 @@
 若\(n\)阶方阵\(\mata\)的每行元素之和为常数\(c\)，证明：\(c\)是\(\mata\)的一个特征值：\(\forall m\in\mathbf{N}\)，\(\mata^m\)的每行元素之和为\(c^m\)。
 \end{problem}
 \begin{proof}
+    记\(\rea^n\)中各分量均为\(1\)的列向量为\(\vecone\)。则由题设可知\(\mata\vecone=c\vecone\)。
 
+    所以\(c\)是\(\mata\)的一个特征值，\(\vecone\)是其对应的特征向量。因此有\(\mata^m\vecone=c^m\vecone\)，结论成立。
 \end{proof}
 
 \setcounter{problem}{17}
@@ -144,7 +241,13 @@
 设\(\enums{\vecx}{n}\)是\(\mata\)的属于\(\lambda_0\)的特征向量，试证\(\enums{\vecx}{n}\)的任一非零线性组合也是\(\mata\)的属于\(\lambda_0\)的特征向量。
 \end{problem}
 \begin{proof}
-
+    设\(\rea^n\)中的任意非零向量为\(\vecy\)，则\(\enums{\vecx}{n}\)的任一非零线性组合可表示为\(\mat{\enums{\vecx}{n}}\vecy\)。因此有
+    \begin{align*}
+          & \mata\begin{bmatrix}\vecx_1&\vecx_2&\cdots&\vecx_n\end{bmatrix}\vecy      \\
+        = & \begin{bmatrix}\mata\vecx_1&\mata\vecx_2&\cdots&\mata\vecx_n\end{bmatrix} \\
+        = & \lambda_0\begin{bmatrix}\vecx_1&\vecx_2&\cdots&\vecx_n\end{bmatrix}\vecy
+    \end{align*}
+    结论成立。
 \end{proof}
 
 % 5.19
@@ -152,7 +255,13 @@
 设\(\vecx_1,\vecx_2\)分别是属于\(\lambda_1,\lambda_2\)的特征向量，而且\(\lambda_1\neq\lambda_2\)，试证\(\vecx_1+\vecx_2\)不可能是\(\mata\)的特征向量。
 \end{problem}
 \begin{proof}
+    反设结论不成立，即\(\vecx_1+\vecx_2\)是\(\mata\)的特征值为\(\lambda\)的特征向量。则有
+    \begin{equation*}
+        \lambda_1\vecx_1+\lambda_2\vecx_2=\mata\vecx_1+\mata\vecx_2=\mata\mypar{\vecx_1+\vecx_2}=\lambda\mypar{\vecx_1+\vecx_2}
+    \end{equation*}
+    化简得到\(\mypar{\lambda_1-\lambda}\vecx_1+\mypar{\lambda_2-\lambda}\vecx_2=\veczero\)。由\(\lambda_1\neq\lambda_2\)可知\(\vecx_1,\vecx_2\)线性相关，和定理5.1.5矛盾。
 
+    所以\(\vecx_1+\vecx_2\)不可能是\(\mata\)的特征向量。
 \end{proof}
 
 \setcounter{problem}{23}
@@ -161,7 +270,7 @@
 设\(\mata=\vecu\vecv^\top\)，其中\(\vecu,\vecv\)都是\(n\)元非零列向量，求证：\(\vecu\)是\(\mata\)的特征向量，并求出其对应的特征值。
 \end{problem}
 \begin{proof}
-
+    因为\(\mata\vecu=\vecu\vecv^\top\vecu=\mypar{\vecu^\top\vecv}\vecu\)，由特征值和特征向量的定义可知\(\vecu\)是\(\mata\)的特征向量，对应的特征值是\(\vecu^\top\vecv\)。
 \end{proof}
 
 % 5.25
@@ -169,7 +278,14 @@
 设\(\mata=\begin{bmatrix}2&0&0\\0&0&1\\0&1&x\end{bmatrix}\)，\(\matb=\begin{bmatrix}2&&\\&y&\\&&-1\end{bmatrix}\)，已知\(\mata\)与\(\matb\)相似，求\(x,y\)。
 \end{problem}
 \begin{proof}
-
+    由定理5.1.2和定理5.1.3可知，相似矩阵的迹和行列式相等。因此有
+    \begin{equation*}
+        \begin{cases}
+            -2=-2y \\
+            2+x=1+y
+        \end{cases}
+    \end{equation*}
+    解得\(x=0,y=1\)。
 \end{proof}
 
 % 5.26
@@ -181,7 +297,31 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{enumerate}
+        \item
+              {
+              \(\mata\)的特征多项式为
+              \begin{equation*}
+                  \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda+3&-2\\2&\lambda-2\end{vmatrix}=\mypar{\lambda-1}\mypar{\lambda+2}
+              \end{equation*}
+              因此\(\mata\)的特征值为\(\lambda_1=1,\lambda_2=-2\)。
 
+              将\(\lambda_1=1\)代入特征方程组，解得其线性无关的特征向量为\(\myvec{1,2}\)；
+
+              将\(\lambda_2=-2\)代入特征方程组，解得其线性无关的特征向量为\(\myvec{2,1}\)。
+
+              因此得到满足条件的\(\matp=\begin{bmatrix}1&2\\2&1\end{bmatrix}\)。
+              }
+        \item
+              {
+              由(1)可得\(\mata=\matp\matlam\inv{\matp}\)，其中\(\matlam=\begin{bmatrix}1&0\\0&-2\end{bmatrix}\)。因此有
+              \begin{align*}
+                  \mata^{10}-\mata^6-\mati & =\matp\mypar{\matlam^{10}-\matlam^6-\mati}\inv{\matp}                                                                      \\
+                                           & =\begin{bmatrix}1&2\\2&1\end{bmatrix}\begin{bmatrix}-1&0\\0&959\end{bmatrix}\begin{bmatrix}-1/3&2/3\\2/3&-1/3\end{bmatrix} \\
+                                           & =\begin{bmatrix}1279&-640\\640&-321\end{bmatrix}
+              \end{align*}
+              }
+    \end{enumerate}
 \end{proof}
 
 % 5.27
@@ -193,7 +333,31 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+    \begin{enumerate}
+        \item
+              {
+              因为\(\mata\)可对角化，由定理5.2.2可知\(\mata\)的代数重数与几何重数相等。考虑
+              \begin{equation*}
+                  \lambda\mati-\mata=2\mati-\mata=
+                  \begin{bmatrix}
+                      1  & 1  & -1 \\
+                      -x & -2 & -y \\
+                      3  & 3  & -3
+                  \end{bmatrix}\to
+                  \begin{bmatrix}
+                      1   & 1 & -1  \\
+                      2-x & 0 & 2-y \\
+                      0   & 0 & 0
+                  \end{bmatrix}
+              \end{equation*}
+              因为\(\lambda=2\)是\(\mata\)的二重特征值，所以\(\rank{\lambda\mati-\mata}=1\)，由此得到\(x=2,y=-2\)。
+              }
+        \item
+              {
+              由定理5.1.2可知\(\mata\)的另一个特征值为\(\trace{\mata}-2\lambda=6\)。
+              将\(\lambda_1=\lambda_2=2\)，\(\lambda_3=6\)代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\mata\)对应的线性无关的特征向量分别为\(\myvec{-1,1,0}\)，\(\myvec{1,0,1}\)和\(\myvec{1,-2,3}\)。所以对应的可逆矩阵\(\matp\)为\(\begin{bmatrix}-1&1&1\\1&0&-2\\0&1&3\end{bmatrix}\)。
+              }
+    \end{enumerate}
 \end{proof}
 
 % 5.28(2)
@@ -214,7 +378,23 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \(\mata\)的特征多项式为
+    \begin{equation*}
+        \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda-1&-1&-1\\-1&\lambda-1&-1\\-1&\lambda-1&-1\end{vmatrix}=\lambda^2\mypar{\lambda-3}
+    \end{equation*}
+    所以\(\mata\)的特征值为\(\lambda_1=\lambda_2=0\)，\(\lambda_3=3\)。
 
+    将上述特征值代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\lambda_1,\lambda_2\)对应的线性无关的特征向量为\(\vecal_1=\myvec{-1,1,0}\)和\(\vecal_2=\myvec{-1,0,1}\)，\(\lambda_3\)对应的线性无关的特征向量为\(\vecal_3=\myvec{1,1,1}\)。
+
+    对向量组\(\vecal_1,\vecal_2\)和向量组\(\vecal_3\)分别做Schmidt正交化，得到正交矩阵
+    \begin{equation*}
+        \matq=\begin{bmatrix}\vecq_1&\vecq_2&\vecq_3\end{bmatrix}=
+        \begin{bmatrix}
+            -\frac{\sqrt{2}}{2} & -\frac{\sqrt{6}}{6} & \frac{\sqrt{3}}{3} \\
+            \frac{\sqrt{2}}{2}  & -\frac{\sqrt{6}}{6} & \frac{\sqrt{3}}{3} \\
+            0                   & \frac{2\sqrt{6}}{6} & \frac{\sqrt{3}}{3}
+        \end{bmatrix}
+    \end{equation*}
 \end{proof}
 
 \setcounter{problem}{29}
@@ -223,7 +403,29 @@
 设矩阵\(\mata=\begin{bmatrix}0&0&1\\a&1&b\\1&0&0\end{bmatrix}\)有三个线性无关的特征向量，求\(a,b\)满足的条件，并求可逆矩阵\(\matp\)，使得\(\inv{\matp}\mata\matp\)为对角阵。
 \end{problem}
 \begin{proof}
+    \(\mata\)的特征多项式为
+    \begin{equation*}
+        \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda&0&-1\\-a&\lambda-1&-b\\-1&0&\lambda\end{vmatrix}=\mypar{\lambda-1}^2\mypar{\lambda+1}
+    \end{equation*}
+    所以\(\mata\)的特征值为\(\lambda_1=\lambda_2=1\)，\(\lambda_3=-1\)。
 
+    由定理5.2.1和定理5.2.2可知\(\mata\)的代数重数与几何重数相等。考虑
+    \begin{equation*}
+        \lambda_1\mati-\mata=\mati-\mata=
+        \begin{bmatrix}
+            1  & 0 & -1 \\
+            -a & 0 & -b \\
+            -1 & 0 & 1
+        \end{bmatrix}\to
+        \begin{bmatrix}
+            1  & 0 & -1 \\
+            -a & 0 & -b \\
+            0  & 0 & 0
+        \end{bmatrix}
+    \end{equation*}
+    因为\(\lambda=1\)是\(\mata\)的二重特征值，所以\(\rank{\lambda\mati-\mata}=1\)，由此得到\(a=b=0\)。
+
+    将\(\lambda_1=\lambda_2=1\)，\(\lambda_3=-1\)代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\mata\)对应的线性无关的特征向量分别为\(\myvec{0,1,0}\)，\(\myvec{1,0,1}\)和\(\myvec{-1,0,1}\)。所以对应的可逆矩阵\(\matp\)为\(\begin{bmatrix}0&1&-1\\1&0&0\\0&1&1\end{bmatrix}\)。
 \end{proof}
 
 \setcounter{problem}{31}
@@ -232,7 +434,21 @@
 计算\({\begin{bmatrix}1&2&2\\2&1&2\\2&2&1\end{bmatrix}}^{100}\)。
 \end{problem}
 \begin{proof}
+    记矩阵\(\begin{bmatrix}1&2&2\\2&1&2\\2&2&1\end{bmatrix}\)为\(\mata\)。则\(\mata\)的特征多项式为
+    \begin{equation*}
+        \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda-1&-2&-2\\-2&\lambda-1&-2\\-2&-2&\lambda-1\end{vmatrix}=\mypar{\lambda+1}^2\mypar{\lambda-5}
+    \end{equation*}
+    所以\(\mata\)的特征值为\(\lambda_1=\lambda_2=-1\)，\(\lambda_3=5\)。
 
+    将\(\lambda_1=\lambda_2=-1\)，\(\lambda_3=5\)代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\mata\)对应的线性无关的特征向量分别为\(\myvec{-1,1,0}\)，\(\myvec{-1,0,1}\)和\(\myvec{1,1,1}\)。所以有
+    \begin{equation*}
+        \matp=\begin{bmatrix}-1&-1&1\\1&0&1\\0&1&1\end{bmatrix},\matlam=\begin{bmatrix}-1&0&0\\0&-1&0\\0&0&5\end{bmatrix}
+    \end{equation*}
+    \begin{align*}
+        \mata^{100} & =\mypar{\matp\matlam\inv{\matp}}^{100}=\matp\matlam^{100}\inv{\matp}                                                                                                  \\
+                    & =\frac{1}{3}\begin{bmatrix}-1&-1&1\\1&0&1\\0&1&1\end{bmatrix}\begin{bmatrix}1&0&0\\0&1&0\\0&0&5^{100}\end{bmatrix}\begin{bmatrix}-1&2&-1\\-1&-1&2\\1&1&1\end{bmatrix} \\
+                    & =\frac{1}{3}\begin{bmatrix}5^{100}+2&5^{100}-1&5^{100}-1\\5^{100}-1&5^{100}+2&5^{100}-1\\5^{100}-1&5^{100}-1&5^{100}+2\end{bmatrix}
+    \end{align*}
 \end{proof}
 
 \setcounter{problem}{33}
@@ -240,11 +456,16 @@
 \begin{problem}
 求二次型\(f\)的矩阵：
 \begin{enumerate}
-    \item[(2)] \(f(x_1,x_2,x_3)=\mypar{x_1+x_2}^2+\mypar{x_2+x_3}^2+\mypar{x_3+x_1}^2\)
+    \item[(2)] \(f(x_1,x_2,x_3)=\mypar{x_1+x_2}^2+\mypar{x_2-x_3}^2+\mypar{x_3+x_1}^2\)
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{align*}
+        f(x_1,x_2,x_3) & =\mypar{x_1+x_2}^2+\mypar{x_2-x_3}^2+\mypar{x_3+x_1}^2 \\
+                       & =2x_1^2+2x_2^2+2x_3^2+2x_1x_2-2x_2x_3+2x_3x_1
+    \end{align*}
 
+    所以二次型\(f\)的矩阵为\(\mata=\begin{bmatrix}2&1&1\\1&2&-1\\1&-1&2\end{bmatrix}\)。
 \end{proof}
 
 % 5.35
@@ -256,7 +477,24 @@
 化为标准形，写出所作的正交变换。
 \end{problem}
 \begin{proof}
+    记二次型\(f\)的矩阵为\(\mata=\begin{bmatrix}1&-2&2\\-2&4&-4\\2&-4&4\end{bmatrix}\)。则\(\mata\)的特征多项式为
+    \begin{equation*}
+        \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda-1&2&-2\\2&\lambda-4&4\\-2&4&\lambda-4\end{vmatrix}=\lambda^2\mypar{\lambda-9}
+    \end{equation*}
+    所以\(\mata\)的特征值为\(\lambda_1=\lambda_2=0\)，\(\lambda_3=9\)。
 
+    将上述特征值代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\lambda_1,\lambda_2\)对应的线性无关的特征向量为\(\vecal_1=\myvec{2,0,-1}\)和\(\vecal_2=\myvec{0,1,1}\)，\(\lambda_3\)对应的线性无关的特征向量为\(\vecal_3=\myvec{1,-2,2}\)。
+
+    对向量组\(\vecal_1,\vecal_2\)和向量组\(\vecal_3\)分别做Schmidt正交化，得到正交变换的表示矩阵
+    \begin{equation*}
+        \matp=
+        \begin{bmatrix}
+            \frac{2\sqrt{5}}{5} & \frac{2\sqrt{39}}{39} & \frac{1}{3}  \\
+            0                   & \frac{5\sqrt{39}}{39} & -\frac{2}{3} \\
+            -\frac{\sqrt{5}}{5} & \frac{4\sqrt{39}}{39} & \frac{2}{3}
+        \end{bmatrix}
+    \end{equation*}
+    即二次型\(f\)在正交变换\(\vecy=\matp^\top\vecx\)下化为标准形\(f\mypar{x_1,x_2,x_3}=9y_3^2\)。
 \end{proof}
 
 % 5.36
@@ -265,20 +503,53 @@
 \begin{equation*}
     f\mypar{x_1,x_2,x_3}=\vecx^\top\mata\vecx=ax_1^2+2x_2^2-2x_3^2+2bx_1x_3\mypar{b>0}
 \end{equation*}
-其中二次型\(f\)的矩阵\(\mata\)的特征值之和为\(1\)，特征值之积为\(12\)，求
+其中二次型\(f\)的矩阵\(\mata\)的特征值之和为\(1\)，特征值之积为\(-12\)，求
 \begin{enumerate}
     \item \(a,b\)的值；
     \item 用正交变换将\(f\)化为标准形，写出所作的正交变换及对应的正交矩阵。
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{enumerate}
+        \item
+              {
+              由题意，\(\mata=\begin{bmatrix}a&0&b\\0&2&0\\b&0&-2\end{bmatrix}\)。由定理5.1.2，有
+              \begin{equation*}
+                  \begin{cases}
+                      \trace{\mata}=a=1 \\
+                      \det{\mata}=-4a-2b^2=-12
+                  \end{cases}
+              \end{equation*}
+              解得\(a=1,b=2\)。
+              }
+        \item
+              {
+              \(\mata\)的特征多项式为
+              \begin{equation*}
+                  \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda-1&0&-2\\0&\lambda-2&0\\-2&0&\lambda+2\end{vmatrix}=\mypar{\lambda-2}^2\mypar{\lambda+3}
+              \end{equation*}
+              所以\(\mata\)的特征值为\(\lambda_1=\lambda_2=2\)，\(\lambda_3=-3\)。
 
+              将上述特征值代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\lambda_1,\lambda_2\)对应的线性无关的特征向量为\(\vecal_1=\myvec{2,0,1}\)和\(\vecal_2=\myvec{0,1,0}\)，\(\lambda_3\)对应的线性无关的特征向量为\(\vecal_3=\myvec{1,0,-2}\)。
+
+              对向量组\(\vecal_1,\vecal_2\)和向量组\(\vecal_3\)分别做Schmidt正交化，得到正交变换的表示矩阵
+              \begin{equation*}
+                  \matp=
+                  \begin{bmatrix}
+                      \frac{2\sqrt{5}}{5} & 0 & \frac{\sqrt{5}}{5}   \\
+                      0                   & 1 & 0                    \\
+                      \frac{\sqrt{5}}{5}  & 0 & -\frac{2\sqrt{5}}{5}
+                  \end{bmatrix}
+              \end{equation*}
+              即二次型\(f\)在正交变换\(\vecy=\matp^\top\vecx\)下化为标准形\(f\mypar{x_1,x_2,x_3}=2y_1^2+2y_2^2-3y_3^2\)。
+              }
+    \end{enumerate}
 \end{proof}
 
 \setcounter{problem}{37}
 % 5.38
 \begin{problem}
-已知二次型\(f\mypar{x_1,x_2,x_3}=4x_2^2+4x_3^2+4x_1x_2+ax_1x_3-4x_2x_3\)的秩为\(2\)，
+已知二次型\(f\mypar{x_1,x_2,x_3}=4x_1^2+4x_2^2+4x_3^2+4x_1x_2+ax_1x_3-4x_2x_3\)的秩为\(2\)，
 \begin{enumerate}
     \item 求\(a\)的值；
     \item 求正交变换\(\vecx=\matp\vecy\)把\(f\mypar{x_1,x_2,x_3}\)化为标准形；
@@ -286,7 +557,69 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    记二次型\(f\)的矩阵为\(\mata=\begin{bmatrix}4&2&a/2\\2&4&2\\a/2&2&4\end{bmatrix}\)。
+    \begin{enumerate}
+        \item
+              {
+              因为\(\rank{\mata}=2\neq3\)，因此有
+              \begin{equation*}
+                  \det{\mata}=32+4a-a^2=0
+              \end{equation*}
+              解得\(a=8\)或\(a=-4\)，将\(a\)代入验证\(\rank{\mata}=2\)，均满足条件。
+              }
+        \item
+              {
+              当\(a=8\)时，\(\mata\)的特征多项式为
+              \begin{equation*}
+                  \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda-4&-2&-4\\-2&\lambda-4&-2\\-4&-2&\lambda-4\end{vmatrix}=\lambda\mypar{\lambda^2-12\lambda+24}
+              \end{equation*}
+              所以\(\mata\)的特征值为\(\lambda_1=0\)，\(\lambda_2=6+2\sqrt{3}\)，\(\lambda_3=6-2\sqrt{3}\)。
 
+              将上述特征值代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\mata\)的线性无关的特征向量为\(\vecal_1=\myvec{-1,0,1}\)，\(\vecal_2=\myvec{1,-1+\sqrt{3},1}\)，\(\vecal_3=\myvec{1,-1-\sqrt{3},1}\)。
+
+              对\(\vecal_1,\vecal_2,\vecal_3\)标准化，得到正交变换的表示矩阵
+              \begin{equation*}
+                  \matp_1=
+                  \begin{bmatrix}
+                      -0.707 & 0.325  & -0.628 \\
+                      0      & -0.888 & -0.460 \\
+                      0.707  & 0.325  & -0.628
+                  \end{bmatrix}
+              \end{equation*}
+              该正交变换将二次型\(f\)化为标准形\(f\mypar{x_1,x_2,x_3}=\mypar{6+2\sqrt{3}}y_2^2+\mypar{6-2\sqrt{3}}y_3^2\)。
+
+              当\(a=-4\)时，\(\mata\)的特征多项式为
+              \begin{equation*}
+                  \abs{\lambda\mati-\mata}=\begin{vmatrix}\lambda-4&-2&2\\-2&\lambda-4&-2\\2&-2&\lambda-4\end{vmatrix}=\lambda\mypar{\lambda-6}^2
+              \end{equation*}
+              所以\(\mata\)的特征值为\(\lambda_1=\lambda_2=6\)，\(\lambda_3=0\)。
+
+              将上述特征值代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\lambda_1,\lambda_2\)对应的线性无关的特征向量为\(\vecal_1=\myvec{1,1,0}\)和\(\vecal_2=\myvec{-1,0,1}\)，\(\lambda_3\)对应的线性无关的特征向量为\(\vecal_3=\myvec{1,-1,1}\)。
+
+              对向量组\(\vecal_1,\vecal_2\)和向量组\(\vecal_3\)分别做Schmidt正交化，得到正交变换的表示矩阵
+              \begin{equation*}
+                  \matp_2=
+                  \begin{bmatrix}
+                      \frac{\sqrt{2}}{2} & -\frac{\sqrt{6}}{6} & \frac{\sqrt{3}}{3}  \\
+                      \frac{\sqrt{2}}{2} & \frac{\sqrt{6}}{6}  & \frac{-\sqrt{3}}{3} \\
+                      0                  & \frac{2\sqrt{6}}{6} & \frac{\sqrt{3}}{3}
+                  \end{bmatrix}
+              \end{equation*}
+              该正交变换将二次型\(f\)化为标准形\(f\mypar{x_1,x_2,x_3}=6y_1^2+6y_2^2\)。
+              }
+        \item
+              {
+              当\(a=8\)时，因为正交变换\(\matp_1\)将二次型\(f\)化为标准形\(f\mypar{x_1,x_2,x_3}=\mypar{6+2\sqrt{3}}y_2^2+\mypar{6-2\sqrt{3}}y_3^2\)，因此\(f\mypar{x_1,x_2,x_3}=0\)的解空间的基为
+              \begin{equation*}
+                  \matp_1\begin{bmatrix}1&0&0\end{bmatrix}^\top=\begin{bmatrix}-\frac{\sqrt{2}}{2}&0&\frac{\sqrt{2}}{2}\end{bmatrix}^\top
+              \end{equation*}
+
+              当\(a=-4\)时，因为正交变换\(\matp_2\)将二次型\(f\)化为标准形\(f\mypar{x_1,x_2,x_3}=6y_1^2+6y_2^2\)，因此\(f\mypar{x_1,x_2,x_3}=0\)的解空间的基为
+              \begin{equation*}
+                  \matp_2\begin{bmatrix}0&0&1\end{bmatrix}^\top=\begin{bmatrix}\frac{\sqrt{3}}{3}&-\frac{\sqrt{3}}{3}&\frac{\sqrt{3}}{3}\end{bmatrix}^\top
+              \end{equation*}
+              }
+    \end{enumerate}
 \end{proof}
 
 % 5.39
@@ -298,15 +631,53 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+    \begin{enumerate}
+        \item {
+              记二次型\(f\)的矩阵为\(\mata=\begin{bmatrix}5&2&-4\\2&1&-2\\-4&-2&5\end{bmatrix}\)。则其顺序主子式为
+              \begin{equation*}
+                  \Delta_1=\begin{vmatrix}5\end{vmatrix}=5>0,\Delta_2=\begin{vmatrix}5&2\\2&1\end{vmatrix}=1>0,\Delta_3=\begin{vmatrix}5&2&-4\\2&1&-2\\-4&-2&5\end{vmatrix}=1>0
+              \end{equation*}
+              所以该二次型是正定的。
+              }
+        \item {
+              记二次型\(f\)的矩阵为\(\mata=\begin{bmatrix}1&0&3&4\\0&1&-2&1\\3&-2&14&2\\4&1&2&7\end{bmatrix}\)。因为\(\mata\)的\(4\)阶顺序主子式为
+              \begin{equation*}
+                  \Delta_4=\begin{vmatrix}1&0&3&4\\0&1&-2&1\\3&-2&14&2\\4&1&2&7\end{vmatrix}=-74<0
+              \end{equation*}
+              所以该二次型不是正定的。
+              }
+    \end{enumerate}
 \end{proof}
 
 % 5.40
 \begin{problem}
-判断二次型\(f=\sum_{i=0}^nx_i^2+\sum_{1\le i<j\le n}x_ix_j\)的正定性。
+判断二次型\(f=\sum_{i=1}^nx_i^2+\sum_{1\le i<j\le n}x_ix_j\)的正定性。
 \end{problem}
 \begin{proof}
-
+    记二次型\(f_n\)的矩阵为\(\mata_n\in\rea^{n\times n}\)，则有
+    \begin{gather*}
+        A_n =
+        \begin{bmatrix}
+            1           & \frac{1}{2} & \cdots & \frac{1}{2} \\
+            \frac{1}{2} & 1           & \cdots & \frac{1}{2} \\
+            \vdots      & \vdots      &        & \vdots      \\
+            \frac{1}{2} & \frac{1}{2} & \cdots & 1
+        \end{bmatrix}\xrightarrow[i=2,3,\dots,n]{C_1+C_i}
+        \begin{bmatrix}
+            \frac{n+1}{2} & \frac{1}{2} & \cdots & \frac{1}{2} \\
+            \frac{n+1}{2} & 1           & \cdots & \frac{1}{2} \\
+            \vdots        & \vdots      &        & \vdots      \\
+            \frac{n+1}{2} & \frac{1}{2} & \cdots & 1
+        \end{bmatrix} \\
+        \xrightarrow[i=2,3,\dots,n]{R_i-R_1}
+        \begin{bmatrix}
+            \frac{n+1}{2} & \frac{1}{2} & \cdots & \frac{1}{2} \\
+            0             & \frac{1}{2} & \cdots & \frac{1}{2} \\
+            \vdots        & \vdots      &        & \vdots      \\
+            0             & 0           & \cdots & \frac{1}{2}
+        \end{bmatrix}
+    \end{gather*}
+    所以\(\det{\mata_n}=\mypar{n+1}2^{-n}>0\)。又因为\(\mata_n\)的顺序主子式为\(\Delta_i=\det{\mata_i}\)，由定理5.4.2知\(\mata_n\)正定，即二次型\(f_n\)正定。
 \end{proof}
 
 % 5.41
@@ -318,7 +689,19 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+    \begin{enumerate}
+        \item {
+              设\(\mata\)特征值为\(\lambda\)对应的特征向量为\(\vecal\neq\veczero\)，则有
+              \begin{align*}
+                  \mypar{\lambda^2+2\lambda}\vecal & =\mypar{\mata^2+2\mata}\vecal \\
+                                                   & =\mato\vecal=\veczero
+              \end{align*}
+              所以\(\lambda^2+2\lambda=0\)，解得\(\lambda=0\)或\(\lambda=-2\)。
+              }
+        \item {
+              因为\(\rank{\mata}=2\)且\(\mata\)为实对称矩阵，因此存在正交矩阵\(\matp\)，满足\(\mata+k\mati=\matp\matlam\matp^\top\)，其中\(\matlam=\diag{\mat{k-2,k-2,k}}\)。由正定矩阵定义可知当\(k>2\)时，\(\mata+k\mati\)正定。
+              }
+    \end{enumerate}
 \end{proof}
 
 % 5.42
@@ -326,7 +709,18 @@
 设\(\mata\)是\(n\)阶实对称矩阵，证明\(\rank{\mata}=n\)的充要条件是存在一个\(n\)阶实矩阵\(\matb\)，使得\(\mata\matb+\matb^\top\mata\)正定。
 \end{problem}
 \begin{proof}
+    首先证明必要性。
 
+    因为\(\rank{\mata}=n\)且\(\mata\)为实对称矩阵，可知\(\mata\)的特征值为非零实数\(\enums{\lambda}{n}\)。令\(\matb=\mata\)，则\(\mata\matb+\matb^\top\mata=2\mata^2\)特征值为\(2\lambda_1^2,2\lambda_2^2\dots,2\lambda_n^2\)。因此\(2\mata^2\)正定，结论成立。
+
+    随后用反证法证明充分性。
+
+    因为\(\rank{\mata}<n\)，所以存在\(\vecx\in\rea^n\neq\veczero\)满足\(\mata\vecx=\veczero\)。因此对\(\forall\matb\in\rea^{n\times n}\)，有
+    \begin{align*}
+        \vecx^\top\mypar{\mata\matb+\matb^\top\mata}\vecx & =\vecx^\top\mypar{\mata\matb}\vecx+\vecx^\top\mypar{\matb^\top\mata}\vecx \\
+                                                          & =\mypar{\mata\vecx}^\top\matb\vecx+\mypar{\matb\vecx}^\top\mata\vecx=0
+    \end{align*}
+    这和题设矛盾。
 \end{proof}
 
 % 5.43
