@@ -17,7 +17,7 @@
 
 % \usefonttheme[onlymath]{serif}
 
-\input{headers.tex}
+\input{../headers.tex}
 
 \author{夏海淞}
 \title{线性代数习题课}
@@ -53,7 +53,7 @@
     \begin{figure}[htpb]
         \begin{center}
             \vspace*{-0.5cm}
-            \includegraphics[width=0.1\linewidth]{pic/FDU.jpeg}
+            \includegraphics[width=0.1\linewidth]{../pic/FDU.jpeg}
         \end{center}
     \end{figure}
 \end{frame}
@@ -288,7 +288,7 @@
                       1 & 0 & 1 \\
                       0 & 1 & 2 \\
                       1 & 0 & 2
-                  \end{bmatrix}          \\
+                  \end{bmatrix}                                                        \\
                    & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
               \end{align*}
               \begin{align*}
@@ -299,7 +299,7 @@
                       1 & 1 & 1 \\
                       0 & 1 & 1 \\
                       0 & 0 & 1
-                  \end{bmatrix}          \\
+                  \end{bmatrix}                                                        \\
                    & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb
               \end{align*}
               又因为\(\rank{\mata}=\rank{\matb}=3\)，由习题4.2可知\(\vecxi_1,\vecxi_2,\vecxi_3\)和\(\veceta_1,\veceta_2,\veceta_3\)均线性无关，且任意\(V\)中的向量均可由上述两个向量组线性表出。所以\(\vecxi_1,\vecxi_2,\vecxi_3\)和\(\veceta_1,\veceta_2,\veceta_3\)都是\(V\)的一组基；
@@ -309,7 +309,7 @@
               \begin{align*}
                   \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}
                    & =
-                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb                \\
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb          \\
                    & =\begin{bmatrix}\vecxi_1&\vecxi_2&\vecxi_3\end{bmatrix}\inv{\mata}\matb
               \end{align*}
               因此由基\(\vecxi_1,\vecxi_2,\vecxi_3\)到基\(\veceta_1,\veceta_2,\veceta_3\)的过渡矩阵为
@@ -433,7 +433,7 @@
                       1  & -1 & 1  & 1  \\
                       1  & 1  & -1 & 1  \\
                       1  & 1  & 1  & -1
-                  \end{bmatrix}          \\
+                  \end{bmatrix}                                                                \\
                    & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb
               \end{align*}
               其中\(\rank{\mata}=\rank{\matb}=4\)。所以\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)和\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)线性无关，且\(\rea^{2\times2}\)中的任意元素可由这两个向量组线性表出。
@@ -450,7 +450,7 @@
               由(1)可得
               \begin{align*}
                   \begin{bmatrix}\vecbeta_1&\vecbeta_2&\vecbeta_3&\vecbeta_4\end{bmatrix}
-                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb            \\
+                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb    \\
                    & =\begin{bmatrix}\vecal_1&\vecal_2&\vecal_3&\vecal_4\end{bmatrix}\inv{\mata}\matb
               \end{align*}
               所以由基\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)到\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)的过渡矩阵为
@@ -924,8 +924,8 @@
               \end{equation*}
               将\(\vecal_1,\vecal_2,\vecal_3\) Schmidt正交化：
               \begin{align*}
-                  \vecq_1 & =\frac{\vecal_1}{\Abs{\vecal_1}}=\frac{1}{\sqrt2}\begin{bmatrix}0&1&1&0&0\end{bmatrix}^\top                                                                                                                     \\
-                  \vecq_2 & =\frac{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}{\Abs{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}}=\frac{1}{\sqrt{10}}\begin{bmatrix}-2&1&-1&2&0\end{bmatrix}^\top                                                          \\
+                  \vecq_1 & =\frac{\vecal_1}{\Abs{\vecal_1}}=\frac{1}{\sqrt2}\begin{bmatrix}0&1&1&0&0\end{bmatrix}^\top                                                                                                                      \\
+                  \vecq_2 & =\frac{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}{\Abs{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}}=\frac{1}{\sqrt{10}}\begin{bmatrix}-2&1&-1&2&0\end{bmatrix}^\top                                                         \\
                   \vecq_3 & =\frac{\vecal_3-\vecq_1\vecq_1^\top\vecal_3-\vecq_2\vecq_2^\top\vecal_3}{\Abs{\vecal_3-\vecq_1\vecq_1^\top\vecal_3-\vecq_2\vecq_2^\top\vecal_3}}=\frac{1}{3\sqrt{35}}\begin{bmatrix}4&-5&0&0&1\end{bmatrix}^\top
               \end{align*}
               \(\vecq_1,\vecq_2,\vecq_3\)构成\(\nullsp{\mata}\)的一组标准正交基。
@@ -940,7 +940,7 @@
               \end{equation*}
               同(1)理，将\(\vecbeta_1,\vecbeta_2\) Schmidt正交化后得到\(\colsp{\mata^\top}\)的标准正交基为
               \begin{align*}
-                  \vecp_1 & =\frac{1}{4}\begin{bmatrix}2&1&-1&1&-3\end{bmatrix}^\top          \\
+                  \vecp_1 & =\frac{1}{4}\begin{bmatrix}2&1&-1&1&-3\end{bmatrix}^\top              \\
                   \vecp_2 & =\frac{1}{12\sqrt{7}}\begin{bmatrix}14&15&-15&-1&19\end{bmatrix}^\top
               \end{align*}
               }
