@@ -1,20 +1,106 @@
 \section{线性方程组}
 
-\setcounter{problem}{3}
+% 2.1
+\begin{problem}
+设\(\mata\)为\(m\times n\)矩阵，判断下列命题是否正确。
+\begin{enumerate}
+    \item 非齐次线性方程组\(\mata\vecx=\vecb\)，当\(m<n\)时，有无穷多解；当\(m=n\)时，有唯一解；当\(m>n\)时，无解；
+    \item 齐次线性方程组\(\mata\vecx=\veczero\)，当\(m<n\)时，必有非零解；
+    \item 非齐次线性方程组\(\mata\vecx=\vecb\)，当\(\rank{\mata}=m\)，则一定有解。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.2
+\begin{problem}
+解下列线性方程组：
+\begin{enumerate}
+    \item \begin{equation*}
+              \begin{cases}
+                  x_1-2x_2+3x_3-4x_4=0 \\
+                  x_2-x_3+x_4=0        \\
+                  x_1+3x_2-3x_4=0      \\
+                  x_1-4x_2+3x_3-2x_4=0
+              \end{cases}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{cases}
+                  x_1+x_2+x_3+x_4+x_5=0    \\
+                  3x_1+2x_2+x_3+x_4-3x_5=0 \\
+                  x_2+2x_3+2x_4+6x_5=0     \\
+                  5x_1+4x_2+3x_3+3x_4-x_5=0
+              \end{cases}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{cases}
+                  x_1+2x_2+x_3-x_4=6         \\
+                  2x_1-x_2+x_3+3x_4+4x_5=-7  \\
+                  2x_1-x_2+2x_3+x_4-2x_5=-4  \\
+                  2x_1-3x_2+x_3+2x_4-2x_5=-9 \\
+                  x_1+x_3-2x_4-6x_5=4
+              \end{cases}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{cases}
+                  2x_1-x_2-2x_3+x_4=0 \\
+                  x_1+2x_2+2x_3+x_4=6 \\
+                  3x_1+x_2-x_3-2x_4=1 \\
+                  x_1+2x_2+x_3-3x_4=2 \\
+                  2x_1+4x_2+3x_3-2x_4=7
+              \end{cases}
+          \end{equation*}
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.3
+\begin{problem}
+求线性方程组
+\begin{equation*}
+    \begin{cases}
+        x_1-x_2+2x_3+x_4=1  \\
+        2x_1-x_2+x_3+2x_4=3 \\
+        x_1-x_3+x_4=2       \\
+        3x_1-x_2+3x_4=5
+    \end{cases}
+\end{equation*}
+的通解，并求出满足\(x_1^2=x_2^2\)的全部解。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.4(2)
 \begin{problem}
 讨论下列线性方程组，当\(\lambda\)取什么值时方程组有唯一解？取什么值时有无穷多解？取什么值时无解？
 \begin{enumerate}
-    \item[(2)]
-        {
-        \begin{equation*}
-            \begin{cases}
-                x_1+x_2+\lambda x_3=2  \\
-                3x_1+4x_2+2x_3=\lambda \\
-                2x_1+3x_2-x_3=3        \\
-            \end{cases}
-        \end{equation*}
-        }
+    \item \begin{equation*}
+              \begin{cases}
+                  \mypar{\lambda+3}x_1+x_2+2x_3=\lambda        \\
+                  \lambda x_1+\mypar{\lambda-1}x_2+x_3=\lambda \\
+                  3\mypar{\lambda+1}x_1+\lambda x_1+\mypar{\lambda+3}x_3=3
+              \end{cases}
+          \end{equation*}
+    \item
+          {
+          \begin{equation*}
+              \begin{cases}
+                  x_1+x_2+\lambda x_3=2 \\
+                  2x_1+\lambda x_2+8x_3=\lambda
+              \end{cases}
+          \end{equation*}
+          }
+    \item \begin{equation*}
+              \begin{cases}
+                  x_1+x_2+\lambda x_3=2  \\
+                  3x_1+4x_2+2x_3=\lambda \\
+                  2x_1+3x_2-x_3=3        \\
+              \end{cases}
+          \end{equation*}
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -80,7 +166,94 @@
 
 \end{proof}
 
-\setcounter{problem}{13}
+% 2.9
+\begin{problem}
+已知非齐次线性方程组
+\begin{equation*}
+    x_1+x_2+x_3+x_4=-1\\
+    4x_1+3x_2+5x_3-x_4=-1\\
+    ax_1+x_2+3x_3+bx_4=1
+\end{equation*}
+有\(3\)个线性无关的解，
+\begin{enumerate}
+    \item 证明方程组系数矩阵\(\mata\)的秩\(\rank{\mata}=2\)；
+    \item 求\(a,b\)的值及方程组的通解。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.10
+\begin{problem}
+设线性方程组
+\begin{equation*}
+    \begin{cases}
+        x_1+x_2+x_3=0   \\
+        x_1+2x_2+ax_3=0 \\
+        x_1+4x_2+a^2x_3=0
+    \end{cases}
+\end{equation*}
+与方程\(x_1+2x_2+x_3=a-1\)有公共解，求\(a\)的值及所有公共解。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.11
+\begin{problem}
+设线性方程组\(\mata\vecx=\vecb\)存在两个不同的解，其中
+\begin{equation*}
+    \mata=
+    \begin{bmatrix}
+        \lambda & 1         & 1       \\
+        0       & \lambda-1 & 0       \\
+        1       & 1         & \lambda
+    \end{bmatrix},
+    \vecb=
+    \begin{bmatrix}
+        a \\1\\1
+    \end{bmatrix}
+\end{equation*}
+\begin{enumerate}
+    \item 求\(\lambda,a\)的值；
+    \item 求方程组\(\mata\vecx=\vecb\)的通解。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.12
+\begin{problem}
+设
+\begin{equation*}
+    \mata=
+    \begin{bmatrix}
+        1 & a & 0 & 0 \\
+        0 & 1 & a & 0 \\
+        0 & 0 & 1 & a \\
+        a & 0 & 0 & 1
+    \end{bmatrix},
+    \vecb=
+    \begin{bmatrix}
+        1 \\-1\\0\\0
+    \end{bmatrix}
+\end{equation*}
+当实数\(a\)为何值时，方程组\(\mata\vecx=\vecb\)有无穷多解，并求其通解。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.13
+\begin{problem}
+已知\(4\)阶矩阵\(\mata=\mat{\vecal_1,\vecal_2,\vecal_3,\vecal_4}\)，\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)均为\(4\)元列向量，其中\(\vecal_2,\vecal_3,\vecal_4\)线性无关，\(\vecal_1=2\vecal_2-\vecal_3\)，若\(\vecbeta=\vecal_1+\vecal_2+\vecal_3+\vecal_4\)，求线性方程组\(\mata\vecx=\vecbeta\)的通解。
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.14
 \begin{problem}
 已知\(3\)阶矩阵\(\mata\)的第一行是\(\mat{a,b,c}\)，\(a,b,c\)不全为零，
@@ -110,7 +283,46 @@
 
 \end{proof}
 
-\setcounter{problem}{20}
+% 2.16
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.17
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.18
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.19
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.20
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.21
 \begin{problem}
 设\(\mata\)是\(s\times n\)矩阵，\(\matb\)是\(n\times m\)矩阵，\(n<m\)，证明：齐次线性方程组\(\mypar{\mata\matb}\vecx=\veczero\)有非零解。
@@ -127,7 +339,30 @@
 
 \end{proof}
 
-\setcounter{problem}{25}
+% 2.23
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.24
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.25
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.26(3)
 \begin{problem}
 求下列向量组的秩和极大线性无关组：
@@ -139,7 +374,14 @@
 
 \end{proof}
 
-\setcounter{problem}{27}
+% 2.27
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.28(1)
 \begin{problem}
 求下列齐次线性方程组的一个基础解系：
@@ -213,7 +455,14 @@
 
 \end{proof}
 
-\setcounter{problem}{34}
+% 2.34
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.35
 \begin{problem}
 给定\(n\)个非零的数\(\enums{a}{n}\)，求下面向量组的秩：
@@ -228,7 +477,14 @@
 
 \end{proof}
 
-\setcounter{problem}{36}
+% 2.36
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.37
 \begin{problem}
 设\(\enums{\veceta}{t}\)是某一非齐次线性方程组的解。证明：\(\mu_1\veceta_1+\mu_2\veceta_2+\cdots+\mu_t\veceta_t\)也是该非齐次线性方程组的解的充要条件是\(\mu_1+\mu_2+\cdots+\mu_t=1\)。
@@ -237,7 +493,22 @@
 
 \end{proof}
 
-\setcounter{problem}{39}
+% 2.38
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.39
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.40(1)
 \begin{problem}
 解下列矩阵方程：
@@ -257,7 +528,22 @@
 
 \end{proof}
 
-\setcounter{problem}{43}
+% 2.42
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.43
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.44
 \begin{problem}
 设\(n\)阶可逆矩阵\(\mata\)每行元素之和都等于常数\(c\)。证明：\(c\neq0\)，且\(\inv{\mata}\)中每行元素之和都等于\(\inv{c}\)。
@@ -266,7 +552,14 @@
 
 \end{proof}
 
-\setcounter{problem}{45}
+% 2.45
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
 % 2.46
 \begin{problem}
 设\(\mata,\matb\)均为\(n\)阶可逆矩阵。证明：如果\(\mata+\matb\)可逆，则\(\inv{\mata}+\inv{\matb}\)也可逆，并求其逆矩阵。
@@ -283,6 +576,46 @@
         设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata-\mati_n\)和\(\matb\)可逆。证明：若\(\inv{\mypar{\mata-\mati_n}}=\mypar{\matb-\mati_n}^\top\)，则\(\mata\)可逆。
         }
 \end{enumerate}
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.48
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.49
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.50
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.51
+\begin{problem}
+
+\end{problem}
+\begin{proof}
+
+\end{proof}
+
+% 2.52
+\begin{problem}
+
 \end{problem}
 \begin{proof}
 
