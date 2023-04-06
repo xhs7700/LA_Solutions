@@ -210,7 +210,7 @@
                       1 & 0 & 1 \\
                       0 & 1 & 2 \\
                       1 & 0 & 2
-                  \end{bmatrix}          \\
+                  \end{bmatrix}                                                        \\
                    & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
               \end{align*}
               \begin{align*}
@@ -221,7 +221,7 @@
                       1 & 1 & 1 \\
                       0 & 1 & 1 \\
                       0 & 0 & 1
-                  \end{bmatrix}          \\
+                  \end{bmatrix}                                                        \\
                    & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb
               \end{align*}
               又因为\(\rank{\mata}=\rank{\matb}=3\)，由习题4.2可知\(\vecxi_1,\vecxi_2,\vecxi_3\)和\(\veceta_1,\veceta_2,\veceta_3\)均线性无关，且任意\(V\)中的向量均可由上述两个向量组线性表出。所以\(\vecxi_1,\vecxi_2,\vecxi_3\)和\(\veceta_1,\veceta_2,\veceta_3\)都是\(V\)的一组基；
@@ -231,7 +231,7 @@
               \begin{align*}
                   \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}
                    & =
-                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb                \\
+                  \begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\matb          \\
                    & =\begin{bmatrix}\vecxi_1&\vecxi_2&\vecxi_3\end{bmatrix}\inv{\mata}\matb
               \end{align*}
               因此由基\(\vecxi_1,\vecxi_2,\vecxi_3\)到基\(\veceta_1,\veceta_2,\veceta_3\)的过渡矩阵为
@@ -349,7 +349,7 @@
                       1  & -1 & 1  & 1  \\
                       1  & 1  & -1 & 1  \\
                       1  & 1  & 1  & -1
-                  \end{bmatrix}          \\
+                  \end{bmatrix}                                                                \\
                    & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb
               \end{align*}
               其中\(\rank{\mata}=\rank{\matb}=4\)。所以\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)和\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)线性无关，且\(\rea^{2\times2}\)中的任意元素可由这两个向量组线性表出。
@@ -366,7 +366,7 @@
               由(1)可得
               \begin{align*}
                   \begin{bmatrix}\vecbeta_1&\vecbeta_2&\vecbeta_3&\vecbeta_4\end{bmatrix}
-                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb            \\
+                   & =\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3&\vecveps_4\end{bmatrix}\matb    \\
                    & =\begin{bmatrix}\vecal_1&\vecal_2&\vecal_3&\vecal_4\end{bmatrix}\inv{\mata}\matb
               \end{align*}
               所以由基\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)到\(\vecbeta_1,\vecbeta_2,\vecbeta_3,\vecbeta_4\)的过渡矩阵为
@@ -463,7 +463,17 @@
     所以\(\vecal_1\)在在基\(\vecal_2,\dots,\vecal_n,\vecal_{n+1}\)下的坐标为\(\myvec{-\frac{x_2}{x_1},\cdots,-\frac{x_n}{x_1},\frac{1}{x_1}}\)。
 \end{proof}
 
-\setcounter{problem}{11}
+% 4.11
+\begin{problem}
+设\(\mathrm{K}^{n\times n}\)为数域\(\mathrm{K}\)上全体\(n\)阶方阵构成的\(n^2\)维线性空间，又\(\mata\in\mathrm{K}^{n\times n}\)。
+\begin{enumerate}
+    \item 证明：\(\mathrm{K}^{n\times n}\)中与\(\mata\)可交换（即\(\mata\matb=\matb\mata\)，称\(\mata\)与\(\matb\)可交换）的全体方阵构成子空间（该子空间记为\(\mathrm{W}\mypar{\mata}\)）；
+    \item 问：当\(\mata\)是主对角线上元素为\(\enums{a}{n}\)（\(a_i\in\mathrm{K}\)且互异）的对角阵时，\(\mathrm{W}\mypar{\mata}\)是几维的？并给出其一基。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 4.12
 \begin{problem}
 设\(V_1,V_2\)是\(\rea^n\)的两个非平凡子空间，证明：在\(\rea^n\)中存在向量\(\vecal\)，使\(\vecal\notin V_1\)，且\(\vecal\notin V_2\)，并在\(\rea^3\)中举例说明此结论。
@@ -523,7 +533,17 @@
     因此得到\(\nullsp{\mata}\)的一组基为\(\myvec{1,-2,1,0}\)，\(\mat{-1,1,0,1}\)。
 \end{proof}
 
-\setcounter{problem}{15}
+% 4.15
+\begin{problem}
+令\(\mata\)和\(\matb\)为\(n\times n\)矩阵。
+\begin{enumerate}
+    \item 证明：当且仅当\(\matb\)的列空间是\(\mata\)的零空间的子空间时，有\(\mata\matb=\mato\)；
+    \item 证明：若\(\mata\matb=\mato\)，则\(\mata\)和\(\matb\)的秩的和不会超过\(n\)。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 4.16
 \begin{problem}
 已知向量组\(\vecal_1=\myvec{2,0,1,3,-1}\)，\(\vecal_2=\mat{0,-2,1,5,-3}^\top\)，\(\vecbeta_1=\mat{1,1,0,-1,1}^\top\)，\(\vecbeta_2=\mat{1,-3,2,0,5}\)，且\(W_1=\myspan{\vecal_1,\vecal_2}\)，\(W_2=\myspan{\vecbeta_1,\vecbeta_2}\)。试求\(W_1\cap W_2\)与\(W_1+W_2\)的维数以及各自的一组基。
@@ -573,7 +593,29 @@
     \end{enumerate}
 \end{proof}
 
-\setcounter{problem}{19}
+% 4.18
+\begin{problem}
+设\(\vecal=\myvec{a_1,a_2,a_3}\in\rea^3\)，\(\vecbeta=\myvec{b_1,b_2,b_3}\in\rea^3\)，定义内积\(\indot{\vecal}{\vecbeta}=\vecal^\top\mata\vecbeta\)。当\(\mata\)取以下哪个矩阵时，使\(\rea^3\)成为Euclid空间。
+\begin{enumerate}
+    \item \(\mata_1=\begin{bmatrix}1&0&0\\0&2&0\\0&0&1\end{bmatrix}\)；
+    \item \(\mata_2=\begin{bmatrix}1&-1&1\\-1&1&0\\1&0&0\end{bmatrix}\)；
+    \item \(\mata_3=\begin{bmatrix}1&-1&3\\-1&2&0\\1&0&3\end{bmatrix}\)。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
+% 4.19
+\begin{problem}
+在\(\rea^2\)中，设\(\vecal=\myvec{a_1,a_2}\)，\(\vecbeta=\myvec{b_1,b_2}\)，令
+\begin{equation*}
+    \indot{\vecal}{\vecbeta}=a_1b_1-a_2b_1-a_1b_2+3a_2b_2
+\end{equation*}
+试验证这是\(\rea^2\)的一个内积。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 4.20
 \begin{problem}
 设\(\enums{\vecal}{n}\)是内积空间的\(n\)个向量，行列式
@@ -697,7 +739,20 @@
     因此\(\matm\)为正交矩阵等价于\(\matb\)为正交矩阵。又因为\(\matb\)为正交矩阵等价于\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基，所以\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基的充分必要条件是\(\matm\)为正交矩阵。
 \end{proof}
 
-\setcounter{problem}{25}
+% 4.25
+\begin{problem}
+求下列线性方程组的最小二乘解。
+\begin{equation*}
+    \begin{cases}
+        x_1+x_2=1  \\
+        2x_1-x_2=2 \\
+        -2x_1+4x_2=7
+    \end{cases}
+\end{equation*}
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 4.26
 \begin{problem}
 设
@@ -796,8 +851,8 @@
               \end{equation*}
               将\(\vecal_1,\vecal_2,\vecal_3\) Schmidt正交化：
               \begin{align*}
-                  \vecq_1 & =\frac{\vecal_1}{\Abs{\vecal_1}}=\frac{1}{\sqrt2}\begin{bmatrix}0&1&1&0&0\end{bmatrix}^\top                                                                                                                     \\
-                  \vecq_2 & =\frac{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}{\Abs{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}}=\frac{1}{\sqrt{10}}\begin{bmatrix}-2&1&-1&2&0\end{bmatrix}^\top                                                          \\
+                  \vecq_1 & =\frac{\vecal_1}{\Abs{\vecal_1}}=\frac{1}{\sqrt2}\begin{bmatrix}0&1&1&0&0\end{bmatrix}^\top                                                                                                                      \\
+                  \vecq_2 & =\frac{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}{\Abs{\vecal_2-\vecq_1\vecq_1^\top\vecal_2}}=\frac{1}{\sqrt{10}}\begin{bmatrix}-2&1&-1&2&0\end{bmatrix}^\top                                                         \\
                   \vecq_3 & =\frac{\vecal_3-\vecq_1\vecq_1^\top\vecal_3-\vecq_2\vecq_2^\top\vecal_3}{\Abs{\vecal_3-\vecq_1\vecq_1^\top\vecal_3-\vecq_2\vecq_2^\top\vecal_3}}=\frac{1}{3\sqrt{35}}\begin{bmatrix}4&-5&0&0&1\end{bmatrix}^\top
               \end{align*}
               \(\vecq_1,\vecq_2,\vecq_3\)构成\(\nullsp{\mata}\)的一组标准正交基。
@@ -853,7 +908,20 @@
     \end{itemize}
 \end{proof}
 
-\setcounter{problem}{30}
+% 4.30
+\begin{problem}
+设\(T\)是线性空间\(\mathrm{K}^{n\times n}\)的如下变换：
+\begin{equation*}
+    T(\mata)=\matc\mata-\mata\matc \mypar{\matc\in\mathrm{K}^{n\times n},\forall\mata\in\mathrm{K}^{n\times n}}
+\end{equation*}
+证明：\(T\)是\(\mathrm{K}^{n\times n}\)的线性变换且
+\begin{equation*}
+    T\mypar{\mata\matb}=T\mypar{\mata}\matb+\mata T\mypar{\matb}
+\end{equation*}
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 4.31
 \begin{problem}
 已知在\(\rea^3\)中，线性变换\(T\)在基
@@ -904,7 +972,13 @@
     \end{equation*}
 \end{proof}
 
-\setcounter{problem}{32}
+% 4.32
+\begin{problem}
+在\(P_n[x]\)中，取基为\(\epsilon_0=1\)，\(\epsilon_1=\mypar{x-a}\)，\(\epsilon_2=\frac{\mypar{x-a}^2}{2!}\)，\dots，\(\epsilon_n=\frac{\mypar{x-a}^n}{n!}\)（其中\(a\)为实数），求线性变换\(D\mypar{f\mypar{x}}=f'\mypar{x}\)在此基下的表示矩阵。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 4.33
 \begin{problem}
 给定\(\rea^3\)的两组基：
@@ -950,4 +1024,22 @@
             1  & \frac{1}{2}  & -\frac{5}{2}
         \end{bmatrix}
     \end{equation*}
+\end{proof}
+
+% 4.34
+\begin{problem}
+在实数域上所有\(2\)阶矩阵所构成的线性空间\(\rea^{2\times2}\)中，定义变换\(T\mypar{\vecal}=\vecgamma\vecal-\vecal\vecgamma\)，其中\(\vecal\)为\(\rea^{2\times2}\)中任意一个元素（矩阵），\(\vecgamma\)为\(\rea^{2\times2}\)中一个固定的元素（矩阵）。
+\begin{enumerate}
+    \item 证明：\(T\)是\(\rea^{2\times2}\)上的一个线性变换；
+    \item 对于\(\rea^{2\times2}\)的一组基
+          \begin{equation*}
+              \vecal_1=\begin{bmatrix}1&0\\0&0\end{bmatrix},
+              \vecal_2=\begin{bmatrix}0&1\\0&0\end{bmatrix},
+              \vecal_3=\begin{bmatrix}0&0\\1&0\end{bmatrix},
+              \vecal_4=\begin{bmatrix}0&0\\0&1\end{bmatrix}
+          \end{equation*}
+          求\(T\)在这组基下的表示矩阵。
+\end{enumerate}
+\end{problem}
+\begin{proof}
 \end{proof}

@@ -4,15 +4,50 @@
 \begin{problem}
 求下列矩阵的特征值和特征向量：
 \begin{enumerate}
-    \item[(2)]{
-                \begin{equation*}
-                    \begin{bmatrix}
-                        -1 & 2  & 2  \\
-                        3  & -1 & 1  \\
-                        2  & 2  & -1
-                    \end{bmatrix}
-                \end{equation*}
-          }
+    \item \begin{equation*}
+              \begin{bmatrix}
+                  2  & -1 & -1 \\
+                  0  & 2  & 0  \\
+                  -4 & 1  & 3
+              \end{bmatrix}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{bmatrix}
+                  -1 & 2  & 2  \\
+                  3  & -1 & 1  \\
+                  2  & 2  & -1
+              \end{bmatrix}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{bmatrix}
+                  1  & -1 & 1  \\
+                  2  & 4  & -2 \\
+                  -3 & -3 & 5
+              \end{bmatrix}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{bmatrix}
+                  3  & -2 & 0  \\
+                  -1 & 3  & -1 \\
+                  -5 & 7  & -1
+              \end{bmatrix}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{bmatrix}
+                  1 & 1  & 1  & 1  \\
+                  1 & 1  & -1 & -1 \\
+                  1 & -1 & 1  & -1 \\
+                  1 & -1 & -1 & 1
+              \end{bmatrix}
+          \end{equation*}
+    \item \begin{equation*}
+              \begin{bmatrix}
+                  1 & 3  & 1 & 2 \\
+                  0 & -1 & 1 & 3 \\
+                  0 & 0  & 2 & 5 \\
+                  0 & 0  & 0 & 2
+              \end{bmatrix}
+          \end{equation*}
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -170,7 +205,13 @@
     由\(\vecal\neq\veczero\)解得\(\lambda=1\)或\(\lambda=2\)。结论成立。
 \end{proof}
 
-\setcounter{problem}{11}
+% 5.11
+\begin{problem}
+已知矩阵\(\mata\)满足\(\mata^2=\mata\)。求证：\(\mata\)的特征值只能是\(0\)或\(1\)。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 5.12
 \begin{problem}
 设非零向量\(\vecal=\myvec{\enums{a}{n}}\)，\(\vecbeta=\myvec{\enums{b}{n}}\)，且\(\vecal^\top\vecbeta=0\)，\(\mata=\vecal\vecbeta^\top\)，求\(\mata\)的特征值和特征向量。
@@ -237,7 +278,25 @@
     所以\(c\)是\(\mata\)的一个特征值，\(\vecone\)是其对应的特征向量。因此有\(\mata^m\vecone=c^m\vecone\)，结论成立。
 \end{proof}
 
-\setcounter{problem}{17}
+% 5.16
+\begin{problem}
+设\(\mata,\matb\)均为\(n\)阶可逆矩阵，且满足\(\mata^2+\mata=\mato\)，\(\matb^2+\matb=\mato\)。
+证明：
+\begin{enumerate}
+    \item \(-1\)是\(\mata,\matb\)的特征值；
+    \item 若\(\mata\matb=\matb\mata=\mato\)，\(\veceta_1,\veceta_2\)分别是\(\mata,\matb\)的对应于\(\lambda=-1\)的特征向量，则\(\veceta_1,\veceta_2\)线性无关。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
+% 5.17
+\begin{problem}
+设向量\(\vecal=\myvec{\enums{a}{n}}\)，\(\vecbeta=\myvec{\enums{b}{n}}\)都是非零向量，且满足\(\vecal^\top\vecbeta=0\)，记\(n\)阶矩阵\(\mata=\vecal\vecbeta^\top\)，求\(\mata\)的特征值和特征向量。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 5.18
 \begin{problem}
 设\(\enums{\vecx}{n}\)是\(\mata\)的属于\(\lambda_0\)的特征向量，试证\(\enums{\vecx}{n}\)的任一非零线性组合也是\(\mata\)的属于\(\lambda_0\)的特征向量。
@@ -266,7 +325,34 @@
     所以\(\vecx_1+\vecx_2\)不可能是\(\mata\)的特征向量。
 \end{proof}
 
-\setcounter{problem}{23}
+% 5.20
+\begin{problem}
+设\(\mata\)为\(n\)阶可逆矩阵，证明其特征值\(\lambda_0\neq0\)，而且\(\inv{\lambda_0}\)是\(\inv{\mata}\)的特征值。
+\end{problem}
+\begin{proof}
+\end{proof}
+
+% 5.21
+\begin{problem}
+证明\(n\)阶方阵\(\mata\)的特征值\(\lambda_0\)的平方是\(\mata^2\)的特征值。
+\end{problem}
+\begin{proof}
+\end{proof}
+
+% 5.22
+\begin{problem}
+设\(\mata\)为\(n\)阶矩阵，证明\(\mata^\top\)与\(\mata\)有相同的特征值。
+\end{problem}
+\begin{proof}
+\end{proof}
+
+% 5.23
+\begin{problem}
+设\(3\)阶矩阵\(\mata\)的特征值为\(-1,1,2\)。求矩阵\(\mata^2+\mata-2\mati\)的特征值。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 5.24
 \begin{problem}
 设\(\mata=\vecu\vecv^\top\)，其中\(\vecu,\vecv\)都是\(n\)元非零列向量，求证：\(\vecu\)是\(\mata\)的特征向量，并求出其对应的特征值。
@@ -395,7 +481,17 @@
     \end{equation*}
 \end{proof}
 
-\setcounter{problem}{29}
+% 5.29
+\begin{problem}
+设\(\mata\)与\(\matb\)相似，其中\(\mata=\begin{bmatrix}-2&0&0\\2&x&2\\3&1&1\end{bmatrix}\)，\(\matb=\begin{bmatrix}-1&0&0\\0&2&0\\0&0&y\end{bmatrix}\)。
+\begin{enumerate}
+    \item 求\(x\)与\(y\)；
+    \item 求可逆矩阵\(\matp\)，使得\(\inv{\matp}\mata\matp=\matb\)。
+\end{enumerate}
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 5.30
 \begin{problem}
 设矩阵\(\mata=\begin{bmatrix}0&0&1\\a&1&b\\1&0&0\end{bmatrix}\)有三个线性无关的特征向量，求\(a,b\)满足的条件，并求可逆矩阵\(\matp\)，使得\(\inv{\matp}\mata\matp\)为对角阵。
@@ -426,7 +522,13 @@
     将\(\lambda_1=\lambda_2=1\)，\(\lambda_3=-1\)代入特征方程组\(\mypar{\lambda\mati-\mata}\vecal=0\)，得到\(\mata\)对应的线性无关的特征向量分别为\(\myvec{0,1,0}\)，\(\myvec{1,0,1}\)和\(\myvec{-1,0,1}\)。所以对应的可逆矩阵\(\matp\)为\(\begin{bmatrix}0&1&-1\\1&0&0\\0&1&1\end{bmatrix}\)。
 \end{proof}
 
-\setcounter{problem}{31}
+% 5.31
+\begin{problem}
+设矩阵\(\mata=\begin{bmatrix}1&-1&1\\x&4&y\\-3&-3&5\end{bmatrix}\)，已知\(\mata\)有三个线性无关的特征向量，\(\lambda=2\)是\(\mata\)的二重特征值，求可逆矩阵\(\matp\)，使得\(\inv{\matp}\mata\matp\)为对角矩阵。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 5.32
 \begin{problem}
 计算\({\begin{bmatrix}1&2&2\\2&1&2\\2&2&1\end{bmatrix}}^{100}\)。
@@ -449,12 +551,29 @@
     \end{align*}
 \end{proof}
 
-\setcounter{problem}{33}
+% 5.33
+\begin{problem}
+设上三角阵
+\begin{equation*}
+    \mata=
+    \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        0      & a_{22} & \cdots & a_{2n} \\
+        \vdots & \vdots &        & \vdots \\
+        0      & 0      & \cdots & a_{nn}
+    \end{bmatrix}
+\end{equation*}
+它们的对角线元素各不相同，证明\(\mata\)可以化为对角阵。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 5.34(2)
 \begin{problem}
 求二次型\(f\)的矩阵：
 \begin{enumerate}
-    \item[(2)] \(f(x_1,x_2,x_3)=\mypar{x_1+x_2}^2+\mypar{x_2-x_3}^2+\mypar{x_3+x_1}^2\)
+    \item \(f\mypar{x_1,x_2,x_3}=2x_1^2-x_2^2+3x_3^2-4x_1x_2+6x_1x_3\)；
+    \item \(f(x_1,x_2,x_3)=\mypar{x_1+x_2}^2+\mypar{x_2-x_3}^2+\mypar{x_3+x_1}^2\)
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -542,7 +661,13 @@
     \end{enumerate}
 \end{proof}
 
-\setcounter{problem}{37}
+% 5.37
+\begin{problem}
+二次型\(f\mypar{x_1,x_2,x_3}=x_2^2+x_3^2+2ax_1x_2+2x_1x_3+2bx_2x_3\)经正交变换\(\vecx=\matq\vecy\)化为标准形\(f\mypar{y_1,y_2,y_3}=y_2^2+2y_3^2\)，求\(a,b\)。
+\end{problem}
+\begin{proof}
+\end{proof}
+
 % 5.38
 \begin{problem}
 已知二次型\(f\mypar{x_1,x_2,x_3}=4x_1^2+4x_2^2+4x_3^2+4x_1x_2+ax_1x_3-4x_2x_3\)的秩为\(2\)，
