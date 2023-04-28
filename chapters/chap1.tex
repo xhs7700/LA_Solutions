@@ -1,60 +1,84 @@
 \section{矩阵}
 
 % 1.1
-\begin{problem}
+\begin{problem}\label{problem-1.1}
 计算下列矩阵的乘积：
 
 \begin{enumerate}
-    \item[(1)] \(\begin{bmatrix}
-            4 & 3 & 1 \\1&-2&3\\5&7&0
-        \end{bmatrix}\begin{bmatrix}
-            7 \\2\\1
-        \end{bmatrix}\)
-    \item[(5)] \(\begin{bmatrix}
-            x_1 & x_2 & x_3
-        \end{bmatrix}
-        \begin{bmatrix}
-            a_{11} & a_{12} & a_{13} \\
-            a_{12} & a_{22} & a_{23} \\
-            a_{13} & a_{23} & a_{33}
-        \end{bmatrix}
-        \begin{bmatrix}
-            x_1 \\x_2\\x_3
-        \end{bmatrix}\)
+    \item \(\begin{bmatrix}
+              4 & 3 & 1 \\1&-2&3\\5&7&0
+          \end{bmatrix}\begin{bmatrix}
+              7 \\2\\1
+          \end{bmatrix}\)；
+    \item \(\begin{bmatrix}1&2&3\end{bmatrix}\begin{bmatrix}3\\2\\1\end{bmatrix}\)；
+    \item \(\begin{bmatrix}2\\1\\3\end{bmatrix}\begin{bmatrix}-1&2\end{bmatrix}\)；
+    \item \(\begin{bmatrix}
+              2 & 1  & 4 & 0 \\
+              1 & -1 & 3 & 4
+          \end{bmatrix}\begin{bmatrix}
+              1 & 3  & 1  \\
+              0 & -1 & 2  \\
+              1 & -3 & 1  \\
+              4 & 0  & -2
+          \end{bmatrix}\)；
+    \item \(\begin{bmatrix}
+              x_1 & x_2 & x_3
+          \end{bmatrix}
+          \begin{bmatrix}
+              a_{11} & a_{12} & a_{13} \\
+              a_{12} & a_{22} & a_{23} \\
+              a_{13} & a_{23} & a_{33}
+          \end{bmatrix}
+          \begin{bmatrix}
+              x_1 \\x_2\\x_3
+          \end{bmatrix}\)。
 \end{enumerate}
 \end{problem}
 \begin{proof}
     \begin{enumerate}
-        \item[(1)] \(\begin{bmatrix}
-                4 & 3 & 1 \\1&-2&3\\5&7&0
-            \end{bmatrix}\begin{bmatrix}
-                7 \\2\\1
-            \end{bmatrix}=\begin{bmatrix}
-                35 \\6\\49
-            \end{bmatrix}\)
-        \item[(5)]
-            \begin{align*}
-                  & \begin{bmatrix}
-                        x_1 & x_2 & x_3
-                    \end{bmatrix}
-                \begin{bmatrix}
-                    a_{11} & a_{12} & a_{13} \\
-                    a_{12} & a_{22} & a_{23} \\
-                    a_{13} & a_{23} & a_{33}
-                \end{bmatrix}
-                \begin{bmatrix}
-                    x_1 \\x_2\\x_3
-                \end{bmatrix}                                                                                    \\
-                = & \begin{bmatrix}\sum_{i=1}^3a_{1i}x_i+\sum_{i=1}^3a_{2i}x_i+\sum_{i=1}^3a_{3i}x_i\end{bmatrix}
-                \begin{bmatrix}x_1 \\x_2 \\x_3\end{bmatrix}                                                       \\
-                = & \sum_{1 \leq i<j \leq 3} 2 a_{i j} x_i x_j+\sum_{k=1}^3 a_{k k} x_k^2
-            \end{align*}
-
+        \item \(\begin{bmatrix}
+                  4 & 3 & 1 \\1&-2&3\\5&7&0
+              \end{bmatrix}\begin{bmatrix}
+                  7 \\2\\1
+              \end{bmatrix}=\begin{bmatrix}
+                  35 \\6\\49
+              \end{bmatrix}\)；
+        \item \(\begin{bmatrix}1&2&3\end{bmatrix}\begin{bmatrix}3\\2\\1\end{bmatrix}=\begin{bmatrix}10\end{bmatrix}\)；
+        \item \(\begin{bmatrix}2\\1\\3\end{bmatrix}\begin{bmatrix}-1&2\end{bmatrix}=\begin{bmatrix}-2&4\\-1&2\\-3&6\end{bmatrix}\)；
+        \item \(\begin{bmatrix}
+                  2 & 1  & 4 & 0 \\
+                  1 & -1 & 3 & 4
+              \end{bmatrix}\begin{bmatrix}
+                  1 & 3  & 1  \\
+                  0 & -1 & 2  \\
+                  1 & -3 & 1  \\
+                  4 & 0  & -2
+              \end{bmatrix}=\begin{bmatrix}
+                  6  & -7 & 8  \\
+                  20 & -5 & -6
+              \end{bmatrix}\)；
+        \item
+              \begin{align*}
+                    & \begin{bmatrix}
+                          x_1 & x_2 & x_3
+                      \end{bmatrix}
+                  \begin{bmatrix}
+                      a_{11} & a_{12} & a_{13} \\
+                      a_{12} & a_{22} & a_{23} \\
+                      a_{13} & a_{23} & a_{33}
+                  \end{bmatrix}
+                  \begin{bmatrix}
+                      x_1 \\x_2\\x_3
+                  \end{bmatrix}                                                                                    \\
+                  = & \begin{bmatrix}\sum_{i=1}^3a_{1i}x_i+\sum_{i=1}^3a_{2i}x_i+\sum_{i=1}^3a_{3i}x_i\end{bmatrix}
+                  \begin{bmatrix}x_1 \\x_2 \\x_3\end{bmatrix}                                                       \\
+                  = & \sum_{1 \leq i<j \leq 3} 2 a_{i j} x_i x_j+\sum_{k=1}^3 a_{k k} x_k^2
+              \end{align*}。
     \end{enumerate}
 \end{proof}
 
 % 1.2
-\begin{problem}
+\begin{problem}\label{problem-1.2}
 设\(\mata=\begin{bmatrix}
     1 & 1  & 1  \\
     1 & 1  & -1 \\
@@ -103,7 +127,7 @@
 \end{proof}
 
 % 1.3
-\begin{problem}
+\begin{problem}\label{problem-1.3}
 设\(\mata=\begin{bmatrix}3&1\\1&-3\end{bmatrix}\)，求\(\mata^{50}\)和\(\mata^{51}\)。
 \end{problem}
 \begin{proof}
@@ -117,7 +141,7 @@
 \end{proof}
 
 % 1.4
-\begin{problem}
+\begin{problem}\label{problem-1.4}
 \begin{enumerate}
     \item 设\(\mata,\matb\)为\(n\)阶矩阵，且\(\mata\)为对称矩阵，证明\(\matb^\top\mata\matb\)也是对称矩阵；
     \item 设\(\mata,\matb\)为\(n\)阶对称矩阵，证明\(\mata\matb\)是对称矩阵的充要条件是\(\mata\matb=\matb\mata\)。
@@ -144,7 +168,7 @@
 \end{proof}
 
 % 1.5
-\begin{problem}
+\begin{problem}\label{problem-1.5}
 证明矩阵\(\mata=\mato\)的充分必要条件是方阵\(\mata^\top\mata=\mato\)。
 \end{problem}
 \begin{proof}
@@ -160,7 +184,7 @@
 \end{proof}
 
 % 1.6
-\begin{problem}
+\begin{problem}\label{problem-1.6}
 设
 
 \begin{equation*}
@@ -192,7 +216,7 @@
 \end{proof}
 
 % 1.7
-\begin{problem}
+\begin{problem}\label{problem-1.7}
 已知\(\begin{bmatrix}a&1&1\\3&0&1\\0&2&-1\end{bmatrix}\begin{bmatrix}3\\a\\-3\end{bmatrix}=\begin{bmatrix}b\\6\\b\end{bmatrix}\)，求\(a\)和\(b\)。
 \end{problem}
 \begin{proof}
@@ -210,7 +234,7 @@
 \end{proof}
 
 % 1.8
-\begin{problem}
+\begin{problem}\label{problem-1.8}
 若\(\mata\)是\(n\)阶方阵且\(\mata^n=\mato\)，试证：
 
 \begin{equation*}
@@ -228,63 +252,94 @@
 \end{proof}
 
 % 1.9
-\begin{problem}
+\begin{problem}\label{problem-1.9}
 计算下列矩阵的\(n\)次方幂：
 
 \begin{enumerate}
-    \item[(3)] 设\(\matc=\begin{bmatrix}1&-1&-1&-1\\-1&1&-1&-1\\-1&-1&1&-1\\-1&-1&-1&1\end{bmatrix}\)，求\(\matc^n\)；
-    \item[(4)] 设\(\matd=\begin{bmatrix}1&1&0\\0&1&1\\0&0&1\end{bmatrix}\)，求\(\matd^n\)。
+    \item 设\(\mata=\vecal^\top\vecbeta\)，其中\(\vecal=\mat{1,2,3}\)，\(\vecbeta=\mat{1,\frac{1}{2},\frac{1}{3}}\)，求\(\mata^n\)；
+    \item 设\(\matb=\begin{bmatrix}1&2&3\\2&4&6\\3&6&9\end{bmatrix}\)，求\(\matb^n\)；
+    \item 设\(\matc=\begin{bmatrix}1&-1&-1&-1\\-1&1&-1&-1\\-1&-1&1&-1\\-1&-1&-1&1\end{bmatrix}\)，求\(\matc^n\)；
+    \item 设\(\matd=\begin{bmatrix}1&1&0\\0&1&1\\0&0&1\end{bmatrix}\)，求\(\matd^n\)。
 \end{enumerate}
 \end{problem}
 \begin{proof}
     \begin{enumerate}
+        \item 当\(n=0\)时，\(\mata^n=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\)；
 
-        \item[(3)]
-            {
-            容易发现
-            \begin{equation*}
-                \matc^2=
-                \begin{bmatrix}
-                    4 & 0 & 0 & 0 \\
-                    0 & 4 & 0 & 0 \\
-                    0 & 0 & 4 & 0 \\
-                    0 & 0 & 0 & 4
-                \end{bmatrix}=4\mati_4
-            \end{equation*}
-            因此根据奇偶性讨论，有
-            \begin{equation*}
-                \matc^n=
-                \begin{cases}
-                    2^{n-1}\matc & n=2k-1 \\
-                    2^n\mati_4   & n=2k
-                \end{cases}
-                (k\in N^+)
-            \end{equation*}
-            }
+              当\(n\ge1\)时，
+              \begin{align*}
+                  \mata^n & =\underbrace{\mypar{\vecal^\top\vecbeta}\mypar{\vecal^\top\vecbeta}\cdots\mypar{\vecal^\top\vecbeta}}_n                        \\
+                          & =\vecal^\top\underbrace{\mypar{\vecbeta\vecal^\top}\mypar{\vecbeta\vecal^\top}\cdots\mypar{\vecbeta\vecal^\top}}_{n-1}\vecbeta \\
+                          & =\mypar{\vecbeta\vecal^\top}^{n-1}\mypar{\vecal^\top\vecbeta}                                                                  \\
+                          & =3^{n-1}\begin{bmatrix}
+                                        1 & \frac{1}{2} & \frac{1}{3} \\
+                                        2 & 1           & \frac{2}{3} \\
+                                        3 & \frac{3}{2} & 1
+                                    \end{bmatrix};
+              \end{align*}
+        \item 注意到\(\matb=\vecbeta\vecbeta^\top\)，其中\(\vecbeta=\myvec{1,2,3}\)。
 
-        \item[(4)]
-            {
-            记\(\matd'=\begin{bmatrix}0&1&0\\0&0&1\\0&0&0\end{bmatrix}\)，容易发现
-            \begin{equation*}
-                \matd'^2=\begin{bmatrix}0&0&1\\0&0&0\\0&0&0\end{bmatrix},\matd'^n=\mato(n\ge3)
-            \end{equation*}
-            因此有
-            \begin{align*}
-                \matd^n & =\mypar{\mati+\matd'}^n                 \\
-                        & =\mati+\sum_{i=1}^n\binom{n}{i}\matd'^i \\
-                        & =\mati+n\matd'+\binom{n}{2}\matd'^2     \\
-                        & =\begin{bmatrix}
-                               1 & n & n(n-1)/2 \\
-                               0 & 1 & n        \\
-                               0 & 0 & 1
-                           \end{bmatrix}
-            \end{align*}
-            }
+              类似地，当\(n=0\)时，\(\matb^n=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}\)；
+
+              当\(n=1\)时，
+              \begin{align*}
+                  \matb^n & =\underbrace{\mypar{\vecbeta\vecbeta^\top}\mypar{\vecbeta\vecbeta^\top}\cdots\mypar{\vecbeta\vecbeta^\top}}_n                          \\
+                          & =\vecbeta\underbrace{\mypar{\vecbeta^\top\vecbeta}\mypar{\vecbeta^\top\vecbeta}\cdots\mypar{\vecbeta^\top\vecbeta}}_{n-1}\vecbeta^\top \\
+                          & =\mypar{\vecbeta^\top\vecbeta}^{n-1}\mypar{\vecbeta\vecbeta^\top}                                                                      \\
+                          & ={14}^{n-1}
+                  \begin{bmatrix}
+                      1 & 2 & 3 \\
+                      2 & 4 & 6 \\
+                      3 & 6 & 9
+                  \end{bmatrix};
+              \end{align*}
+
+        \item
+              {
+              容易发现
+              \begin{equation*}
+                  \matc^2=
+                  \begin{bmatrix}
+                      4 & 0 & 0 & 0 \\
+                      0 & 4 & 0 & 0 \\
+                      0 & 0 & 4 & 0 \\
+                      0 & 0 & 0 & 4
+                  \end{bmatrix}=4\mati_4
+              \end{equation*}
+              因此根据奇偶性讨论，有
+              \begin{equation*}
+                  \matc^n=
+                  \begin{cases}
+                      2^{n-1}\matc & n=2k-1 \\
+                      2^n\mati_4   & n=2k
+                  \end{cases}
+                  (k\in N^+)
+              \end{equation*}
+              }
+
+        \item
+              {
+              记\(\matd'=\begin{bmatrix}0&1&0\\0&0&1\\0&0&0\end{bmatrix}\)，容易发现
+              \begin{equation*}
+                  \matd'^2=\begin{bmatrix}0&0&1\\0&0&0\\0&0&0\end{bmatrix},\matd'^n=\mato(n\ge3)
+              \end{equation*}
+              因此有
+              \begin{align*}
+                  \matd^n & =\mypar{\mati+\matd'}^n                 \\
+                          & =\mati+\sum_{i=1}^n\binom{n}{i}\matd'^i \\
+                          & =\mati+n\matd'+\binom{n}{2}\matd'^2     \\
+                          & =\begin{bmatrix}
+                                 1 & n & n(n-1)/2 \\
+                                 0 & 1 & n        \\
+                                 0 & 0 & 1
+                             \end{bmatrix}
+              \end{align*}
+              }
     \end{enumerate}
 \end{proof}
 
 % 1.10
-\begin{problem}
+\begin{problem}\label{problem-1.10}
 试证：
 \begin{enumerate}
     \item 与所有\(n\)阶对角阵乘法可交换的矩阵也必是\(n\)阶对角阵；
@@ -318,7 +373,7 @@
 \end{proof}
 
 % 1.11
-\begin{problem}
+\begin{problem}\label{problem-1.11}
 证明：两个对角元为\(1\)的上三角阵乘积仍是对角元为\(1\)的上三角阵。
 \end{problem}
 \begin{proof}
@@ -332,7 +387,7 @@
 \end{proof}
 
 % 1.12
-\begin{problem}
+\begin{problem}\label{problem-1.12}
 设\(n\)元向量\(\vecx=\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}\)，\(\vecy=\begin{bmatrix}y_1\\y_2\\\vdots\\y_n\end{bmatrix}\)。若\(\mata=\vecy\vecx^\top\)，求\(\mata^k\mypar{k \in N^+}\)。
 \end{problem}
 \begin{proof}
@@ -364,7 +419,7 @@
 \end{proof}
 
 % 1.13
-\begin{problem}
+\begin{problem}\label{problem-1.13}
 设\(n\mypar{n\ge2}\)元向量\(\vecx=\begin{bmatrix}\frac12\\0\\\vdots\\0\\\frac12\end{bmatrix}\)，\(\mata=\mati_n-\vecx\vecx^\top\)，\(\matb=\mati_n+2\vecx\vecx^\top\)，求\(\mata\matb\)。
 \end{problem}
 \begin{proof}
@@ -383,7 +438,7 @@
 \end{proof}
 
 % 1.14
-\begin{problem}
+\begin{problem}\label{problem-1.14}
 设\(\mata\)是\(m\times n\)矩阵。证明：若对于任何\(n\)元列向量\(\vecx\)成立\(\mata\vecx=\veczero\)，则\(\mata=\mato_{m\times n}\)。
 \end{problem}
 \begin{proof}
@@ -397,7 +452,7 @@
 \end{proof}
 
 % 1.15
-\begin{problem}
+\begin{problem}\label{problem-1.15}
 设\(n\)阶方阵\(\mata,\matb\)满足\(\mata^2=\mata\)，\(\matb^2=\matb\)，且\(\mypar{\mata+\matb}^2=\mata+\matb\)，证明：\(\mata\matb=\mato\)。
 \end{problem}
 \begin{proof}
@@ -418,7 +473,7 @@
 \end{proof}
 
 % 1.16
-\begin{problem}
+\begin{problem}\label{problem-1.16}
 设\(\mata=\begin{bmatrix}1&0&1\\0&2&0\\1&0&1\end{bmatrix}\)，求\(\mata^n-2\mata^{n-1}\mypar{n\ge2}\)。
 \end{problem}
 \begin{proof}
@@ -438,7 +493,7 @@
 \end{proof}
 
 % 1.17
-\begin{problem}
+\begin{problem}\label{problem-1.17}
 设\(n\)阶方阵\(\mata,\matb\)满足\(\mata^2=-\mata\)，\(\matb^2=-\matb\)，且\(\mypar{\mata+\matb}^2=-\mata-\matb\)，证明：\(\mata\matb=\mato\)。
 \end{problem}
 \begin{proof}
@@ -459,7 +514,7 @@
 \end{proof}
 
 % 1.18
-\begin{problem}
+\begin{problem}\label{problem-1.18}
 设\(\mata=\begin{bmatrix}1&1&1\\0&2&0\\1&0&1\end{bmatrix}\)，\(n\)为正整数，求\(\mata^n-2\mata^{n-1}\)。
 \end{problem}
 \begin{proof}
@@ -481,7 +536,7 @@
 \end{proof}
 
 % 1.19
-\begin{problem}
+\begin{problem}\label{problem-1.19}
 设\(\mata=\mati-\vecal\vecal^\top\)，其中\(\vecal\)为非零\(n\times1\)矩阵，试证：\(\mata^2=\mata\)的充要条件是\(\vecal^\top\vecal=1\)。
 \end{problem}
 \begin{proof}
@@ -508,7 +563,7 @@
 \end{proof}
 
 % 1.20
-\begin{problem}
+\begin{problem}\label{problem-1.20}
 设\(n\)维向量\(\vecal=\myvec{a,0,\cdots,0,a}\)，\(a<0\)，\(\mati\)为\(n\)阶单位矩阵，矩阵
 \begin{equation*}
     \mata=\mati-\vecal\vecal^\top,\matb=\mati+\frac{1}{a}\vecal\vecal^\top
@@ -516,19 +571,29 @@
 其中\(\mata\matb=\mati\)，求\(\vecal\)。
 \end{problem}
 \begin{proof}
-
+    因为\(\vecal^\top\vecal=2a^2\)，所以有
+    \begin{align*}
+        \mata\matb & =\mypar{\mati-\vecal\vecal^\top}\mypar{\mati+\frac{1}{a}\vecal\vecal^\top} \\
+                   & =\mati+\mypar{\frac{1}{a}-1-\frac{1}{a}\vecal^\top\vecal}\vecal\vecal^\top \\
+                   & =\mati+\mypar{\frac{1}{a}-1-2a}\vecal\vecal^\top
+    \end{align*}
+    又因为\(\mata\matb=\mati\)且\(a<0\)，所以有\(\frac{1}{a}-1-2a=0\)。解得\(a=-1\)。
 \end{proof}
 
 % 1.21
-\begin{problem}
+\begin{problem}\label{problem-1.21}
 设矩阵\(\mata=\begin{bmatrix}1&1&1\\0&2&0\\1&0&1\end{bmatrix}\)，矩阵\(\matx\)满足\(\mata\matx+\mati=\mata^2+\matx\)，其中\(\mati\)为\(3\)阶单位矩阵，试求出矩阵\(\matx\)。
 \end{problem}
 \begin{proof}
-
+    将上述等式变换后可得
+    \begin{equation*}
+        \mypar{\mata-\mati}\matx=\mypar{\mata^2-\mati}=\mypar{\mata-\mati}\mypar{\mata+\mati}
+    \end{equation*}
+    因为\(\mata-\mati=\begin{bmatrix}0&1&1\\0&1&0\\1&0&0\end{bmatrix}\)可逆，所以\(\matx=\mata+\mati=\begin{bmatrix}2&0&1\\0&3&0\\1&0&2\end{bmatrix}\)。
 \end{proof}
 
 % 1.22
-\begin{problem}
+\begin{problem}\label{problem-1.22}
 计算下列矩阵的\(k\)次幂，其中\(k\)为正整数：
 
 \begin{enumerate}
@@ -565,7 +630,7 @@
 \end{proof}
 
 % 1.23
-\begin{problem}
+\begin{problem}\label{problem-1.23}
 设\(\mata,\matb\)是两个\(n\)阶矩阵，若\(\trace{\mata\matb\matc}=\trace{\matc\matb\mata}\)对任意\(n\)阶矩阵\(\matc\)成立，求证\(\mata\matb=\matb\mata\)。
 \end{problem}
 \begin{proof}
@@ -587,7 +652,7 @@
 \end{proof}
 
 % 1.24
-\begin{problem}
+\begin{problem}\label{problem-1.24}
 设
 
 \begin{equation*}
@@ -640,7 +705,7 @@
 \end{proof}
 
 % 1.25
-\begin{problem}
+\begin{problem}\label{problem-1.25}
 求矩阵\(\mata,\matb\)的秩，其中：
 \begin{equation*}
     \mata=
@@ -648,7 +713,7 @@
         1 & 2 & 3  \\
         2 & 3 & -5 \\
         4 & 7 & 1
-    \end{bmatrix}\\
+    \end{bmatrix},
     \matb=
     \begin{bmatrix}
         3 & 2  & 0  & 5  & 0  \\
@@ -663,7 +728,7 @@
 \end{proof}
 
 % 1.26
-\begin{problem}
+\begin{problem}\label{problem-1.26}
 设
 \begin{equation*}
     \mata=
@@ -680,7 +745,7 @@
 \end{proof}
 
 % 1.27
-\begin{problem}
+\begin{problem}\label{problem-1.27}
 求证：矩阵添加一行（列），其秩不变或者增加\(1\)。
 \end{problem}
 \begin{proof}
@@ -688,7 +753,7 @@
 \end{proof}
 
 % 1.28
-\begin{problem}
+\begin{problem}\label{problem-1.28}
 设\(\mata\)是\(n\)阶方阵，满足\(\mata^2=\mati_n\)，求证：\(\rank{\mata+\mati_n}+\rank{\mata-\mati_n}=n\)。
 \end{problem}
 \begin{proof}
@@ -696,7 +761,7 @@
 \end{proof}
 
 % 1.29
-\begin{problem}
+\begin{problem}\label{problem-1.29}
 设\(\mata\)为\(n\)阶矩阵，则\(\rank{\mata}=1\)的充分必要条件是存在矩阵\(\matb_{n\times1}\)和\(\matc_{1\times n}\)（\(\matb\neq\mato,\matc\neq\mato\)），使得\(\mata=\matb\matc\)。
 \end{problem}
 \begin{proof}
@@ -704,7 +769,7 @@
 \end{proof}
 
 % 1.30
-\begin{problem}
+\begin{problem}\label{problem-1.30}
 设\(\mata\)为\(m\times n\)矩阵，且\(\rank{\mata}=r\)，从\(\mata\)中任取\(s\)行构成一个\(s\times n\)矩阵\(\matb\)，证明：\(\rank{\matb}\ge r+s-m\)。
 \end{problem}
 \begin{proof}
@@ -712,7 +777,7 @@
 \end{proof}
 
 % 1.31
-\begin{problem}
+\begin{problem}\label{problem-1.31}
 设\(n\mypar{n\ge3}\)阶矩阵
 \begin{equation*}
     \mata=
@@ -731,7 +796,7 @@
 \end{proof}
 
 % 1.32
-\begin{problem}
+\begin{problem}\label{problem-1.32}
 用初等行变换将下列矩阵化为阶梯形矩阵：
 \begin{enumerate}
     \item \(\begin{bmatrix}1&2&3&4\\0&-1&0&-2\\1&1&3&2\\2&2&6&4\end{bmatrix}\)；
@@ -743,7 +808,7 @@
 \end{proof}
 
 % 1.33
-\begin{problem}
+\begin{problem}\label{problem-1.33}
 判断下列矩阵是否有相同的最简阶梯型：
 \begin{enumerate}
     \item \(\begin{bmatrix}1&2&3\\2&4&6\\0&1&2\end{bmatrix},\begin{bmatrix}1&-1&5\\0&3&3\\0&2&2\end{bmatrix}\)；
@@ -800,7 +865,7 @@
 \end{proof}
 
 % 附加1.2
-\begin{extraprob}
+\begin{extraprob}\label{extra-1.2}
     证明\(\mata\matb=\sum_{k=1}^l\col{\mata}{k}\row{\matb}{k}\)。
 \end{extraprob}
 \begin{proof}
@@ -843,7 +908,7 @@
 \end{proof}
 
 % 附加1.3
-\begin{extraprob}
+\begin{extraprob}\label{extra-1.3}
     设\(\mata,\matb\)是数域\(P\)上的\(n\)级矩阵，则\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
 
     提示：使用性质\(\col{\mata\matb}{j}=\mata\col{\matb}{j}=\sum_{k=1}^lb_{kj}\col{\mata}{k}\)。
@@ -869,7 +934,7 @@
 \end{proof}
 
 % 附加1.4
-\begin{extraprob}
+\begin{extraprob}\label{extra-1.4}
     证明：
     \begin{enumerate}
         \item \(\matc\mypar{\mata+\matb}=\matc\mata+\matc\matb\)
@@ -922,7 +987,7 @@
 \end{proof}
 
 % 补充1.1
-\begin{suplprob}
+\begin{suplprob}\label{supl-1.1}
     设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata\matb=\mata+\matb\)。证明：
     \begin{enumerate}
         \item \(\mata-\mati\)可逆；
@@ -945,7 +1010,7 @@
 \end{proof}
 
 % 补充1.2
-\begin{suplprob}
+\begin{suplprob}\label{supl-1.2}
     设\(\mata,\matb\)为\(n\)阶方阵，\(\mata\)对称且可逆，且\(\mypar{\mata-\matb}^2=\mati\)。化简：
     \begin{equation*}
         \mypar{\mati+\inv{\mata}\matb^\top}^\top\inv{\mypar{\mati-\matb\inv{\mata}}}
