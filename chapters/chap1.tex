@@ -956,7 +956,7 @@
           & \mypar{\mati+\inv{\mata}\matb^\top}^\top\inv{\mypar{\mati-\matb\inv{\mata}}}          \\
         = & \mypar{\mati+\matb\inv{\mata}}\inv{\mypar{\mata\inv{\mata}-\matb\inv{\mata}}}         \\
         = & \mypar{\mata\inv{\mata}+\matb\inv{\mata}}\inv{\mypar{\mypar{\mata-\matb}\inv{\mata}}} \\
-        = & \mypar{\mypar{\mata+\matb}\inv{\mata}}\mata\inv{\mypar{\mata-\matb}}                  \\
+        = & \mypar{\mypar{\mata+\matb}\inv{\mata}}\mata\pinv{\mata-\matb}                         \\
         = & \mypar{\mata+\matb}\mypar{\mata-\matb}
     \end{align*}
 \end{proof}

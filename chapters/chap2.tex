@@ -648,11 +648,11 @@
 \begin{enumerate}
     \item 设\(\mata\)为方阵，正整数\(k>1\)，\(\mata^k=\mato\)，证明：
           \begin{equation*}
-              \inv{\mypar{\mati-\mata}}=\mati+\mata+\mata^2+\cdots+\mata^{k-1}
+              \pinv{\mati-\mata}=\mati+\mata+\mata^2+\cdots+\mata^{k-1}
           \end{equation*}
     \item 设\(\matj_n\)为所有元素全为\(1\)的\(n\)阶矩阵，证明：
           \begin{equation*}
-              \inv{\mypar{\mati-\matj_n}}=\mati-\frac{1}{n-1}\matj_n
+              \pinv{\mati-\matj_n}=\mati-\frac{1}{n-1}\matj_n
           \end{equation*}
 \end{enumerate}
 \end{problem}
@@ -678,7 +678,7 @@
 
 % 2.45
 \begin{problem}
-设\(\mata\)为方阵，又\(\mata+\mati\)可逆，\(f\mypar{\mata}=\mypar{\mati-\mata}\inv{\mypar{\mati+\mata}}\)。证明：
+设\(\mata\)为方阵，又\(\mata+\mati\)可逆，\(f\mypar{\mata}=\mypar{\mati-\mata}\pinv{\mati+\mata}\)。证明：
 \begin{enumerate}
     \item \(\mypar{\mati+f\mypar{\mata}}\mypar{\mati+\mata}=2\mati\)；
     \item \(f\mypar{f\mypar{\mata}}=\mata\)。
@@ -702,7 +702,7 @@
     \item 设\(\mata\)为\(n\)阶方阵，满足\(\mata^3+2\mata^2-2\mata-\mati_n=\mato\)，证明：\(\mata+\mati_n\)是可逆矩阵，并求其逆矩阵；
     \item
           {
-          设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata-\mati_n\)和\(\matb\)可逆。证明：若\(\inv{\mypar{\mata-\mati_n}}=\mypar{\matb-\mati_n}^\top\)，则\(\mata\)可逆；
+          设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata-\mati_n\)和\(\matb\)可逆。证明：若\(\pinv{\mata-\mati_n}=\mypar{\matb-\mati_n}^\top\)，则\(\mata\)可逆；
           }
     \item 设\(n\)阶方阵\(\mata\)满足\(\mata^2+\mata-6\mati_n=\mato\)，证明：\(\mata\mata+\mati_n\)和\(\mata+4\mati_n\)都可逆，并求它们的逆矩阵。
 \end{enumerate}
@@ -746,7 +746,7 @@
 
 % 2.50
 \begin{problem}
-设\(\matp\)是\(m\times n\)矩阵，且\(\matp\matp^\top\)可逆。记\(\mata=\mati_n-\matp^\top\inv{\mypar{\matp\matp^\top}}\matp\)，证明：\(\mata\)是对称矩阵，且\(\mata^2=\mata\)。
+设\(\matp\)是\(m\times n\)矩阵，且\(\matp\matp^\top\)可逆。记\(\mata=\mati_n-\matp^\top\pinv{\matp\matp^\top}\matp\)，证明：\(\mata\)是对称矩阵，且\(\mata^2=\mata\)。
 \end{problem}
 \begin{proof}
 
