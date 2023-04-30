@@ -1,7 +1,7 @@
 \section{线性方程组}
 
 % 2.1
-\begin{problem}
+\begin{problem}\label{problem-2.1}
 设\(\mata\)为\(m\times n\)矩阵，判断下列命题是否正确。
 \begin{enumerate}
     \item 非齐次线性方程组\(\mata\vecx=\vecb\)，当\(m<n\)时，有无穷多解；当\(m=n\)时，有唯一解；当\(m>n\)时，无解；
@@ -14,7 +14,7 @@
 \end{proof}
 
 % 2.2
-\begin{problem}
+\begin{problem}\label{problem-2.2}
 解下列线性方程组：
 \begin{enumerate}
     \item \begin{equation*}
@@ -58,7 +58,7 @@
 \end{proof}
 
 % 2.3
-\begin{problem}
+\begin{problem}\label{problem-2.3}
 求线性方程组
 \begin{equation*}
     \begin{cases}
@@ -75,7 +75,7 @@
 \end{proof}
 
 % 2.4
-\begin{problem}
+\begin{problem}\label{problem-2.4}
 讨论下列线性方程组，当\(\lambda\)取什么值时方程组有唯一解？取什么值时有无穷多解？取什么值时无解？
 \begin{enumerate}
     \item \begin{equation*}
@@ -89,7 +89,7 @@
           {
           \begin{equation*}
               \begin{cases}
-                  x_1+x_2+\lambda x_3=2 \\
+                  x_1+2x_2+\lambda x_3=1 \\
                   2x_1+\lambda x_2+8x_3=\lambda
               \end{cases}
           \end{equation*}
@@ -104,11 +104,27 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{enumerate}
+        \item[(2)] 对增广矩阵进行初等行变换：
+            \begin{equation*}
+                \mat{\mata,\vecb}=
+                \begin{bmatrix}
+                    1 & 2       & \lambda & 1       \\
+                    2 & \lambda & 8       & \lambda
+                \end{bmatrix}\xrightarrow{R_2-2R_1}
+                \begin{bmatrix}
+                    1 & 2         & \lambda    & 1         \\
+                    0 & \lambda-4 & 8-2\lambda & \lambda-2
+                \end{bmatrix}
+            \end{equation*}
+            当\(\lambda=4\)时，\(\lambda-4=0\)。此时\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
 
+            当\(\lambda\neq4\)时，\(\lambda-4\neq0\)。此时\(\rank{\mat{\mata,\vecb}}=\rank{\mata}<4\)，方程组有无穷多解。
+    \end{enumerate}
 \end{proof}
 
 % 2.5
-\begin{problem}
+\begin{problem}\label{problem-2.5}
 讨论\(a,b\)为何值时，线性方程组
 \begin{equation*}
     \begin{cases}
@@ -118,13 +134,47 @@
         x_1-3x_2+\mypar{3-a}x_3=-4 \\
     \end{cases}
 \end{equation*}
+有解或无解。若有解，求出其解。
 \end{problem}
 \begin{proof}
+    对增广矩阵进行初等行变换：
+    \begin{align*}
+        \mat{\mata,\vecb}=
+         & \begin{bmatrix}
+               1 & -1 & 2   & 0  & 1  \\
+               2 & -1 & 3   & -1 & 4  \\
+               0 & 1  & a   & b  & b  \\
+               1 & -3 & 3-a & 0  & -4
+           \end{bmatrix}\xrightarrow[R_4-R_1]{R_2-2R_1}
+         & \begin{bmatrix}
+               1 & -1 & 2   & 0  & 1  \\
+               0 & 1  & -1  & -1 & -2 \\
+               0 & 1  & a   & b  & b  \\
+               0 & -2 & 1-a & 0  & -5
+           \end{bmatrix}                       \\
+        \xrightarrow[R_4+2R_2]{R_3-R_2}
+         & \begin{bmatrix}
+               1 & -1 & 2    & 0   & 1   \\
+               0 & 1  & -1   & -1  & -2  \\
+               0 & 0  & a+1  & b+1 & b+2 \\
+               0 & 0  & -a-1 & -2  & -9
+           \end{bmatrix}\xrightarrow{R_4+R_3}
+         & \begin{bmatrix}
+               1 & -1 & 2   & 0   & 1   \\
+               0 & 1  & -1  & -1  & -2  \\
+               0 & 0  & a+1 & b+1 & b+2 \\
+               0 & 0  & 0   & b-1 & b-7
+           \end{bmatrix}
+    \end{align*}
+    当\(b=1\)时，\(b-1=0\)。此时\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
 
+    当\(b\neq1\)时，\(b-1\neq0\)。此时\(\rank{\mat{\mata,\vecb}}=\rank{\mata}=4\)，方程组有唯一解。
+
+    \todo{求出解}
 \end{proof}
 
 % 2.6
-\begin{problem}
+\begin{problem}\label{problem-2.6}
 设\(x_1-x_2=a_1\)，\(x_2-x_3=a_2\)，\(x_3-x_4=a_3\)，\(x_4-x_5=a_4\)，\(x_5-x_1=a_5\)。证明：这个方程组有解的充分必要条件为
 \begin{equation*}
     \sum_{i=1}^5a_i=0
@@ -132,11 +182,33 @@
 并在有解的情况下求出它的一般解。
 \end{problem}
 \begin{proof}
-
+    对增广矩阵进行初等行变换：
+    \begin{align*}
+        \mat{\mata,\vecb}=
+         & \begin{bmatrix}
+               1  & -1 & 0  & 0  & 0  & a_1 \\
+               0  & 1  & -1 & 0  & 0  & a_2 \\
+               0  & 0  & 1  & -1 & 0  & a_3 \\
+               0  & 0  & 0  & 1  & -1 & a_4 \\
+               -1 & 0  & 0  & 0  & 1  & a_5
+           \end{bmatrix}            \\
+        \longrightarrow
+         & \begin{bmatrix}
+               1 & -1 & 0  & 0  & 0  & a_1             \\
+               0 & 1  & -1 & 0  & 0  & a_2             \\
+               0 & 0  & 1  & -1 & 0  & a_3             \\
+               0 & 0  & 0  & 1  & -1 & a_4             \\
+               0 & 0  & 0  & 0  & 0  & \sum_{i=1}^5a_i
+           \end{bmatrix}
+    \end{align*}
+    因此
+    \begin{equation*}
+        \text{方程组有解}\iff \rank{\mat{\mata,\vecb}}=\rank{\mata}\iff \sum_{i=1}^5a_i=0\text{。}
+    \end{equation*}
 \end{proof}
 
 % 2.7
-\begin{problem}
+\begin{problem}\label{problem-2.7}
 已知平面上三条不同直线的方程分别为：
 \begin{align*}
     l_1: & ax+2by+3c=0 \\
@@ -146,11 +218,20 @@
 试证这三条直线交于一点的充要条件是\(a+b+c=0\)。
 \end{problem}
 \begin{proof}
-
+    三条直线交于一点等价于方程组
+    \begin{equation*}
+        \begin{cases}
+            ax+2by+3c=0 \\
+            bx+2cy+3a=0 \\
+            cx+2ay+3b=0
+        \end{cases}
+    \end{equation*}
+    有唯一解。
+    \todo{继续分析，学舍证明存在问题}
 \end{proof}
 
 % 2.8
-\begin{problem}
+\begin{problem}\label{problem-2.8}
 设有\(n\)元齐次线性方程组（\(n\ge2\)）
 \begin{equation*}
     \begin{cases}
@@ -167,7 +248,7 @@
 \end{proof}
 
 % 2.9
-\begin{problem}
+\begin{problem}\label{problem-2.9}
 已知非齐次线性方程组
 \begin{equation*}
     x_1+x_2+x_3+x_4=-1\\
@@ -185,7 +266,7 @@
 \end{proof}
 
 % 2.10
-\begin{problem}
+\begin{problem}\label{problem-2.10}
 设线性方程组
 \begin{equation*}
     \begin{cases}
@@ -201,7 +282,7 @@
 \end{proof}
 
 % 2.11
-\begin{problem}
+\begin{problem}\label{problem-2.11}
 设线性方程组\(\mata\vecx=\vecb\)存在两个不同的解，其中
 \begin{equation*}
     \mata=
@@ -225,7 +306,7 @@
 \end{proof}
 
 % 2.12
-\begin{problem}
+\begin{problem}\label{problem-2.12}
 设
 \begin{equation*}
     \mata=
@@ -247,7 +328,7 @@
 \end{proof}
 
 % 2.13
-\begin{problem}
+\begin{problem}\label{problem-2.13}
 已知\(4\)阶矩阵\(\mata=\mat{\vecal_1,\vecal_2,\vecal_3,\vecal_4}\)，\(\vecal_1,\vecal_2,\vecal_3,\vecal_4\)均为\(4\)元列向量，其中\(\vecal_2,\vecal_3,\vecal_4\)线性无关，\(\vecal_1=2\vecal_2-\vecal_3\)，若\(\vecbeta=\vecal_1+\vecal_2+\vecal_3+\vecal_4\)，求线性方程组\(\mata\vecx=\vecbeta\)的通解。
 \end{problem}
 \begin{proof}
@@ -255,7 +336,7 @@
 \end{proof}
 
 % 2.14
-\begin{problem}
+\begin{problem}\label{problem-2.14}
 已知\(3\)阶矩阵\(\mata\)的第一行是\(\mat{a,b,c}\)，\(a,b,c\)不全为零，
 \begin{equation*}
     \matb=
@@ -272,7 +353,7 @@
 \end{proof}
 
 % 2.15
-\begin{problem}
+\begin{problem}\label{problem-2.15}
 设\(\vecal,\vecbeta\)为三维列向量，矩阵\(\mata=\vecal\vecal^\top+\vecbeta\vecbeta^\top\)，证明：
 \begin{enumerate}
     \item 秩\(\rank{\mata}\le2\)；
@@ -284,7 +365,7 @@
 \end{proof}
 
 % 2.16
-\begin{problem}
+\begin{problem}\label{problem-2.16}
 设
 \begin{equation*}
     \mata=
@@ -305,7 +386,7 @@
 \end{proof}
 
 % 2.17
-\begin{problem}
+\begin{problem}\label{problem-2.17}
 设向量组\(\vecal_1=\myvec{1,0,1}\)，\(\vecal_2=\myvec{0,1,1}\)，\(\vecal_3=\myvec{1,3,5}\)不能由向量组\(\vecbeta_1=\myvec{1,1,1}\)，\(\vecbeta_2=\myvec{1,2,3}\)，\(\vecbeta_3=\myvec{3,4,a}\)线性表出，
 \begin{enumerate}
     \item 求\(a\)的值；
@@ -317,7 +398,7 @@
 \end{proof}
 
 % 2.18
-\begin{problem}
+\begin{problem}\label{problem-2.18}
 设矩阵
 \begin{equation*}
     \mata=
@@ -337,7 +418,7 @@
 \end{proof}
 
 % 2.19
-\begin{problem}
+\begin{problem}\label{problem-2.19}
 \begin{enumerate}
     \item 设\(\mata\)是\(2\)阶方阵，求满足\(\mata^2=\mato\)的所有矩阵\(\mata\)；
     \item 证明：若\(\mata^2=\mato\)，且\(\mata=\mata^\top\)，则\(\mata=\mato\)。
@@ -348,7 +429,7 @@
 \end{proof}
 
 % 2.20
-\begin{problem}
+\begin{problem}\label{problem-2.20}
 设
 \begin{equation*}
     \mata=
@@ -365,7 +446,7 @@
 \end{proof}
 
 % 2.21
-\begin{problem}
+\begin{problem}\label{problem-2.21}
 设\(\mata\)是\(s\times n\)矩阵，\(\matb\)是\(n\times m\)矩阵，\(n<m\)，证明：齐次线性方程组\(\mypar{\mata\matb}\vecx=\veczero\)有非零解。
 \end{problem}
 \begin{proof}
@@ -373,7 +454,7 @@
 \end{proof}
 
 % 2.22
-\begin{problem}
+\begin{problem}\label{problem-2.22}
 设\(\mata\)是\(m\times s\)矩阵，\(\matb\)是\(s\times n\)矩阵，\(\vecx\)是\(n\)元列向量。证明：若\(\mypar{\mata\matb}\vecx=\veczero\)与\(\matb\vecx=\veczero\)是同解方程组，则\(\rank{\mata\matb}=\rank{\matb}\)。
 \end{problem}
 \begin{proof}
@@ -381,7 +462,7 @@
 \end{proof}
 
 % 2.23
-\begin{problem}
+\begin{problem}\label{problem-2.23}
 试将向量\(\vecbeta\)表示成向量组\(\vecal_1,\vecal_2,\vecal_3\)的线性组合：
 \begin{enumerate}
     \item \(\vecbeta=\myvec{3,4,1}\)，\(\vecal_1=\myvec{1,-1,1}\)，\(\vecal_2=\myvec{2,2,0}\)，\(\vecal_3=\myvec{1,1,1}\)；
@@ -394,7 +475,7 @@
 \end{proof}
 
 % 2.24
-\begin{problem}
+\begin{problem}\label{problem-2.24}
 问\(y\)为何值时，向量\(\vecbeta=\myvec{4,6,y,-2}\)可以由向量组\(\vecal_1=\myvec{2,3,1,-2}\)，\(\vecal_2=\myvec{3,-2,-5,3}\)，\(\vecal_3=\myvec{-3,2,2,-1}\)线性表出。
 \end{problem}
 \begin{proof}
@@ -402,7 +483,7 @@
 \end{proof}
 
 % 2.25
-\begin{problem}
+\begin{problem}\label{problem-2.25}
 判断下列向量组的线性相关性：
 \begin{enumerate}
     \item \(\vecal_1=\myvec{2,2,7,-1}\)，\(\vecal_2=\myvec{3,-1,2,4}\)，\(\vecal_3=\myvec{1,1,3,1}\)；
@@ -415,7 +496,7 @@
 \end{proof}
 
 % 2.26
-\begin{problem}
+\begin{problem}\label{problem-2.26}
 求下列向量组的秩和极大线性无关组：
 \begin{enumerate}
     \item \(\vecal_1=\myvec{2,1,0}\)，\(\vecal_2=\myvec{3,1,1}\)，\(\vecal_3=\myvec{2,0,2}\)，\(\vecal_4=\myvec{4,2,0}\)；
@@ -428,7 +509,7 @@
 \end{proof}
 
 % 2.27
-\begin{problem}
+\begin{problem}\label{problem-2.27}
 已知向量组\(\vecal_1=\myvec{1,-1,2,1,0}\)，\(\vecal_2=\myvec{2,-2,4,-2,0}\)，\(\vecal_3=\myvec{3,0,6,-1,1}\)，\(\vecal_4=\myvec{0,x,0,0,1}\)有\(4\)个不同极大无关组，求\(x\)的值。
 \end{problem}
 \begin{proof}
@@ -436,19 +517,24 @@
 \end{proof}
 
 % 2.28(1)
-\begin{problem}
+\begin{problem}\label{problem-2.28}
 求下列齐次线性方程组的一个基础解系：
 \begin{enumerate}
-    \item
-          {
-          \begin{equation*}
+    \item \begin{equation*}
               \begin{cases}
                   x_1-2x_2+4x_3-7x_4=0 \\
                   2x_1+x_2-2x_3+x_4=0  \\
                   3x_1-x_2+2x_3-4x_4=0 \\
               \end{cases}
           \end{equation*}
-          }
+    \item \begin{equation*}
+              \begin{cases}
+                  2x_1+x_2-x_3-x_4+x_5=0     \\
+                  x_1-x_2+x_3+x_4-2x_5=0     \\
+                  3x_1+3x_2-3x_3-3x_4+4x_5=0 \\
+                  4x_1+5x_2-5x_3-5x_4+7x_5=0
+              \end{cases}
+          \end{equation*}
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -456,7 +542,7 @@
 \end{proof}
 
 % 2.29
-\begin{problem}
+\begin{problem}\label{problem-2.29}
 求下列线性方程组的通解，并表示成列向量线性组合的形式：
 \begin{enumerate}
     \item
@@ -485,7 +571,7 @@
 \end{proof}
 
 % 2.30
-\begin{problem}
+\begin{problem}\label{problem-2.30}
 已知：向量组I可用向量组II线性表出，向量组II可用向量组III线性表出。求证：向量组I可用向量组III线性表出。
 \end{problem}
 \begin{proof}
@@ -493,7 +579,7 @@
 \end{proof}
 
 % 2.31
-\begin{problem}
+\begin{problem}\label{problem-2.31}
 设向量组\(\enums{\vecal}{n}\)线性无关。证明：当且仅当\(n\)为奇数时，向量组\(\vecal_1+\vecal_2\)，\(\vecal_2+\vecal_3\)，\(\cdots\)，\(\vecal_{n-1}+\vecal_n\)，\(\vecal_n+\vecal_1\)也线性无关。
 \end{problem}
 \begin{proof}
@@ -501,7 +587,7 @@
 \end{proof}
 
 % 2.32
-\begin{problem}
+\begin{problem}\label{problem-2.32}
 设向量组\(\enums{\vecal}{n}\)线性无关，而向量组\(\enums{\vecal}{n},\vecbeta,\vecgamma\)线性相关。证明：或者\(\vecbeta\)与\(\vecgamma\)中至少有一个可由\(\enums{\vecal}{n}\)线性表出，或者向量组\(\enums{\vecal}{n},\vecbeta\)与向量组\(\enums{\vecal}{n},\vecgamma\)可相互线性表出。
 \end{problem}
 \begin{proof}
@@ -509,7 +595,7 @@
 \end{proof}
 
 % 2.33
-\begin{problem}
+\begin{problem}\label{problem-2.33}
 设\(\vecbeta_1=\vecal_2+\vecal_3+\cdots+\vecal_{n}\)，\(\vecbeta_2=\vecal_1+\vecal_3+\cdots+\vecal_{n}\)，\(\cdots\)，\(\vecbeta_n=\vecal_1+\vecal_2+\cdots+\vecal_{n-1}\)，其中\(m>1\)。证明：向量组\(\enums{\vecal}{n}\)与向量组\(\enums{\vecbeta}{n}\)可相互线性表出。
 \end{problem}
 \begin{proof}
@@ -517,7 +603,7 @@
 \end{proof}
 
 % 2.34
-\begin{problem}
+\begin{problem}\label{problem-2.34}
 设向量组\(\enums{\vecal}{n}\)与\(\enums{\vecbeta}{n}\)满足：
 \begin{equation*}
     \vecal_i=\begin{bmatrix}x_{1i}\\x_{2i}\\\vdots\\x_{ri}\end{bmatrix},
@@ -531,7 +617,7 @@
 \end{proof}
 
 % 2.35
-\begin{problem}
+\begin{problem}\label{problem-2.35}
 给定\(n\)个非零的数\(\enums{a}{n}\)，求下面向量组的秩：
 \begin{align*}
     \veceta_1 & =\mat{1+a_1,1,\cdots,1} \\
@@ -545,7 +631,7 @@
 \end{proof}
 
 % 2.36
-\begin{problem}
+\begin{problem}\label{problem-2.36}
 设\(\mata,\matb\)分别是\(m\times n\)和\(n\times s\)的矩阵，且\(\mata\matb=\mato\)。证明：\(\rank{\mata}+\rank{\matb}\le n\)。
 \end{problem}
 \begin{proof}
@@ -553,7 +639,7 @@
 \end{proof}
 
 % 2.37
-\begin{problem}
+\begin{problem}\label{problem-2.37}
 设\(\enums{\veceta}{t}\)是某一非齐次线性方程组的解。证明：\(\mu_1\veceta_1+\mu_2\veceta_2+\cdots+\mu_t\veceta_t\)也是该非齐次线性方程组的解的充要条件是\(\mu_1+\mu_2+\cdots+\mu_t=1\)。
 \end{problem}
 \begin{proof}
@@ -561,7 +647,7 @@
 \end{proof}
 
 % 2.38
-\begin{problem}
+\begin{problem}\label{problem-2.38}
 证明：方程组
 \begin{equation*}
     \begin{cases}
@@ -581,7 +667,7 @@
 \end{proof}
 
 % 2.39
-\begin{problem}
+\begin{problem}\label{problem-2.39}
 求下列矩阵的逆矩阵：
 \begin{enumerate}
     \item \(\begin{bmatrix}
@@ -616,7 +702,7 @@
 \end{proof}
 
 % 2.40
-\begin{problem}
+\begin{problem}\label{problem-2.40}
 解下列矩阵方程：
 \begin{enumerate}
     \item \(\begin{bmatrix}1&1&1\\0&1&1\\0&0&1\end{bmatrix}\matx=\begin{bmatrix}5&6\\3&4\\1&2\end{bmatrix}\)；
@@ -636,7 +722,7 @@
 \end{proof}
 
 % 2.41
-\begin{problem}
+\begin{problem}\label{problem-2.41}
 设\(\mata,\matb,\matc\)均为\(n\)阶方阵，若\(\mata\matb\matc=\mati\)，则下列乘积：\(\mata\matc\matb\)，\(\matb\mata\matc\)，\(\matb\matc\mata\)，\(\matc\mata\matb\)，\(\matc\matb\mata\)中哪些必等于单位阵\(\mati\)。
 \end{problem}
 \begin{proof}
@@ -644,7 +730,7 @@
 \end{proof}
 
 % 2.42
-\begin{problem}
+\begin{problem}\label{problem-2.42}
 \begin{enumerate}
     \item 设\(\mata\)为方阵，正整数\(k>1\)，\(\mata^k=\mato\)，证明：
           \begin{equation*}
@@ -661,7 +747,7 @@
 \end{proof}
 
 % 2.43
-\begin{problem}
+\begin{problem}\label{problem-2.43}
 设\(\mata=\begin{bmatrix}\mato&\matb\\\matc&\mato\end{bmatrix}\)，其中\(\matb\)是\(n\)阶可逆矩阵，\(\matc\)是\(m\)阶可逆矩阵。证明：\(\mata\)可逆，并求出\(\inv{\mata}\)。
 \end{problem}
 \begin{proof}
@@ -669,7 +755,7 @@
 \end{proof}
 
 % 2.44
-\begin{problem}
+\begin{problem}\label{problem-2.44}
 设\(n\)阶可逆矩阵\(\mata\)每行元素之和都等于常数\(c\)。证明：\(c\neq0\)，且\(\inv{\mata}\)中每行元素之和都等于\(\inv{c}\)。
 \end{problem}
 \begin{proof}
@@ -677,7 +763,7 @@
 \end{proof}
 
 % 2.45
-\begin{problem}
+\begin{problem}\label{problem-2.45}
 设\(\mata\)为方阵，又\(\mata+\mati\)可逆，\(f\mypar{\mata}=\mypar{\mati-\mata}\pinv{\mati+\mata}\)。证明：
 \begin{enumerate}
     \item \(\mypar{\mati+f\mypar{\mata}}\mypar{\mati+\mata}=2\mati\)；
@@ -689,7 +775,7 @@
 \end{proof}
 
 % 2.46
-\begin{problem}
+\begin{problem}\label{problem-2.46}
 设\(\mata,\matb\)均为\(n\)阶可逆矩阵。证明：如果\(\mata+\matb\)可逆，则\(\inv{\mata}+\inv{\matb}\)也可逆，并求其逆矩阵。
 \end{problem}
 \begin{proof}
@@ -697,7 +783,7 @@
 \end{proof}
 
 % 2.47
-\begin{problem}
+\begin{problem}\label{problem-2.47}
 \begin{enumerate}
     \item 设\(\mata\)为\(n\)阶方阵，满足\(\mata^3+2\mata^2-2\mata-\mati_n=\mato\)，证明：\(\mata+\mati_n\)是可逆矩阵，并求其逆矩阵；
     \item
@@ -712,7 +798,7 @@
 \end{proof}
 
 % 2.48
-\begin{problem}
+\begin{problem}\label{problem-2.48}
 已知\(\mata,\matb\)为\(3\)阶方阵，且满足\(2\inv{\mata}\matb=\matb-4\mati\)。
 \begin{enumerate}
     \item 矩阵\(\mata-2\mati\)可逆；
@@ -733,7 +819,7 @@
 \end{proof}
 
 % 2.49
-\begin{problem}
+\begin{problem}\label{problem-2.49}
 设\(\vecal\)是\(n\)维非零列向量，记\(\mata=\mati_n-\vecal\vecal^\top\)。证明：
 \begin{enumerate}
     \item \(\mata^2=\mata\)的充分必要条件是\(\vecal\vecal^\top=1\)；
@@ -745,7 +831,7 @@
 \end{proof}
 
 % 2.50
-\begin{problem}
+\begin{problem}\label{problem-2.50}
 设\(\matp\)是\(m\times n\)矩阵，且\(\matp\matp^\top\)可逆。记\(\mata=\mati_n-\matp^\top\pinv{\matp\matp^\top}\matp\)，证明：\(\mata\)是对称矩阵，且\(\mata^2=\mata\)。
 \end{problem}
 \begin{proof}
@@ -753,7 +839,7 @@
 \end{proof}
 
 % 2.51
-\begin{problem}
+\begin{problem}\label{problem-2.51}
 证明下列矩阵是正交阵：
 \begin{enumerate}
     \item \(\begin{bmatrix}
@@ -774,7 +860,7 @@
 \end{proof}
 
 % 2.52
-\begin{problem}
+\begin{problem}\label{problem-2.52}
 设\(\mata\)为\(n\)阶对角阵，且为正交矩阵，求\(\mata\)。
 \end{problem}
 \begin{proof}
