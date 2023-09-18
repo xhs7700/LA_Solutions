@@ -17,7 +17,7 @@
 
 % \usefonttheme[onlymath]{serif}
 
-\input{../docs/headers.tex}
+\input{../headers.tex}
 
 \author{夏海淞}
 \title{线性代数习题课}
@@ -61,7 +61,7 @@
 \subsection*{4.1}
 \begin{frame}
     \frametitle{题面}
-    在次数不大于\(2\)的多项式线性空间\(P_2[x]\)中，试证：\(f_1=1\)，\(f_2=x-1\)，\(f_3=\mypar{x-2}\mypar{x-1}\)线性无关。
+    在次数不大于\(2\)的多项式线性空间\(P_2[x]\)中，试证：\(f_1=1\)，\(f_2=x-1\)，\(f_3=\spar{x-2}\spar{x-1}\)线性无关。
 \end{frame}
 
 \begin{frame}
@@ -93,7 +93,7 @@
     \frametitle{题面}
     证明：以下三个多项式为\(P_2[x]\)的一组基：
     \begin{equation*}
-        f_1=1,f_2=x-1,f_3=\mypar{x-1}^2
+        f_1=1,f_2=x-1,f_3=\spar{x-1}^2
     \end{equation*}
     再求\(g(x)=5x^2+x+3\)在此基下的坐标。
 \end{frame}
@@ -134,12 +134,12 @@
         \end{bmatrix}\inv{\mata}\vecx
     \end{equation*}
     因此\(P_2[x]\)中的任意向量可由\(\vecf_1,\vecf_2,\vecf_3\)线性表出。
-    将\(g\mypar{x}\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)下的坐标代入即可得到\(g\mypar{x}\)在基\(\vecf_1,\vecf_2,\vecf_3\)下的坐标：
+    将\(g\spar{x}\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)下的坐标代入即可得到\(g\spar{x}\)在基\(\vecf_1,\vecf_2,\vecf_3\)下的坐标：
     \begin{equation*}
         \inv{\mata}\begin{bmatrix}3&1&5\end{bmatrix}^\top=\begin{bmatrix}9&11&5\end{bmatrix}^\top
     \end{equation*}
 
-    综上，\(\vecf_1,\vecf_2,\vecf_3\)为\(P_2[x]\)的一组基，\(g\mypar{x}\)在此基下的坐标为\(\myvec{9,11,5}\)。
+    综上，\(\vecf_1,\vecf_2,\vecf_3\)为\(P_2[x]\)的一组基，\(g\spar{x}\)在此基下的坐标为\(\myvec{9,11,5}\)。
 \end{frame}
 
 \subsection*{4.3}
@@ -147,8 +147,8 @@
     \frametitle{题面}
     在次数不大于\(3\)的多项式空间\(P_3[x]\)中，
     \begin{enumerate}
-        \item 求由基\(1,x,x^2,x^3\)到基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)的过渡矩阵；
-        \item 求\(f(x)=a_0+a_1x+a_2x^2+a_3x^3\)在基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)下的坐标。
+        \item 求由基\(1,x,x^2,x^3\)到基\(1,1+x,\spar{1+x}^2,\spar{1+x}^3\)的过渡矩阵；
+        \item 求\(f(x)=a_0+a_1x+a_2x^2+a_3x^3\)在基\(1,1+x,\spar{1+x}^2,\spar{1+x}^3\)下的坐标。
     \end{enumerate}
 \end{frame}
 
@@ -159,7 +159,7 @@
               容易发现
               \begin{equation*}
                   \begin{bmatrix}
-                      1 & 1+x & \mypar{1+x}^2 & \mypar{1+x}^3
+                      1 & 1+x & \spar{1+x}^2 & \spar{1+x}^3
                   \end{bmatrix}=
                   \begin{bmatrix}
                       1 \\ x \\ x^2 \\ x^3
@@ -182,17 +182,17 @@
         \item {
               令\(\veca=\myvec{a_0,a_1,a_2,a_3}\)，则有
               \begin{align*}
-                  f\mypar{x}
+                  f\spar{x}
                    & =
                   \begin{bmatrix}
                       1 & x & x^2 & x^3
                   \end{bmatrix}\veca \\
                    & =
                   \begin{bmatrix}
-                      1 & 1+x & \mypar{1+x}^2 & \mypar{1+x}^3
+                      1 & 1+x & \spar{1+x}^2 & \spar{1+x}^3
                   \end{bmatrix}\inv{\matm}\veca
               \end{align*}
-              因此\(f\mypar{x}\)在基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)下的坐标为
+              因此\(f\spar{x}\)在基\(1,1+x,\spar{1+x}^2,\spar{1+x}^3\)下的坐标为
               \begin{equation*}
                   \inv{\matm}\veca=
                   \begin{bmatrix}
@@ -512,7 +512,7 @@
 \subsection*{4.10}
 \begin{frame}
     \frametitle{题面}
-    设\(\enums{\vecal}{n}\)是\(n\)维线性空间\(V\)的一组基，又\(V\)中向量\(\vecal_{n+1}\)在这组基下坐标\(\mypar{\enums{x}{n}}\)全都不为零。
+    设\(\enums{\vecal}{n}\)是\(n\)维线性空间\(V\)的一组基，又\(V\)中向量\(\vecal_{n+1}\)在这组基下坐标\(\spar{\enums{x}{n}}\)全都不为零。
 
     证明\(\enums{\vecal}{n},\vecal_{n+1}\)中任意\(n\)个向量必构成\(V\)的一组基，并求\(\vecal_1\)在基\(\vecal_2,\dots,\vecal_n,\vecal_{n+1}\)下的坐标。
 \end{frame}
@@ -591,8 +591,8 @@
 
     因此对\(\forall\veceta\in\myspan{\vecal,\vecbeta}\)，不妨设\(\veceta=\lambda_1\vecal+\lambda_2\vecbeta\)，则有
     \begin{align*}
-        \veceta & =\lambda_1\mypar{-\frac{c_2}{c_1}\vecbeta-\frac{c_3}{c_1}\vecgamma}+\lambda_2\vecbeta \\
-                & =\mypar{\lambda_2-\frac{c_2\lambda_1}{c_1}}\vecbeta-\frac{c_3\lambda_1}{c_1}\vecgamma
+        \veceta & =\lambda_1\spar{-\frac{c_2}{c_1}\vecbeta-\frac{c_3}{c_1}\vecgamma}+\lambda_2\vecbeta \\
+                & =\spar{\lambda_2-\frac{c_2\lambda_1}{c_1}}\vecbeta-\frac{c_3\lambda_1}{c_1}\vecgamma
     \end{align*}
     所以\(\veceta\in\myspan{\vecbeta,\vecgamma}\)，即\(\myspan{\vecal,\vecbeta}\subseteq\myspan{\vecbeta,\vecgamma}\)。
 
@@ -668,7 +668,7 @@
         \item {
               对\(\forall\vecbeta\in V\)，有
               \begin{equation*}
-                  \indot{\veczero}{\vecal}=\indot{\vecbeta+\mypar{-\vecbeta}}{\vecal}=\indot{\vecbeta}{\vecal}-\indot{\vecbeta}{\vecal}=0
+                  \indot{\veczero}{\vecal}=\indot{\vecbeta+\spar{-\vecbeta}}{\vecal}=\indot{\vecbeta}{\vecal}-\indot{\vecbeta}{\vecal}=0
               \end{equation*}
               }\pause
         \item 令\(\vecal=\vecbeta\)，得到\(\indot{\vecbeta}{\vecbeta}=0\)，由内积定义知\(\vecbeta=\veczero\)；\pause
@@ -777,7 +777,7 @@
 \subsection*{4.23}
 \begin{frame}
     \frametitle{题面}
-    已知\(f_1=1\)，\(f_2=x-1\)，\(f_3=\mypar{x-1}^2\)为三维内积空间\(C\mat{0,1}\)的一组基，内积定义为
+    已知\(f_1=1\)，\(f_2=x-1\)，\(f_3=\spar{x-1}^2\)为三维内积空间\(C\mat{0,1}\)的一组基，内积定义为
     \begin{equation*}
         \indot{f}{g}=\int_0^1f(x)g(x)\mathrm{d}x
     \end{equation*}
@@ -789,9 +789,9 @@
     \begin{align*}
         \vecg_1 & =\frac{\vecf_1}{\Abs{\vecf_1}}=\frac{\vecf_1}{\indot{\vecf_1}{\vecf_1}}=1                                                                                      \\
         \vecg_2 & =\frac{\vecf_2-\indot{\vecg_1}{\vecf_2}\vecg_1}{\Abs{\vecf_2-\indot{\vecg_1}{\vecf_2}\vecg_1}}                                                                 \\
-                & =\frac{x-\frac{1}{2}}{\sqrt{\frac{1}{12}}}=\sqrt3\mypar{2x-1}                                                                                                  \\
+                & =\frac{x-\frac{1}{2}}{\sqrt{\frac{1}{12}}}=\sqrt3\spar{2x-1}                                                                                                   \\
         \vecg_3 & =\frac{\vecf_3-\indot{\vecg_1}{\vecf_3}\vecg_1-\indot{\vecg_2}{\vecf_3}\vecg_2}{\Abs{\vecf_3-\indot{\vecg_1}{\vecf_3}\vecg_1-\indot{\vecg_2}{\vecf_3}\vecg_2}} \\
-                & =\frac{x^2-x+\frac{1}{6}}{\sqrt{\frac{1}{180}}}=\sqrt5\mypar{6x^2-6x+1}
+                & =\frac{x^2-x+\frac{1}{6}}{\sqrt{\frac{1}{180}}}=\sqrt5\spar{6x^2-6x+1}
     \end{align*}
 \end{frame}
 
@@ -810,8 +810,8 @@
     又由过渡矩阵的定义知\(\matb=\mata\matm\)，因此有
 
     \begin{align*}
-        \matb^\top\matb & =\mypar{\mata\matm}^\top\mata\matm      \\
-                        & =\matm^\top\mypar{\mata^\top\mata}\matm \\
+        \matb^\top\matb & =\spar{\mata\matm}^\top\mata\matm      \\
+                        & =\matm^\top\spar{\mata^\top\mata}\matm \\
                         & =\matm^\top\matm
     \end{align*}
     因此\(\matm\)为正交矩阵等价于\(\matb\)为正交矩阵。又因为\(\matb\)为正交矩阵等价于\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基，所以\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基的充分必要条件是\(\matm\)为正交矩阵。
@@ -933,7 +933,7 @@
         \item {
               由推论4.4.1可知\(\nullsp{\mata}\)的正交补空间为\(\colsp{\mata^\top}\)，即\(\mata\)的行空间。
 
-              由(1)可知\(\dim\mypar{\colsp{\mata^\top}}=2\)，因此\(\colsp{\mata^\top}\)的一组基为
+              由(1)可知\(\dim\spar{\colsp{\mata^\top}}=2\)，因此\(\colsp{\mata^\top}\)的一组基为
               \begin{equation*}
                   \vecbeta_1=\begin{bmatrix}2&1&-1&1&-3\end{bmatrix}^\top,
                   \vecbeta_2=\begin{bmatrix}1&1&-1&0&1\end{bmatrix}^\top
@@ -1052,7 +1052,7 @@
         \veceta_2=\begin{bmatrix}2\\2\\-1\end{bmatrix},
         \veceta_3=\begin{bmatrix}2\\-1\\-1\end{bmatrix}
     \end{equation*}
-    定义线性变换：\(T\mypar{\vecveps_i}=\veceta_i\)，\(i\in\setof{1,2,3}\)。分别求\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)与\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵。
+    定义线性变换：\(T\spar{\vecveps_i}=\veceta_i\)，\(i\in\setof{1,2,3}\)。分别求\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)与\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵。
 \end{frame}
 
 \begin{frame}[allowframebreaks]
@@ -1072,7 +1072,7 @@
     \end{equation*}
     设\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)下的表示矩阵为\(\mata\)。由题设可知
     \begin{equation*}
-        \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=T\mypar{\vecveps_1,\vecveps_2,\vecveps_3}=\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
+        \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=T\spar{\vecveps_1,\vecveps_2,\vecveps_3}=\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
     \end{equation*}
     因此有\(\mata=\matm\)。由定理4.5.4知由定理4.5.4知\(T\)在基\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵为\(\inv{\matm}\mata\matm=\matm\)。
 

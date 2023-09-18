@@ -1,10 +1,12 @@
 \section{行列式}
 
+% 1 2 3 4 5 7 9 12 13 14 16 17 21 23 27
+
 % 3.1
 \begin{problem}
 根据行列式定义，计算
 \begin{equation*}
-    f\mypar{x}=
+    f(x)=
     \begin{vmatrix}
         2x & x & 1 & 2  \\
         1  & x & 1 & -1 \\
@@ -15,6 +17,9 @@
 中\(x^4\)与\(x^3\)的系数。
 \end{problem}
 \begin{proof}
+    \(x^4\)的系数为\((-1)^{\tau(1234)}\times2\times1\times1\times1=2\)；
+
+    \(x^3\)的系数为\((-1)^{\tau(2134)}\times1\times1\times1\times1=-1\)。
 \end{proof}
 
 % 3.2
@@ -32,6 +37,13 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    记\(c_i=d_i=e_i=0\)，\(i\in\setof{3,4,5}\)。则由行列式定义可知
+    \begin{equation*}
+        D=\sum_{i_1i_2i_3i_4i_5}(-1)^{\tau(i_1i_2i_3i_4i_5)}a_{i_1}b_{i_2}c_{i_3}d_{i_4}e_{i_5}
+    \end{equation*}
+    因为\(i_1i_2i_3i_4i_5\)是长度为\(5\)的排列，\(\setof{i_3i_4i_5}\cap\setof{3,4,5}\neq\varnothing\)。
+
+    所以\(a_{i_1}b_{i_2}c_{i_3}d_{i_4}e_{i_5}=0\)恒成立，即\(D=0\)。
 \end{proof}
 
 % 3.3
@@ -39,6 +51,7 @@
 证明：一个\(n\)阶行列式中等于零的元素个数如果比\(n^2-n\)多，则此行列式必等于零。
 \end{problem}
 \begin{proof}
+    由题设可知该\(n\)阶行列式中非零元素个数小于\(n^2-\spar{n^2-n}=n\)。记该行列式\(i\)行\(j\)列元素为\(a_{ij}\)，则对任意\(n\)阶排列\(i_1i_2\cdots i_n\)，均满足\(\prod_{j=1}^{n}a_{i_jj}=0\)。由行列式定义可知该行列式为\(0\)。
 \end{proof}
 
 % 3.4
@@ -55,6 +68,11 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    注意到\(D\)中存在两行（列）元素相同，由推论3.2.1可知\(D=0\)。将\(D\)按定义展开：
+    \begin{equation*}
+        D=\sum_{i_1i_2\cdots i_n}(-1)^{\tau(i_1i_2\cdots i_n)}=0
+    \end{equation*}
+    当\(i_1i_2\cdots i_n\)为奇排列时，\((-1)^{\tau(i_1i_2\cdots i_n)}=-1\)；当\(i_1i_2\cdots i_n\)为偶排列时，\((-1)^{\tau(i_1i_2\cdots i_n)}=1\)。因此可知奇偶排列各半。
 \end{proof}
 
 % 3.5
@@ -68,6 +86,12 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{equation*}
+        \begin{array}[2]{ll}
+            \begin{vmatrix}2&0&0\\4&1&0\\7&3&-2\end{vmatrix}=-4,              & \begin{vmatrix}3&0&0\\2&1&1\\1&2&2\end{vmatrix}=0,                    \\
+            \begin{vmatrix}4&0&2&1\\5&0&4&2\\2&0&3&4\\1&0&2&3\end{vmatrix}=0, & \begin{vmatrix}1&1&1&3\\0&3&1&1\\0&0&2&2\\-1&-1&-1&2\end{vmatrix}=30.
+        \end{array}
+    \end{equation*}
 \end{proof}
 
 % 3.6
@@ -85,11 +109,33 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    将行列式按第一行展开，可得
+    \begin{align*}
+        D_{2n} & =x
+        \begin{vmatrix}
+            x      & \cdots & y      & 0      \\
+            \vdots &        & \vdots & \vdots \\
+            y      & \cdots & x      & 0      \\
+            0      & \cdots & 0      & x
+        \end{vmatrix}-y
+        \begin{vmatrix}
+            0      & x      & \cdots & y      \\
+            \vdots & \vdots &        & \vdots \\
+            0      & y      & \cdots & x      \\
+            y      & 0      & \cdots & 0
+        \end{vmatrix}     \\
+               & =x^2D_{2(n-1)}-y^2D_{2(n-1)} \\
+               & =\spar{x^2-y^2}D_{2(n-1)}.
+    \end{align*}
+    又因为\(D_2=\begin{vmatrix}x&y\\y&x\end{vmatrix}=x^2-y^2\)，所以有
+    \begin{equation*}
+        D_{2n}=\spar{x^2-y^2}^{n}.
+    \end{equation*}
 \end{proof}
 
 % 3.7
 \begin{problem}
-计算\(n\mypar{n>1}\)阶行列式：
+计算\(n\spar{n>1}\)阶行列式：
 \begin{equation*}
     D_n=
     \begin{vmatrix}
@@ -102,6 +148,23 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    将行列式按第一列展开，可得
+    \begin{align*}
+        D_n & =x
+        \begin{vmatrix}
+            x      & y      & \cdots & 0      & 0      \\
+            \vdots & \vdots &        & \vdots & \vdots \\
+            0      & 0      & \cdots & x      & y      \\
+            0      & 0      & \cdots & 0      & x
+        \end{vmatrix}+(-1)^{n+1}y
+        \begin{vmatrix}
+            y      & 0      & \cdots & 0      & 0      \\
+            x      & y      & \cdots & 0      & 0      \\
+            \vdots & \vdots &        & \vdots & \vdots \\
+            0      & 0      & \cdots & x      & y
+        \end{vmatrix} \\
+            & =x^n+(-1)^{n+1}y^n.
+    \end{align*}
 \end{proof}
 
 % 3.8
@@ -136,6 +199,19 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    将\(D_n\)按第一行展开，后项按第一列展开后，得
+    \begin{equation*}
+        D_n=\spar{x+y}D_{n-1}-xyD_{n-2}.
+    \end{equation*}
+    该递推式的特征方程为\(\lambda^2-\spar{x+y}\lambda+xy=0\)，根为\(\lambda_1=x\)，\(\lambda_2=y\)。
+
+    当\(x=y\)时，递推式的通解为\(D_n=c_1x^n+c_2nx^n\)。代入初值解得\(D_n=\spar{1+n}x^n\)；
+
+    当\(x\neq y\)时，递推式的通解为\(D_n=c_1x^n+c_2y^n\)。代入初值解得
+    \begin{equation*}
+        D_n=\frac{x}{x-y}x^n-\frac{y}{x-y}y^n=\sum_{i=0}^{n}x^{n-i}y_i.
+    \end{equation*}
+    综上，\(D_n=\sum_{i=0}^{n}x^{n-i}y^i\)。
 \end{proof}
 
 % 3.10
@@ -186,6 +262,46 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    当\(x\neq0\)时，可利用初等列变换将行列式转化为：
+    \begin{align*}
+          &
+        \begin{vmatrix}
+            x      & 0                     & 0       & \cdots & 0      & 0      \\
+            0      & x                     & -1      & \cdots & 0      & 0      \\
+            \vdots & \vdots                & \vdots  &        & \vdots & \vdots \\
+            0      & 0                     & 0       & \cdots & x      & -1     \\
+            a_n    & a_{n-1}+\frac{a_n}{x} & a_{n-2} & \cdots & a_2    & a_1+x
+        \end{vmatrix}                                                                                                       \\
+        = &
+        \begin{vmatrix}
+            x      & 0                     & 0                                         & \cdots & 0      & 0      \\
+            0      & x                     & 0                                         & \cdots & 0      & 0      \\
+            \vdots & \vdots                & \vdots                                    &        & \vdots & \vdots \\
+            0      & 0                     & 0                                         & \cdots & x      & -1     \\
+            a_n    & a_{n-1}+\frac{a_n}{x} & a_{n-2}+\frac{a_{n-1}}{x}+\frac{a_n}{x^2} & \cdots & a_2    & a_1+x
+        \end{vmatrix}                                               \\
+        = &
+        \begin{vmatrix}
+            x      & 0      & 0      & \cdots & 0      & 0                                                        \\
+            0      & x      & 0      & \cdots & 0      & 0                                                        \\
+            \vdots & \vdots & \vdots &        & \vdots & \vdots                                                   \\
+            0      & 0      & 0      & \cdots & x      & 0                                                        \\
+            a_n    & \cdots & \cdots & \cdots & \cdots & \frac{a_n}{x^{n-1}}+\frac{a_{n-1}}{x^{n-2}}+\cdots+a_1+x
+        \end{vmatrix} \\
+        = & x^n+\sum_{i=1}^{n}a_ix^{n-i}
+    \end{align*}
+
+    当\(x=0\)时，可将行列式按第一列展开：
+    \begin{align*}
+        \begin{vmatrix}
+            0      & -1      & 0       & \cdots & 0      & 0      \\
+            0      & 0       & -1      & \cdots & 0      & 0      \\
+            \vdots & \vdots  & \vdots  &        & \vdots & \vdots \\
+            0      & 0       & 0       & \cdots & 0      & -1     \\
+            a_n    & a_{n-1} & a_{n-2} & \cdots & a_2    & a_1
+        \end{vmatrix}=(-1)^{n+1}a_n(-1)^{n-1}=a_n
+    \end{align*}
+    综上，行列式的值为\(x^n+\sum_{i=1}^{n}a_ix^{n-i}\)。
 \end{proof}
 
 % 3.13
@@ -202,6 +318,40 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    对该行列式进行初等行变换：
+    \begin{align*}
+          &
+        \begin{vmatrix}
+            1      & 2      & 3      & \cdots & n      \\
+            2      & 3      & 4      & \cdots & 1      \\
+            3      & 4      & 5      & \cdots & 2      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            n      & 1      & 2      & \cdots & n-1
+        \end{vmatrix}=
+        \begin{vmatrix}
+            1      & 2      & 3      & \cdots & n      \\
+            1      & 1      & 1      & \cdots & 1-n    \\
+            1      & 1      & 1      & \cdots & 1      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            1      & 1-n    & 1      & \cdots & 1
+        \end{vmatrix}                                                                           \\
+        = &
+        \begin{vmatrix}
+            1      & 1      & 2      & \cdots & n-1    \\
+            1      & 0      & 0      & \cdots & -n     \\
+            1      & 0      & 0      & \cdots & 0      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            1      & -n     & 0      & \cdots & 0
+        \end{vmatrix}=
+        \begin{vmatrix}
+            1+\frac{1}{n}\sum_{i=1}^{n-1}i & 1      & 2      & \cdots & n-1    \\
+            0                              & 0      & 0      & \cdots & -n     \\
+            0                              & 0      & 0      & \cdots & 0      \\
+            \vdots                         & \vdots & \vdots &        & \vdots \\
+            0                              & -n     & 0      & \cdots & 0
+        \end{vmatrix}                                                   \\
+        = & \spar{1+\frac{n-1}{2}}(-1)^{\frac{(n-1)(n-2)}{2}(-n)^{n-1}}=\spar{1+\frac{n-1}{2}}(-1)^{\frac{n(n-1)}{2}}n^{n-1}
+    \end{align*}
 \end{proof}
 
 % 3.14
@@ -218,6 +368,23 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    对该行列式进行初等行变换：
+    \begin{equation*}
+        \begin{vmatrix}
+            x_{1}+a & a       & \cdots & a         & a      \\
+            a       & x_{2}+a & \cdots & a         & a      \\
+            \vdots  & \vdots  &        & \vdots    & \vdots \\
+            a       & a       & \cdots & x_{n-1}+a & a      \\
+            a       & a       & \cdots & a         & a
+        \end{vmatrix}=
+        \begin{vmatrix}
+            x_{1}  & 0      & \cdots & 0       & 0      \\
+            0      & x_{2}  & \cdots & 0       & 0      \\
+            \vdots & \vdots &        & \vdots  & \vdots \\
+            0      & 0      & \cdots & x_{n-1} & 0      \\
+            a      & a      & \cdots & a       & a
+        \end{vmatrix}=a\prod_{i=1}^{n-1}x_i
+    \end{equation*}
 \end{proof}
 
 % 3.15
@@ -249,6 +416,36 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    对行列式反复进行初等行（列）变换和按行（列）展开：
+    \begin{align*}
+          &
+        \begin{vmatrix}
+            1 & 1  & 1  & 1  \\
+            1 & 1  & -1 & -1 \\
+            1 & -1 & 1  & -1 \\
+            1 & -1 & -1 & 1
+        \end{vmatrix}=
+        \begin{vmatrix}
+            1 & 1  & 1  & 1  \\
+            0 & 0  & -2 & -2 \\
+            0 & -2 & 0  & -2 \\
+            0 & -2 & -2 & 0
+        \end{vmatrix}=
+        \begin{vmatrix}
+            0  & -2 & -2 \\
+            -2 & 0  & -2 \\
+            -2 & -2 & 0
+        \end{vmatrix} \\
+        = & 2
+        \begin{vmatrix}
+            -2 & -2 \\
+            -2 & 0
+        \end{vmatrix}-2
+        \begin{vmatrix}
+            -2 & -2 \\
+            0  & -2
+        \end{vmatrix}=-16
+    \end{align*}
 \end{proof}
 
 % 3.17
@@ -265,6 +462,40 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    当\(n=1\)时，\(D_n=a_1+b_1\)；
+
+    当\(n=2\)时，\(D_n=a_1b_2+a_2b_1-a_1b_1-a_2b_2\)；
+
+    当\(n\geq3\)时，
+    \begin{align*}
+        D_n & =
+        \begin{vmatrix}
+            a_{1}       & a_{1}       & \cdots & a_{1}       \\
+            a_{2}+b_{1} & a_{2}+b_{2} & \cdots & a_{2}+b_{n} \\
+            \vdots      & \vdots      &        & \vdots      \\
+            a_{n}+b_{1} & a_{n}+b_{2} & \cdots & a_{n}+b_{n}
+        \end{vmatrix}+
+        \begin{vmatrix}
+            b_{1}       & b_{2}       & \cdots & b_{n}       \\
+            a_{2}+b_{1} & a_{2}+b_{2} & \cdots & a_{2}+b_{n} \\
+            \vdots      & \vdots      &        & \vdots      \\
+            a_{n}+b_{1} & a_{n}+b_{2} & \cdots & a_{n}+b_{n}
+        \end{vmatrix} \\
+            & =
+        \begin{vmatrix}
+            a_{1}       & a_{1}       & \cdots & a_{1}       \\
+            a_{2}+b_{1} & b_{2}-b_{1} & \cdots & b_{n}-b_{1} \\
+            \vdots      & \vdots      &        & \vdots      \\
+            a_{n}+b_{1} & b_{2}-b_{1} & \cdots & b_{n}-b_{1}
+        \end{vmatrix}+
+        \begin{vmatrix}
+            b_{1}  & b_{2}  & \cdots & b_{n}  \\
+            a_{2}  & a_{2}  & \cdots & a_{2}  \\
+            \vdots & \vdots &        & \vdots \\
+            a_{n}  & a_{n}  & \cdots & a_{n}
+        \end{vmatrix}                \\
+            & =0+0=0
+    \end{align*}
 \end{proof}
 
 % 3.18
@@ -322,6 +553,7 @@
 设分块\(n\)阶方阵\(\matm=\begin{bmatrix}\mata&\matc\\\mato&\matb\end{bmatrix}\)，其中\(\mata\)为\(k\)阶方阵，证明：\(\det{\matm}=\det{\mata}\det{\matb}\)。
 \end{problem}
 \begin{proof}
+
 \end{proof}
 
 % 3.22
@@ -349,14 +581,36 @@
 计算行列式（设\(n>2\)）:
 \begin{equation*}
     \begin{vmatrix}
-        \sin 2\alpha_1                    & \sin\mypar{\alpha_{1}+\alpha_{2}} & \cdots & \sin\mypar{\alpha_{1}+\alpha_{n}} \\
-        \sin\mypar{\alpha_{2}+\alpha_{1}} & \sin 2\alpha_2                    & \cdots & \sin\mypar{\alpha_{2}+\alpha_{n}} \\
-        \vdots                            & \vdots                            &        & \vdots                            \\
-        \sin\mypar{\alpha_{n}+\alpha_{1}} & \sin\mypar{\alpha_{n}+\alpha_{2}} & \cdots & \sin 2\alpha_n
+        \sin 2\alpha_1                   & \sin\spar{\alpha_{1}+\alpha_{2}} & \cdots & \sin\spar{\alpha_{1}+\alpha_{n}} \\
+        \sin\spar{\alpha_{2}+\alpha_{1}} & \sin 2\alpha_2                   & \cdots & \sin\spar{\alpha_{2}+\alpha_{n}} \\
+        \vdots                           & \vdots                           &        & \vdots                           \\
+        \sin\spar{\alpha_{n}+\alpha_{1}} & \sin\spar{\alpha_{n}+\alpha_{2}} & \cdots & \sin 2\alpha_n
     \end{vmatrix}
 \end{equation*}
 \end{problem}
 \begin{proof}
+    因为\(\sin\spar{\alpha_i+\alpha_j}=\sin\alpha_i\cos\alpha_j+\cos\alpha_i\sin\alpha_j\)，定义\(n\)阶方阵如下：
+    \begin{equation*}
+        \mata_n=
+        \begin{bmatrix}
+            \sin\alpha_{1} & \cos\alpha_{1} & 0 & \cdots & 0 \\
+            \sin\alpha_{2} & \cos\alpha_{2} & 0 & \cdots & 0 \\
+            \vdots         & \vdots         &   & \vdots     \\
+            \sin\alpha_{n} & \cos\alpha_{n} & 0 & \cdots & 0
+        \end{bmatrix},
+        \matb_n=
+        \begin{bmatrix}
+            \cos\alpha_{1} & \cos\alpha_{2} & \cdots & \cos\alpha_{n} \\
+            \sin\alpha_{1} & \sin\alpha_{2} & \cdots & \sin\alpha_{n} \\
+            0              & 0              & \cdots & 0              \\
+            \vdots         & \vdots         &        & \vdots         \\
+            0              & 0              & \cdots & 0
+        \end{bmatrix}
+    \end{equation*}
+    容易发现\(\mat{\mata_n\matb_n}_{ij}=\sin\spar{\alpha_i+\alpha_j}\)。因此有
+    \begin{equation*}
+        \det{\mata_n\matb_n}=\det{\mata_n}\det{\matb_n}=0
+    \end{equation*}
 \end{proof}
 
 % 3.24
@@ -423,6 +677,32 @@
 \end{equation*}
 \end{problem}
 \begin{proof}
+    当\(n=1\)时，\(D_n=1+x_1y_1\)；
+
+    当\(n=2\)时，\(D_n=x_1y_1+x_2y_2-x_1y_2-x_2y_1\)；
+
+    当\(n\geq3\)时，定义\(n\)阶方阵如下：
+    \begin{equation*}
+        \matx_n=
+        \begin{bmatrix}
+            x_{1}  & 1      & 0      & \cdots & 0      \\
+            x_{2}  & 1      & 0      & \cdots & 0      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            x_{n}  & 1      & 0      & \cdots & 0
+        \end{bmatrix},
+        \maty_n=
+        \begin{bmatrix}
+            y_{1}  & y_{2}  & \cdots & y_{n}  \\
+            1      & 1      & \cdots & 1      \\
+            0      & 0      & \cdots & 0      \\
+            \vdots & \vdots &        & \vdots \\
+            0      & 0      & \cdots & 0
+        \end{bmatrix}
+    \end{equation*}
+    容易发现\(\mat{\matx_n\maty_n}_{ij}=x_iy_j+1\)。因此有
+    \begin{equation*}
+        \det{\matx_n\maty_n}=\det{\matx_n}\det{\maty_n}=0
+    \end{equation*}
 \end{proof}
 
 % 3.28
@@ -452,7 +732,7 @@
 
 % 3.29
 \begin{problem}
-设\(\mata\)为\(n\)阶方阵，\(\mata^*\)为\(\mata\)的伴随矩阵。已知\(\abs{\mata}=3\)，求\(\abs{\inv{\mypar{\frac{1}{4}\mata}}-2\mata^*}\)。
+设\(\mata\)为\(n\)阶方阵，\(\mata^*\)为\(\mata\)的伴随矩阵。已知\(\abs{\mata}=3\)，求\(\abs{\inv{\spar{\frac{1}{4}\mata}}-2\mata^*}\)。
 \end{problem}
 \begin{proof}
 \end{proof}
@@ -478,9 +758,9 @@
 \begin{problem}
 设\(\mata\)是\(n\)阶可逆矩阵，证明：
 \begin{enumerate}
-    \item \(\det{\mata^*}=\mypar{\det{\mata}}^{n-1}\)；
-    \item \(\pinv{\mata^*}=\mypar{\inv{\mata}}^*\)；
-    \item \(\mypar{\mata^*}^\top=\mypar{\mata^\top}^*\)。
+    \item \(\det{\mata^*}=\spar{\det{\mata}}^{n-1}\)；
+    \item \(\pinv{\mata^*}=\spar{\inv{\mata}}^*\)；
+    \item \(\spar{\mata^*}^\top=\spar{\mata^\top}^*\)。
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -507,18 +787,18 @@
 
 % 3.33
 \begin{problem}
-设\(a_{ij}\mypar{t}\)为自变量\(t\)的实连续函数，\(i,j=1,2,\cdots,n\)。证明：
+设\(a_{ij}\spar{t}\)为自变量\(t\)的实连续函数，\(i,j=1,2,\cdots,n\)。证明：
 \begin{equation*}
     \fracdif{t}
     \begin{vmatrix}
-        a_{11}\mypar{t} & \cdots & a_{1n}\mypar{t} \\
-        \vdots          &        & \vdots          \\
-        a_{n1}\mypar{t} & \cdots & a_{nn}\mypar{t}
+        a_{11}\spar{t} & \cdots & a_{1n}\spar{t} \\
+        \vdots         &        & \vdots         \\
+        a_{n1}\spar{t} & \cdots & a_{nn}\spar{t}
     \end{vmatrix}=\sum_{j=1}^n
     \begin{vmatrix}
-        a_{11}\mypar{t} & \cdots & \fracdif{t}a_{1j}\mypar{t} & \cdots & a_{1n}\mypar{t} \\
-        \vdots          &        & \vdots                     &        & \vdots          \\
-        a_{n1}\mypar{t} & \cdots & \fracdif{t}a_{nj}\mypar{t} & \cdots & a_{nn}\mypar{t}
+        a_{11}\spar{t} & \cdots & \fracdif{t}a_{1j}\spar{t} & \cdots & a_{1n}\spar{t} \\
+        \vdots         &        & \vdots                    &        & \vdots         \\
+        a_{n1}\spar{t} & \cdots & \fracdif{t}a_{nj}\spar{t} & \cdots & a_{nn}\spar{t}
     \end{vmatrix}
 \end{equation*}
 \end{problem}

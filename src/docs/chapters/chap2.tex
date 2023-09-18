@@ -77,9 +77,9 @@
 \begin{enumerate}
     \item \begin{equation*}
               \begin{cases}
-                  \mypar{\lambda+3}x_1+x_2+2x_3=\lambda        \\
-                  \lambda x_1+\mypar{\lambda-1}x_2+x_3=\lambda \\
-                  3\mypar{\lambda+1}x_1+\lambda x_1+\mypar{\lambda+3}x_3=3
+                  \spar{\lambda+3}x_1+x_2+2x_3=\lambda        \\
+                  \lambda x_1+\spar{\lambda-1}x_2+x_3=\lambda \\
+                  3\spar{\lambda+1}x_1+\lambda x_1+\spar{\lambda+3}x_3=3
               \end{cases}
           \end{equation*}
     \item
@@ -103,20 +103,20 @@
 \begin{proof}
     \begin{enumerate}
         \item[(2)] 对增广矩阵进行初等行变换：
-            \begin{equation*}
-                \mat{\mata,\vecb}=
-                \begin{bmatrix}
-                    1 & 2       & \lambda & 1       \\
-                    2 & \lambda & 8       & \lambda
-                \end{bmatrix}\xrightarrow{R_2-2R_1}
-                \begin{bmatrix}
-                    1 & 2         & \lambda    & 1         \\
-                    0 & \lambda-4 & 8-2\lambda & \lambda-2
-                \end{bmatrix}
-            \end{equation*}
-            当\(\lambda=4\)时，\(\lambda-4=0\)。此时\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
+              \begin{equation*}
+                  \mat{\mata,\vecb}=
+                  \begin{bmatrix}
+                      1 & 2       & \lambda & 1       \\
+                      2 & \lambda & 8       & \lambda
+                  \end{bmatrix}\xrightarrow{R_2-2R_1}
+                  \begin{bmatrix}
+                      1 & 2         & \lambda    & 1         \\
+                      0 & \lambda-4 & 8-2\lambda & \lambda-2
+                  \end{bmatrix}
+              \end{equation*}
+              当\(\lambda=4\)时，\(\lambda-4=0\)。此时\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
 
-            当\(\lambda\neq4\)时，\(\lambda-4\neq0\)。此时\(\rank{\mat{\mata,\vecb}}=\rank{\mata}<4\)，方程组有无穷多解。
+              当\(\lambda\neq4\)时，\(\lambda-4\neq0\)。此时\(\rank{\mat{\mata,\vecb}}=\rank{\mata}<4\)，方程组有无穷多解。
     \end{enumerate}
 \end{proof}
 
@@ -125,10 +125,10 @@
 讨论\(a,b\)为何值时，线性方程组
 \begin{equation*}
     \begin{cases}
-        x_1-x_2+2x_3=1             \\
-        2x_1-x_2+3x_3-x_4=4        \\
-        x_2+ax_3+bx_4=b            \\
-        x_1-3x_2+\mypar{3-a}x_3=-4 \\
+        x_1-x_2+2x_3=1            \\
+        2x_1-x_2+3x_3-x_4=4       \\
+        x_2+ax_3+bx_4=b           \\
+        x_1-3x_2+\spar{3-a}x_3=-4 \\
     \end{cases}
 \end{equation*}
 有解或无解。若有解，求出其解。
@@ -232,10 +232,10 @@
 设有\(n\)元齐次线性方程组（\(n\ge2\)）
 \begin{equation*}
     \begin{cases}
-        \mypar{1+a}x_1+x_2+\cdots+x_n=0   \\
-        2x_1+\mypar{2+a}x_2+\cdots+2x_n=0 \\
-        \vdots                            \\
-        nx_1+nx_2+\cdots+\mypar{n+a}x_n=0
+        \spar{1+a}x_1+x_2+\cdots+x_n=0   \\
+        2x_1+\spar{2+a}x_2+\cdots+2x_n=0 \\
+        \vdots                           \\
+        nx_1+nx_2+\cdots+\spar{n+a}x_n=0
     \end{cases}
 \end{equation*}
 试问\(a\)取何值时，该方程组有非零解，并求出其通解。
@@ -431,14 +431,14 @@
 
 % 2.21
 \begin{problem}\label{problem-2.21}
-设\(\mata\)是\(s\times n\)矩阵，\(\matb\)是\(n\times m\)矩阵，\(n<m\)，证明：齐次线性方程组\(\mypar{\mata\matb}\vecx=\veczero\)有非零解。
+设\(\mata\)是\(s\times n\)矩阵，\(\matb\)是\(n\times m\)矩阵，\(n<m\)，证明：齐次线性方程组\(\spar{\mata\matb}\vecx=\veczero\)有非零解。
 \end{problem}
 \begin{proof}
 \end{proof}
 
 % 2.22
 \begin{problem}\label{problem-2.22}
-设\(\mata\)是\(m\times s\)矩阵，\(\matb\)是\(s\times n\)矩阵，\(\vecx\)是\(n\)元列向量。证明：若\(\mypar{\mata\matb}\vecx=\veczero\)与\(\matb\vecx=\veczero\)是同解方程组，则\(\rank{\mata\matb}=\rank{\matb}\)。
+设\(\mata\)是\(m\times s\)矩阵，\(\matb\)是\(s\times n\)矩阵，\(\vecx\)是\(n\)元列向量。证明：若\(\spar{\mata\matb}\vecx=\veczero\)与\(\matb\vecx=\veczero\)是同解方程组，则\(\rank{\mata\matb}=\rank{\matb}\)。
 \end{problem}
 \begin{proof}
 \end{proof}
@@ -579,7 +579,7 @@
 设向量组\(\enums{\vecal}{n}\)与\(\enums{\vecbeta}{n}\)满足：
 \begin{equation*}
     \vecal_i=\begin{bmatrix}x_{1i}\\x_{2i}\\\vdots\\x_{ri}\end{bmatrix},
-    \vecbeta_i=\begin{bmatrix}x_{1i}\\x_{2i}\\\vdots\\x_{ri}\\x_{\mypar{r+1}i}\\\vdots\\x_{mi}\end{bmatrix},
+    \vecbeta_i=\begin{bmatrix}x_{1i}\\x_{2i}\\\vdots\\x_{ri}\\x_{\spar{r+1}i}\\\vdots\\x_{mi}\end{bmatrix},
     i=1,2,\cdots,n
 \end{equation*}
 证明：若\(\enums{\vecbeta}{n}\)线性相关，则\(\enums{\vecal}{n}\)线性相关；若\(\enums{\vecal}{n}\)线性无关，则\(\enums{\vecbeta}{n}\)线性无关。
@@ -727,10 +727,10 @@
 
 % 2.45
 \begin{problem}\label{problem-2.45}
-设\(\mata\)为方阵，又\(\mata+\mati\)可逆，\(f\mypar{\mata}=\mypar{\mati-\mata}\pinv{\mati+\mata}\)。证明：
+设\(\mata\)为方阵，又\(\mata+\mati\)可逆，\(f\spar{\mata}=\spar{\mati-\mata}\pinv{\mati+\mata}\)。证明：
 \begin{enumerate}
-    \item \(\mypar{\mati+f\mypar{\mata}}\mypar{\mati+\mata}=2\mati\)；
-    \item \(f\mypar{f\mypar{\mata}}=\mata\)。
+    \item \(\spar{\mati+f\spar{\mata}}\spar{\mati+\mata}=2\mati\)；
+    \item \(f\spar{f\spar{\mata}}=\mata\)。
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -749,7 +749,7 @@
     \item 设\(\mata\)为\(n\)阶方阵，满足\(\mata^3+2\mata^2-2\mata-\mati_n=\mato\)，证明：\(\mata+\mati_n\)是可逆矩阵，并求其逆矩阵；
     \item
           {
-          设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata-\mati_n\)和\(\matb\)可逆。证明：若\(\pinv{\mata-\mati_n}=\mypar{\matb-\mati_n}^\top\)，则\(\mata\)可逆；
+          设\(\mata,\matb\)为\(n\)阶方阵，且\(\mata-\mati_n\)和\(\matb\)可逆。证明：若\(\pinv{\mata-\mati_n}=\spar{\matb-\mati_n}^\top\)，则\(\mata\)可逆；
           }
     \item 设\(n\)阶方阵\(\mata\)满足\(\mata^2+\mata-6\mati_n=\mato\)，证明：\(\mata\mata+\mati_n\)和\(\mata+4\mati_n\)都可逆，并求它们的逆矩阵。
 \end{enumerate}

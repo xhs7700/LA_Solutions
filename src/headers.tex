@@ -7,8 +7,8 @@
 \usepackage{color}
 
 \newcommand{\bsym}[1]{\boldsymbol{#1}}
-\newcommand{\mypar}[1]{\left( #1 \right)}
-\newcommand{\gram}[1]{\bsym{G}\mypar{#1}}
+\newcommand{\spar}[1]{\left( #1 \right)}
+\newcommand{\gram}[1]{\bsym{G}\spar{#1}}
 \newcommand{\abs}[1]{\left|#1 \right|}
 \newcommand{\Abs}[1]{\left\Vert#1\right\Vert}
 \newcommand{\setof}[1]{\left\{#1 \right\}}
@@ -27,9 +27,9 @@
 \vdots & \vdots &   \ddots     & \vdots \\
 {#2}_{{#3}1} & {#2}_{{#3}2} & \cdots & {#2}_{{#3}{#4}}
 \end{#1}}
-\newcommand{\nullsp}[1]{\bsym{\mathrm{N}}\mypar{#1}}
-\newcommand{\colsp}[1]{\bsym{\mathrm{C}}\mypar{#1}}
-\newcommand{\func}[2]{\mathrm{#1}\mypar{#2}}
+\newcommand{\nullsp}[1]{\bsym{\mathrm{N}}\spar{#1}}
+\newcommand{\colsp}[1]{\bsym{\mathrm{C}}\spar{#1}}
+\newcommand{\func}[2]{\mathrm{#1}\spar{#2}}
 \newcommand{\entry}[3]{\func{entry}{#1,#2,#3}}
 \newcommand{\row}[2]{\func{row}{#1,#2}}
 \newcommand{\col}[2]{\func{col}{#1,#2}}
@@ -40,7 +40,7 @@
 \newcommand{\myspan}[1]{\func{span}{#1}}
 \newcommand{\enums}[2]{{#1}_1,{#1}_2,\dots,{#1}_{#2}}
 \newcommand{\inv}[1]{{#1}^{-1}}
-\newcommand{\pinv}[1]{\inv{\mypar{#1}}}
+\newcommand{\pinv}[1]{\inv{\spar{#1}}}
 \newcommand{\ortcom}[1]{{#1}^{\bot}}
 
 \renewcommand{\det}[1]{\func{det}{#1}}

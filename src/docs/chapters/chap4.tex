@@ -2,7 +2,7 @@
 
 % 4.1
 \begin{problem}
-在次数不大于\(2\)的多项式线性空间\(P_2[x]\)中，试证：\(\vecf_1=1\)，\(\vecf_2=x-1\)，\(\vecf_3=\mypar{x-2}\mypar{x-1}\)线性无关。
+在次数不大于\(2\)的多项式线性空间\(P_2[x]\)中，试证：\(\vecf_1=1\)，\(\vecf_2=x-1\)，\(\vecf_3=\spar{x-2}\spar{x-1}\)线性无关。
 \end{problem}
 \begin{proof}
     由例4.2.2可知，\(\vecveps_1=1\)，\(\vecveps_2=x\)，\(\vecveps_3=x^2\)是\(P_2[x]\)的一组基。又因为
@@ -31,9 +31,9 @@
 \begin{problem}
 证明：以下三个多项式为\(P_2[x]\)的一组基：
 \begin{equation*}
-    f_1=1,f_2=x-1,f_3=\mypar{x-1}^2
+    f_1=1,f_2=x-1,f_3=\spar{x-1}^2
 \end{equation*}
-再求\(g\mypar{x}=5x^2+x+3\)在此基下的坐标。
+再求\(g\spar{x}=5x^2+x+3\)在此基下的坐标。
 \end{problem}
 \begin{proof}
     和习题4.1类似，令\(\vecveps_1=1\)，\(\vecveps_2=x\)，\(\vecveps_3=x^2\)表示\(P_2[x]\)的一组基。则有
@@ -68,20 +68,20 @@
         \end{bmatrix}\inv{\mata}\vecx
     \end{equation*}
     因此\(P_2[x]\)中的任意向量可由\(\vecf_1,\vecf_2,\vecf_3\)线性表出。
-    将\(g\mypar{x}\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)下的坐标代入即可得到\(g\mypar{x}\)在基\(\vecf_1,\vecf_2,\vecf_3\)下的坐标：
+    将\(g\spar{x}\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)下的坐标代入即可得到\(g\spar{x}\)在基\(\vecf_1,\vecf_2,\vecf_3\)下的坐标：
     \begin{equation*}
         \inv{\mata}\begin{bmatrix}3&1&5\end{bmatrix}^\top=\begin{bmatrix}9&11&5\end{bmatrix}^\top
     \end{equation*}
 
-    综上，\(\vecf_1,\vecf_2,\vecf_3\)为\(P_2[x]\)的一组基，\(g\mypar{x}\)在此基下的坐标为\(\myvec{9,11,5}\)。
+    综上，\(\vecf_1,\vecf_2,\vecf_3\)为\(P_2[x]\)的一组基，\(g\spar{x}\)在此基下的坐标为\(\myvec{9,11,5}\)。
 \end{proof}
 
 % 4.3
 \begin{problem}
 在次数不大于\(3\)的多项式空间\(P_3[x]\)中，
 \begin{enumerate}
-    \item 求由基\(1,x,x^2,x^3\)到基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)的过渡矩阵；
-    \item 求\(f\mypar{x}=a_0+a_1x+a_2x^2+a_3x^3\)在基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)下的坐标。
+    \item 求由基\(1,x,x^2,x^3\)到基\(1,1+x,\spar{1+x}^2,\spar{1+x}^3\)的过渡矩阵；
+    \item 求\(f\spar{x}=a_0+a_1x+a_2x^2+a_3x^3\)在基\(1,1+x,\spar{1+x}^2,\spar{1+x}^3\)下的坐标。
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -90,7 +90,7 @@
               容易发现
               \begin{equation*}
                   \begin{bmatrix}
-                      1 & 1+x & \mypar{1+x}^2 & \mypar{1+x}^3
+                      1 & 1+x & \spar{1+x}^2 & \spar{1+x}^3
                   \end{bmatrix}=
                   \begin{bmatrix}
                       1 \\ x \\ x^2 \\ x^3
@@ -113,17 +113,17 @@
         \item {
               令\(\veca=\myvec{a_0,a_1,a_2,a_3}\)，则有
               \begin{align*}
-                  f\mypar{x}
+                  f\spar{x}
                    & =
                   \begin{bmatrix}
                       1 & x & x^2 & x^3
                   \end{bmatrix}\veca \\
                    & =
                   \begin{bmatrix}
-                      1 & 1+x & \mypar{1+x}^2 & \mypar{1+x}^3
+                      1 & 1+x & \spar{1+x}^2 & \spar{1+x}^3
                   \end{bmatrix}\inv{\matm}\veca
               \end{align*}
-              因此\(f\mypar{x}\)在基\(1,1+x,\mypar{1+x}^2,\mypar{1+x}^3\)下的坐标为
+              因此\(f\spar{x}\)在基\(1,1+x,\spar{1+x}^2,\spar{1+x}^3\)下的坐标为
               \begin{equation*}
                   \inv{\matm}\veca=
                   \begin{bmatrix}
@@ -143,7 +143,7 @@
 \begin{enumerate}
     \item 求旧基到新基的过渡矩阵；
     \item 求多项式\(1+2x+3x^2+4x^3\)在新基下的坐标；
-    \item 若多项式\(f\mypar{x}\)在新基下的坐标为\(\myvec{1,2,3,4}\)，求它在旧基下的坐标。
+    \item 若多项式\(f\spar{x}\)在新基下的坐标为\(\myvec{1,2,3,4}\)，求它在旧基下的坐标。
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -424,7 +424,7 @@
 
 % 4.10
 \begin{problem}
-设\(\enums{\vecal}{n}\)是\(n\)维线性空间\(V\)的一组基，又\(V\)中向量\(\vecal_{n+1}\)在这组基下坐标\(\mypar{\enums{x}{n}}\)全都不为零。
+设\(\enums{\vecal}{n}\)是\(n\)维线性空间\(V\)的一组基，又\(V\)中向量\(\vecal_{n+1}\)在这组基下坐标\(\spar{\enums{x}{n}}\)全都不为零。
 
 证明\(\enums{\vecal}{n},\vecal_{n+1}\)中任意\(n\)个向量必构成\(V\)的一组基，并求\(\vecal_1\)在基\(\vecal_2,\dots,\vecal_n,\vecal_{n+1}\)下的坐标。
 \end{problem}
@@ -467,8 +467,8 @@
 \begin{problem}
 设\(\mathrm{K}^{n\times n}\)为数域\(\mathrm{K}\)上全体\(n\)阶方阵构成的\(n^2\)维线性空间，又\(\mata\in\mathrm{K}^{n\times n}\)。
 \begin{enumerate}
-    \item 证明：\(\mathrm{K}^{n\times n}\)中与\(\mata\)可交换（即\(\mata\matb=\matb\mata\)，称\(\mata\)与\(\matb\)可交换）的全体方阵构成子空间（该子空间记为\(\mathrm{W}\mypar{\mata}\)）；
-    \item 问：当\(\mata\)是主对角线上元素为\(\enums{a}{n}\)（\(a_i\in\mathrm{K}\)且互异）的对角阵时，\(\mathrm{W}\mypar{\mata}\)是几维的？并给出其一基。
+    \item 证明：\(\mathrm{K}^{n\times n}\)中与\(\mata\)可交换（即\(\mata\matb=\matb\mata\)，称\(\mata\)与\(\matb\)可交换）的全体方阵构成子空间（该子空间记为\(\mathrm{W}\spar{\mata}\)）；
+    \item 问：当\(\mata\)是主对角线上元素为\(\enums{a}{n}\)（\(a_i\in\mathrm{K}\)且互异）的对角阵时，\(\mathrm{W}\spar{\mata}\)是几维的？并给出其一基。
 \end{enumerate}
 \end{problem}
 \begin{proof}
@@ -506,8 +506,8 @@
 
     因此对\(\forall\veceta\in\myspan{\vecal,\vecbeta}\)，不妨设\(\veceta=\lambda_1\vecal+\lambda_2\vecbeta\)，则有
     \begin{align*}
-        \veceta & =\lambda_1\mypar{-\frac{c_2}{c_1}\vecbeta-\frac{c_3}{c_1}\vecgamma}+\lambda_2\vecbeta \\
-                & =\mypar{\lambda_2-\frac{c_2\lambda_1}{c_1}}\vecbeta-\frac{c_3\lambda_1}{c_1}\vecgamma
+        \veceta & =\lambda_1\spar{-\frac{c_2}{c_1}\vecbeta-\frac{c_3}{c_1}\vecgamma}+\lambda_2\vecbeta \\
+                & =\spar{\lambda_2-\frac{c_2\lambda_1}{c_1}}\vecbeta-\frac{c_3\lambda_1}{c_1}\vecgamma
     \end{align*}
     所以\(\veceta\in\myspan{\vecbeta,\vecgamma}\)，即\(\myspan{\vecal,\vecbeta}\subseteq\myspan{\vecbeta,\vecgamma}\)。
 
@@ -585,7 +585,7 @@
         \item {
               对\(\forall\vecbeta\in V\)，有
               \begin{equation*}
-                  \indot{\veczero}{\vecal}=\indot{\vecbeta+\mypar{-\vecbeta}}{\vecal}=\indot{\vecbeta}{\vecal}-\indot{\vecbeta}{\vecal}=0
+                  \indot{\veczero}{\vecal}=\indot{\vecbeta+\spar{-\vecbeta}}{\vecal}=\indot{\vecbeta}{\vecal}-\indot{\vecbeta}{\vecal}=0
               \end{equation*}
               }
         \item 令\(\vecal=\vecbeta\)，得到\(\indot{\vecbeta}{\vecbeta}=0\)，由内积定义知\(\vecbeta=\veczero\)；
@@ -704,9 +704,9 @@
 
 % 4.23
 \begin{problem}
-已知\(\vecf_1=1\)，\(\vecf_2=x-1\)，\(\vecf_3=\mypar{x-1}^2\)为三维内积空间\(C\mat{0,1}\)的一组基，内积定义为
+已知\(\vecf_1=1\)，\(\vecf_2=x-1\)，\(\vecf_3=\spar{x-1}^2\)为三维内积空间\(C\mat{0,1}\)的一组基，内积定义为
 \begin{equation*}
-    \indot{\vecf}{\vecg}=\int_0^1\vecf\mypar{x}\vecg\mypar{x}\mathrm{d}x
+    \indot{\vecf}{\vecg}=\int_0^1\vecf\spar{x}\vecg\spar{x}\mathrm{d}x
 \end{equation*}
 利用Schmidt正交化方法，求与\(\vecf_1,\vecf_2,\vecf_3\)等价的一组标准正交基（两个向量组可相互线性表出称为等价）。
 \end{problem}
@@ -714,9 +714,9 @@
     \begin{align*}
         \vecg_1 & =\frac{\vecf_1}{\Abs{\vecf_1}}=\frac{\vecf_1}{\indot{\vecf_1}{\vecf_1}}=1                                                                                      \\
         \vecg_2 & =\frac{\vecf_2-\indot{\vecg_1}{\vecf_2}\vecg_1}{\Abs{\vecf_2-\indot{\vecg_1}{\vecf_2}\vecg_1}}                                                                 \\
-                & =\frac{x-\frac{1}{2}}{\sqrt{\frac{1}{12}}}=\sqrt3\mypar{2x-1}                                                                                                  \\
+                & =\frac{x-\frac{1}{2}}{\sqrt{\frac{1}{12}}}=\sqrt3\spar{2x-1}                                                                                                   \\
         \vecg_3 & =\frac{\vecf_3-\indot{\vecg_1}{\vecf_3}\vecg_1-\indot{\vecg_2}{\vecf_3}\vecg_2}{\Abs{\vecf_3-\indot{\vecg_1}{\vecf_3}\vecg_1-\indot{\vecg_2}{\vecf_3}\vecg_2}} \\
-                & =\frac{x^2-x+\frac{1}{6}}{\sqrt{\frac{1}{180}}}=\sqrt5\mypar{6x^2-6x+1}
+                & =\frac{x^2-x+\frac{1}{6}}{\sqrt{\frac{1}{180}}}=\sqrt5\spar{6x^2-6x+1}
     \end{align*}
 \end{proof}
 
@@ -732,8 +732,8 @@
     又由过渡矩阵的定义知\(\matb=\mata\matm\)，因此有
 
     \begin{align*}
-        \matb^\top\matb & =\mypar{\mata\matm}^\top\mata\matm      \\
-                        & =\matm^\top\mypar{\mata^\top\mata}\matm \\
+        \matb^\top\matb & =\spar{\mata\matm}^\top\mata\matm      \\
+                        & =\matm^\top\spar{\mata^\top\mata}\matm \\
                         & =\matm^\top\matm
     \end{align*}
     因此\(\matm\)为正交矩阵等价于\(\matb\)为正交矩阵。又因为\(\matb\)为正交矩阵等价于\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基，所以\(\enums{\vecbeta}{n}\)为\(V\)的标准正交基的充分必要条件是\(\matm\)为正交矩阵。
@@ -860,7 +860,7 @@
         \item {
               由推论4.4.1可知\(\nullsp{\mata}\)的正交补空间为\(\colsp{\mata^\top}\)，即\(\mata\)的行空间。
 
-              由(1)可知\(\dim\mypar{\colsp{\mata^\top}}=2\)，因此\(\colsp{\mata^\top}\)的一组基为
+              由(1)可知\(\dim\spar{\colsp{\mata^\top}}=2\)，因此\(\colsp{\mata^\top}\)的一组基为
               \begin{equation*}
                   \vecbeta_1=\begin{bmatrix}2&1&-1&1&-3\end{bmatrix}^\top,
                   \vecbeta_2=\begin{bmatrix}1&1&-1&0&1\end{bmatrix}^\top
@@ -912,11 +912,11 @@
 \begin{problem}
 设\(T\)是线性空间\(\mathrm{K}^{n\times n}\)的如下变换：
 \begin{equation*}
-    T(\mata)=\matc\mata-\mata\matc \mypar{\matc\in\mathrm{K}^{n\times n},\forall\mata\in\mathrm{K}^{n\times n}}
+    T(\mata)=\matc\mata-\mata\matc \spar{\matc\in\mathrm{K}^{n\times n},\forall\mata\in\mathrm{K}^{n\times n}}
 \end{equation*}
 证明：\(T\)是\(\mathrm{K}^{n\times n}\)的线性变换且
 \begin{equation*}
-    T\mypar{\mata\matb}=T\mypar{\mata}\matb+\mata T\mypar{\matb}
+    T\spar{\mata\matb}=T\spar{\mata}\matb+\mata T\spar{\matb}
 \end{equation*}
 \end{problem}
 \begin{proof}
@@ -974,7 +974,7 @@
 
 % 4.32
 \begin{problem}
-在\(P_n[x]\)中，取基为\(\epsilon_0=1\)，\(\epsilon_1=\mypar{x-a}\)，\(\epsilon_2=\frac{\mypar{x-a}^2}{2!}\)，\dots，\(\epsilon_n=\frac{\mypar{x-a}^n}{n!}\)（其中\(a\)为实数），求线性变换\(D\mypar{f\mypar{x}}=f'\mypar{x}\)在此基下的表示矩阵。
+在\(P_n[x]\)中，取基为\(\epsilon_0=1\)，\(\epsilon_1=\spar{x-a}\)，\(\epsilon_2=\frac{\spar{x-a}^2}{2!}\)，\dots，\(\epsilon_n=\frac{\spar{x-a}^n}{n!}\)（其中\(a\)为实数），求线性变换\(D\spar{f\spar{x}}=f'\spar{x}\)在此基下的表示矩阵。
 \end{problem}
 \begin{proof}
 \end{proof}
@@ -993,7 +993,7 @@
     \veceta_2=\begin{bmatrix}2\\2\\-1\end{bmatrix},
     \veceta_3=\begin{bmatrix}2\\-1\\-1\end{bmatrix}
 \end{equation*}
-定义线性变换：\(T\mypar{\vecveps_i}=\veceta_i\)，\(i\in\setof{1,2,3}\)。分别求\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)与\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵。
+定义线性变换：\(T\spar{\vecveps_i}=\veceta_i\)，\(i\in\setof{1,2,3}\)。分别求\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)与\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵。
 \end{problem}
 \begin{proof}
     设从基\(\vecveps_1,\vecveps_2,\vecveps_3\)到基\(\veceta_1,\veceta_2,\veceta_3\)的过渡矩阵为\(\matm\)。则有
@@ -1011,7 +1011,7 @@
     \end{equation*}
     设\(T\)在基\(\vecveps_1,\vecveps_2,\vecveps_3\)下的表示矩阵为\(\mata\)。由题设可知
     \begin{equation*}
-        \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=T\mypar{\vecveps_1,\vecveps_2,\vecveps_3}=\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
+        \begin{bmatrix}\veceta_1&\veceta_2&\veceta_3\end{bmatrix}=T\spar{\vecveps_1,\vecveps_2,\vecveps_3}=\begin{bmatrix}\vecveps_1&\vecveps_2&\vecveps_3\end{bmatrix}\mata
     \end{equation*}
     因此有\(\mata=\matm\)。由定理4.5.4知由定理4.5.4知\(T\)在基\(\veceta_1,\veceta_2,\veceta_3\)下的表示矩阵为\(\inv{\matm}\mata\matm=\matm\)。
 
@@ -1028,7 +1028,7 @@
 
 % 4.34
 \begin{problem}
-在实数域上所有\(2\)阶矩阵所构成的线性空间\(\rea^{2\times2}\)中，定义变换\(T\mypar{\vecal}=\vecgamma\vecal-\vecal\vecgamma\)，其中\(\vecal\)为\(\rea^{2\times2}\)中任意一个元素（矩阵），\(\vecgamma\)为\(\rea^{2\times2}\)中一个固定的元素（矩阵）。
+在实数域上所有\(2\)阶矩阵所构成的线性空间\(\rea^{2\times2}\)中，定义变换\(T\spar{\vecal}=\vecgamma\vecal-\vecal\vecgamma\)，其中\(\vecal\)为\(\rea^{2\times2}\)中任意一个元素（矩阵），\(\vecgamma\)为\(\rea^{2\times2}\)中一个固定的元素（矩阵）。
 \begin{enumerate}
     \item 证明：\(T\)是\(\rea^{2\times2}\)上的一个线性变换；
     \item 对于\(\rea^{2\times2}\)的一组基
