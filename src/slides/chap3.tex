@@ -63,7 +63,28 @@
     \tableofcontents[hideallsubsections] %You can comment this line if you want to show the subsections in the table of contents
 \end{frame}
 
-\section{习题要求}
+\section{作业总结}
+
+\begin{frame}
+    \frametitle{作业总结}
+    \metroset{block=fill}
+    \begin{block}{易错点}
+        \begin{enumerate}
+            \item 行列式性质不熟，导致计算错误；
+            \item 递推式求通项时省略过程；
+            \item 忘记讨论边界情况。
+        \end{enumerate}
+    \end{block}
+    \pause
+    \begin{block}{作业/解题要求}
+        \begin{enumerate}
+            \item 作业本写明学号和姓名；
+            \item \textbf{不建议}提交作业纸；
+            \item 作业准确率/完成程度不是考察要求；
+            \item \textbf{建议}将过程写得详细清楚一些。
+        \end{enumerate}
+    \end{block}
+\end{frame}
 
 \section{习题讲解}
 
@@ -633,5 +654,71 @@
 \end{frame}
 
 \section{补充习题}
+
+\subsection*{补充习题1}
+\begin{frame}
+    \frametitle{题面}
+    计算\(n\)阶行列式：
+    \begin{equation*}
+        D_n=
+        \begin{vmatrix}
+            a      & 0      & 0      & \cdots & 0      & 1      \\
+            0      & a      & 0      & \cdots & 0      & 0      \\
+            0      & 0      & a      & \cdots & 0      & 0      \\
+            \vdots & \vdots & \vdots &        & \vdots & \vdots \\
+            0      & 0      & 0      & \cdots & a      & 0      \\
+            1      & 0      & 0      & \cdots & 0      & a
+        \end{vmatrix}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    \frametitle{解答}
+    将\(D_n\)按第一行展开，后项按第一列展开后可得
+    \begin{equation*}
+        D_n=a^n+(-1)^{n+1}(-1)^{n}a^{n-2}=a^n-a^{n-2}
+    \end{equation*}
+\end{frame}
+
+\subsection*{补充习题2}
+\begin{frame}
+    \frametitle{题面}
+    定义\(n\)阶方阵\(\mata_n\)为：\(\mat{\mata_n}_{ij}=\abs{i-j}\)。求\(\det{\mata_n}\)。
+\end{frame}
+\begin{frame}[allowframebreaks]
+    \frametitle{解答}
+    由题设可知
+    \begin{equation*}
+        \mata_n=
+        \begin{bmatrix}
+            0      & 1      & 2      & \cdots & n-1    \\
+            1      & 0      & 1      & \cdots & n-2    \\
+            2      & 1      & 0      & \cdots & n-3    \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            n-1    & n-2    & n-3    & \cdots & 0
+        \end{bmatrix}
+    \end{equation*}
+    对其进行初等行变换，可得
+    \begin{equation*}
+        \det{\mata_n}=
+        \begin{vmatrix}
+            -1     & 1      & 1      & \cdots & 1      \\
+            -1     & -1     & 1      & \cdots & 1      \\
+            -1     & -1     & -1     & \cdots & 1      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            n-1    & n-2    & n-3    & \cdots & 0
+        \end{vmatrix}
+    \end{equation*}
+    对其进行初等列变换，可得
+    \begin{equation*}
+        \det{\mata_n}=
+        \begin{vmatrix}
+            -1     & 0      & 0      & \cdots & 0      \\
+            -1     & -2     & 0      & \cdots & 0      \\
+            -1     & -1     & -2     & \cdots & 0      \\
+            \vdots & \vdots & \vdots &        & \vdots \\
+            n-1    & 2n-3   & 2n-4   & \cdots & n-1
+        \end{vmatrix}=(-1)^{n-1}(n-1)2^{n-2}
+    \end{equation*}
+\end{frame}
 
 \end{document}
