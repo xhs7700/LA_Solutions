@@ -44,10 +44,10 @@
 \input{../headers.tex}
 
 \title{线性代数习题课}
-\author{夏海淞}
-\subtitle{第一章}
+\author[夏海淞]{夏海淞\\ \texttt{hsxia22@m.fudan.edu.cn}}
+\subtitle{第三章}
 \institute[复旦大学]{计算机科学技术学院\\ 复旦大学}
-\date{2023年9月21日}
+\date[2023/9/21]{2023年9月21日}
 
 \begin{document}
 {
@@ -62,6 +62,8 @@
     \setbeamertemplate{section in toc}[sections numbered] %This is numbering the sections
     \tableofcontents[hideallsubsections] %You can comment this line if you want to show the subsections in the table of contents
 \end{frame}
+
+\section{习题要求}
 
 \section{习题讲解}
 
@@ -120,11 +122,20 @@
 \end{frame}
 \begin{frame}
     \frametitle{解答}
-    由题设可知该\(n\)阶行列式中非零元素个数小于\(n^2-\spar{n^2-n}=n\)。
+    \metroset{block=fill}
+    \begin{block}{一种解法}
+        由题设可知该\(n\)阶行列式中非零元素个数小于\(n^2-\spar{n^2-n}=n\)。
 
-    记该行列式\(i\)行\(j\)列元素为\(a_{ij}\)，则对任意\(n\)阶排列\(i_1i_2\cdots i_n\)，均满足\(\prod_{j=1}^{n}a_{i_jj}=0\)。
+        记该行列式\(i\)行\(j\)列元素为\(a_{ij}\)，则对任意\(n\)阶排列\(i_1i_2\cdots i_n\)，均满足\(\prod_{j=1}^{n}a_{i_jj}=0\)。
 
-    由行列式定义可知该行列式为\(0\)。
+        由行列式定义可知该行列式为\(0\)。
+    \end{block}
+    \pause
+    \begin{block}{另一种解法}
+        由题设可知该\(n\)阶行列式中非零元素个数小于\(n^2-\spar{n^2-n}=n\)。
+
+        由抽屉原理可知该行列式中至少有一行元素均为\(0\)。根据推论3.2.3可知该行列式为\(0\)。
+    \end{block}
 \end{frame}
 
 \subsection*{3.4}
@@ -259,7 +270,34 @@
     \end{equation*}
 \end{frame}
 \begin{frame}[allowframebreaks]
-    \frametitle{解答}
+    \frametitle{基于列展开的解答}
+
+    记上述行列式为\(D_n\)。将\(D_n\)按第一列展开：
+    \begin{align*}
+        D_n & =xD_{n-1}+(-1)^{n+1}a_n
+        \begin{vmatrix}
+            -1     & 0      & \cdots & 0      & 0      \\
+            x      & -1     & \cdots & 0      & 0      \\
+            \vdots & \vdots &        & \vdots & \vdots \\
+            0      & 0      & \cdots & x      & -1
+        \end{vmatrix} \\
+            & =xD_{n-1}+a_n
+    \end{align*}
+    \(n=1\)时，\(D_n=a_1+x\)；\(n=2\)时，\(D_n=a_2+a_1x+x^2\)。
+
+    猜想\(D_n=x^n+\sum_{i=1}^{n}a_ix^{n-i}\)对\(n\geq1\)成立。
+
+    当\(n=1\)时，结论成立。设当\(n=k\)\((k\geq1)\)时结论成立，则当\(n=k+1\)时，
+    \begin{align*}
+        D_{k+1} & =xD_k+a_{k+1}=x\spar{x^k+\sum_{i=1}^{k}a_ix^{k-i}}+a_{k+1} \\
+                & =x^{k+1}+\sum_{i=1}^{k+1}a_ix^{k+1-i}
+    \end{align*}
+
+    由归纳公理知\(D_n=x^n+\sum_{i=1}^{n}a_ix^{n-i}\)对\(n\geq1\)成立。
+
+\end{frame}
+\begin{frame}[allowframebreaks]
+    \frametitle{基于初等变换的解答}
     当\(x\neq0\)时，可利用初等列变换将行列式转化为：
     \begin{align*}
           &
@@ -498,6 +536,16 @@
 \end{frame}
 \begin{frame}
     \frametitle{解答}
+    利用Laplace定理完成证明。
+
+    在\(\matm=\begin{bmatrix}\mata&\matc\\\mato&\matb\end{bmatrix}\)中取前\(k\)行，分析\(\matm\)中前\(k\)行元素组成的\(k\)阶子矩阵\(\matm_k\)：
+    \pause
+
+    当\(\matm_k=\mata\)时，其子式对应的代数余子式为\(\det{\matb}\)；
+
+    当\(\matm_k\neq\mata\)时，其子式对应的代数余子式中必然存在全零列，即该代数余子式的值为零。
+
+    由Laplace定理可得\(\det{\matm}=\det{\mata}\det{\matb}\)。
 \end{frame}
 
 \subsection*{3.23}
