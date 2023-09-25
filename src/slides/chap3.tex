@@ -47,7 +47,7 @@
 \author[夏海淞]{夏海淞\\ \texttt{hsxia22@m.fudan.edu.cn}}
 \subtitle{第三章}
 \institute[复旦大学]{计算机科学技术学院\\ 复旦大学}
-\date[2023/9/21]{2023年9月21日}
+\date[2023/9/21]{2023年9月26日}
 
 \begin{document}
 {
@@ -395,7 +395,7 @@
             1      & 1      & 1      & \cdots & 1      \\
             \vdots & \vdots & \vdots &        & \vdots \\
             1      & 1-n    & 1      & \cdots & 1
-        \end{vmatrix}                                                                           \\
+        \end{vmatrix}                                                                  \\
         = &
         \begin{vmatrix}
             1      & 1      & 2      & \cdots & n-1    \\
@@ -410,8 +410,8 @@
             0                              & 0      & 0      & \cdots & 0      \\
             \vdots                         & \vdots & \vdots &        & \vdots \\
             0                              & -n     & 0      & \cdots & 0
-        \end{vmatrix}                                                   \\
-        = & \spar{1+\frac{n-1}{2}}(-1)^{\frac{(n-1)(n-2)}{2}(-n)^{n-1}}=\spar{1+\frac{n-1}{2}}(-1)^{\frac{n(n-1)}{2}}n^{n-1}
+        \end{vmatrix}                                          \\
+        = & \spar{1+\frac{n-1}{2}}(-1)^{\frac{(n-1)(n-2)}{2}(-n)^{n-1}}=\frac{n+1}{2}(-1)^{\frac{n(n-1)}{2}}n^{n-1}
     \end{align*}
 \end{frame}
 
