@@ -1,62 +1,69 @@
-\documentclass{beamer}
-\usepackage{ctex}
-\usepackage[T1]{fontenc}
+\documentclass[9pt,xcolor=svgnames]{beamer} %Beamer
+\usepackage{palatino} %font type
+\usefonttheme{metropolis} %Type of slides
+\usefonttheme[onlymath]{serif} %font type Mathematical expressions
+\usetheme[progressbar=frametitle,numbering=counter]{metropolis} %This adds a bar at the beginning of each section.
+\useoutertheme{infolines} %Circles in the top of each frame, showing the slide of each section you are at
 
-% other packages
-\usepackage{latexsym,xcolor,multicol,booktabs,calligra}
-\usepackage{pstricks,listings,stackengine,cite}
-\usepackage{anyfontsize}
-\usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{amsmath,amsthm}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK SC}
+\setCJKsansfont[BoldFont=Noto Sans CJK SC]{Noto Sans CJK SC Light}
 
-\setbeamertemplate{bibliography item}[text]
-% \bibliographystyle{plain}
-% 如果参考文献太多的话，可以像下面这样调整字体：
-% \tiny\bibliographystyle{plain}
+\usepackage{appendixnumberbeamer} %enumerate each slide without counting the appendix
+\setbeamercolor{progress bar}{fg=Maroon!70!Coral} %These are the colours of the progress bar. Notice that the names used are the svgnames
+\setbeamercolor{title separator}{fg=DarkSalmon} %This is the line colour in the title slide
+\setbeamercolor{structure}{fg=black} %Colour of the text of structure, numbers, items, blah. Not the big text.
+\setbeamercolor{normal text}{fg=black!87} %Colour of normal text
+\setbeamercolor{alerted text}{fg=DarkRed!60!Gainsboro} %Color of the alert box
+\setbeamercolor{example text}{fg=Maroon!70!Coral} %Colour of the Example block text
 
-% \usefonttheme[onlymath]{serif}
 
-\input{../headers.tex}
+\setbeamercolor{palette primary}{bg=NavyBlue!50!DarkOliveGreen, fg=white} %These are the colours of the background. Being this the main combination and so one. 
+\setbeamercolor{palette secondary}{bg=NavyBlue!50!DarkOliveGreen, fg=white}
+\setbeamercolor{palette tertiary}{bg=NavyBlue!40!Black, fg= white}
+\setbeamercolor{section in toc}{fg=NavyBlue!40!Black} %Color of the text in the table of contents (toc)
 
-\author{夏海淞}
+%These next packages are the useful for Physics in general, you can add the extras here. 
+\usepackage{amsmath,amssymb}
+\usepackage{slashed}
+\usepackage{cite}
+\usepackage{relsize}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usepackage{geometry}
+\usepackage{xspace}
+\usepackage{graphicx,subfig,float}
+\usepackage{color}
+\newcommand{\themename}{\textbf{\textsc{bluetemp}\xspace}}%metropolis}}\xspace}
+
+\input{../../headers.tex}
+
 \title{线性代数习题课}
+\author[夏海淞]{夏海淞\\ \texttt{hsxia22@m.fudan.edu.cn}}
 \subtitle{第五章}
-% \institute{School of Computer Science, Fudan University}
+\institute[复旦大学]{计算机科学技术学院\\ 复旦大学}
 \date{\today}
-\usepackage{College}
-
-% defs
-\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
-\def\env#1{\texttt{\color{blue}\footnotesize #1}}
-\definecolor{deepblue}{rgb}{0,0,0.5}
-\definecolor{deepred}{rgb}{0.6,0,0}
-\definecolor{deepgreen}{rgb}{0,0.5,0}
-\definecolor{halfgray}{gray}{0.55}
-
-\lstset{
-    basicstyle=\ttfamily\small,
-    keywordstyle=\bfseries\color{deepblue},
-    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
-    stringstyle=\color{deepgreen},
-    numbers=left,
-    numberstyle=\small\color{halfgray},
-    rulesepcolor=\color{red!20!green!20!blue!20},
-    frame=shadowbox,
-}
 
 \begin{document}
-\setlength{\parskip}{0.45\baselineskip}
+{
+\setbeamercolor{background canvas}{bg=NavyBlue!50!DarkOliveGreen, fg=white}
+\setbeamercolor{normal text}{fg=white}
+\maketitle
+}%This is the colour of the first slide. bg= background and fg=foreground
+
+% \metroset{titleformat frame=smallcaps} %This changes the titles for small caps
 
 \begin{frame}
-    \titlepage
-    \begin{figure}[htpb]
-        \begin{center}
-            \vspace*{-0.5cm}
-            \includegraphics[width=0.1\linewidth]{../../pic/FDU.jpeg}
-        \end{center}
-    \end{figure}
+    \setbeamertemplate{section in toc}[sections numbered] %This is numbering the sections
+    \tableofcontents[hideallsubsections] %You can comment this line if you want to show the subsections in the table of contents
 \end{frame}
+
+\section{习题讲解}
 
 \subsection*{5.1}
 \begin{frame}
