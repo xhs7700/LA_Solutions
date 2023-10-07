@@ -1012,7 +1012,7 @@
     证明\(\mata\matb=\sum_{k=1}^l\col{\mata}{k}\row{\matb}{k}\)。
 \end{extraprob}
 \begin{proof}
-    和附加习题\ref{extra-1.1}解法类似，定义矩阵\(\mata=\mat{a_ij}_{m\times l}\)，\(\matb=\mat{b_{ij}}_{l\times n}\)。则有
+    和附加习题\ref{extra-1.1}解法类似，定义矩阵\(\mata=\mat{a_{ij}}_{m\times l}\)，\(\matb=\mat{b_{ij}}_{l\times n}\)。则有
     \begin{equation*}
         \mata\matb=
         \begin{bmatrix}
@@ -1072,7 +1072,7 @@
 
     则容易发现\(\col{\matc}{j}=\sum_{k=1}^nb_{kj}\col{\mata}{k}=\col{\mata\matb}{j}\)，即\(\matc=\mata\matb\)。
 
-    又由Laplace定理可知，\(\abs{\matf}=\abs{\mata}\abs{\matb}\)，\(\abs{\matfstar}=-\abs{\matc}\abs{\matd}=\abs{\mata\matb}\)，配合行列式性质即可得\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
+    又由Laplace定理可知，\(\abs{\matf}=\abs{\mata}\abs{\matb}\)，\(\abs{\matfstar}=\spar{-1}^n\abs{\matc}\abs{\matd}=\abs{\mata\matb}\)，配合行列式性质即可得\(\abs{\mata\matb}=\abs{\mata}\abs{\matb}\)。
 
 \end{proof}
 
