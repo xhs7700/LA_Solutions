@@ -137,39 +137,74 @@
 \end{problem}
 \begin{proof}
     对增广矩阵进行初等行变换：
-    \begin{align*}
+    \begin{small}
+        \begin{align*}
+            \mat{\mata,\vecb}=
+             & \begin{bmatrix}
+                   1 & -1 & 2   & 0  & 1  \\
+                   2 & -1 & 3   & -1 & 4  \\
+                   0 & 1  & a   & b  & b  \\
+                   1 & -3 & 3-a & 0  & -4
+               \end{bmatrix}\xrightarrow[R_4-R_1]{R_2-2R_1}
+             & \begin{bmatrix}
+                   1 & -1 & 2   & 0  & 1  \\
+                   0 & 1  & -1  & -1 & 2  \\
+                   0 & 1  & a   & b  & b  \\
+                   0 & -2 & 1-a & 0  & -5
+               \end{bmatrix}                       \\
+            \xrightarrow[R_4+2R_2]{R_3-R_2}
+             & \begin{bmatrix}
+                   1 & -1 & 2    & 0   & 1   \\
+                   0 & 1  & -1   & -1  & 2   \\
+                   0 & 0  & a+1  & b+1 & b-2 \\
+                   0 & 0  & -a-1 & -2  & -1
+               \end{bmatrix}\xrightarrow{R_4+R_3}
+             & \begin{bmatrix}
+                   1 & -1 & 2   & 0   & 1   \\
+                   0 & 1  & -1  & -1  & -2  \\
+                   0 & 0  & a+1 & b+1 & b-2 \\
+                   0 & 0  & 0   & b-1 & b-3
+               \end{bmatrix}
+        \end{align*}
+    \end{small}
+    当\(b=1\)时，\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
+
+    当\(b\neq1\)且\(a=-1\)时，\(\mat{\mata,\vecb}\)为：
+    \begin{equation*}
+        \begin{bmatrix}
+            1 & -1 & 2  & 0   & 1   \\
+            0 & 1  & -1 & -1  & -2  \\
+            0 & 0  & 0  & b+1 & b-2 \\
+            0 & 0  & 0  & b-1 & b-3
+        \end{bmatrix}
+    \end{equation*}
+    当\(b=-1\)时，\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
+
+    当\(b\neq-1\)时，对\(\mat{\mata,\vecb}\)进一步进行初等行变换：
+    \begin{equation*}
         \mat{\mata,\vecb}=
-         & \begin{bmatrix}
-               1 & -1 & 2   & 0  & 1  \\
-               2 & -1 & 3   & -1 & 4  \\
-               0 & 1  & a   & b  & b  \\
-               1 & -3 & 3-a & 0  & -4
-           \end{bmatrix}\xrightarrow[R_4-R_1]{R_2-2R_1}
-         & \begin{bmatrix}
-               1 & -1 & 2   & 0  & 1  \\
-               0 & 1  & -1  & -1 & -2 \\
-               0 & 1  & a   & b  & b  \\
-               0 & -2 & 1-a & 0  & -5
-           \end{bmatrix}                       \\
-        \xrightarrow[R_4+2R_2]{R_3-R_2}
-         & \begin{bmatrix}
-               1 & -1 & 2    & 0   & 1   \\
-               0 & 1  & -1   & -1  & -2  \\
-               0 & 0  & a+1  & b+1 & b+2 \\
-               0 & 0  & -a-1 & -2  & -9
-           \end{bmatrix}\xrightarrow{R_4+R_3}
-         & \begin{bmatrix}
-               1 & -1 & 2   & 0   & 1   \\
-               0 & 1  & -1  & -1  & -2  \\
-               0 & 0  & a+1 & b+1 & b+2 \\
-               0 & 0  & 0   & b-1 & b-7
-           \end{bmatrix}
+        \begin{bmatrix}
+            1 & -1 & 2  & 0   & 1   \\
+            0 & 1  & -1 & -1  & -2  \\
+            0 & 0  & 0  & b+1 & b-2 \\
+            0 & 0  & 0  & b-1 & b-3
+        \end{bmatrix}\xrightarrow[R_4-\spar{b-1}R_3]{R_3/\spar{b+1}}
+        \begin{bmatrix}
+            1 & -1 & 2  & 0  & 1               \\
+            0 & 1  & -1 & -1 & -2              \\
+            0 & 0  & 0  & 1  & \frac{b-2}{b+1} \\
+            0 & 0  & 0  & 0  & \frac{b-5}{b+1}
+        \end{bmatrix}
+    \end{equation*}
+    当\(b=5\)时，\(\rank{\mat{\mata,\vecb}}=\rank{\mata}=3\)，方程组有无穷多解；
+
+    当\(b\neq5\)时，\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
+
+    当\(b\neq1\)且\(a\neq-1\)时，\(\rank{\mat{\mata,\vecb}}=\rank{\mata}=4\)，方程组有唯一解：
+    \begin{align*}
+          & \vecx^\top=\myvec{x_1,x_2,x_3,x_4}                                                                                                        \\
+        = & \myvec{\frac{-2ab+b+4a-11}{\spar{b-1}\spar{a+1}},\frac{3ab+2b-5a}{\spar{b-1}\spar{a+1}},\frac{5-b}{\spar{b-1}\spar{a+1}},\frac{b-3}{b-1}}
     \end{align*}
-    当\(b=1\)时，\(b-1=0\)。此时\(\rank{\mat{\mata,\vecb}}>\rank{\mata}\)，方程组无解；
-
-    当\(b\neq1\)时，\(b-1\neq0\)。此时\(\rank{\mat{\mata,\vecb}}=\rank{\mata}=4\)，方程组有唯一解。
-
-    \todo{求出解}
 \end{proof}
 
 % 2.6
@@ -204,6 +239,11 @@
     \begin{equation*}
         \text{方程组有解}\iff \rank{\mat{\mata,\vecb}}=\rank{\mata}\iff \sum_{i=1}^5a_i=0\text{。}
     \end{equation*}
+    方程组的通解为
+    \begin{align*}
+          & \vecx^\top=\myvec{x_1,x_2,x_3,x_4,x_5}                    \\
+        = & \myvec{a_1+a_2+a_3+a_4+t,a_2+a_3+a_4+t,a_3+a_4+t,a_4+t,t}
+    \end{align*}
 \end{proof}
 
 % 2.7
@@ -217,16 +257,44 @@
 试证这三条直线交于一点的充要条件是\(a+b+c=0\)。
 \end{problem}
 \begin{proof}
-    三条直线交于一点等价于方程组
+    设方程组对应的增广矩阵为
     \begin{equation*}
-        \begin{cases}
-            ax+2by+3c=0 \\
-            bx+2cy+3a=0 \\
-            cx+2ay+3b=0
-        \end{cases}
+        \mat{\mata,\vecb}=
+        \begin{bmatrix}
+            a & 2b & -3c \\
+            b & 2c & -3a \\
+            c & 2a & -3b
+        \end{bmatrix}
     \end{equation*}
-    有唯一解。
-    \todo{继续分析，学舍证明存在问题}
+    三条直线交于一点等价于上述方程组有唯一解。
+
+    首先证明必要性。
+    对\(\det{\mat{\mata,\vecb}}\)进行初等变换后按第一行展开，可得
+    \begin{align*}
+        \det{\mat{\mata,\vecb}}
+         & =6\spar{a+b+c}\begin{vmatrix}c-b & b-a\\a-c & c-b\end{vmatrix} \\
+         & =6\spar{a+b+c}\spar{\spar{c-b}^2-\spar{b-a}\spar{a-c}}         \\
+         & =3\spar{a+b+c}\spar{\spar{a-b}^2+\spar{b-c}^2+\spar{c-a}^2}
+    \end{align*}
+    因为方程组有唯一解，所以\(\det{\mat{\mata,\vecb}}=0\)。又因为\(l_1,l_2,l_3\)互不相同，所以\(a,b,c\)互不相同。综上，可得\(a+b+c=0\)。
+
+    随后证明充分性。
+
+    因为\(a,b,c\)互不相同，所以\(a,b,c\)中至少有一个非零。不妨设\(a\neq0\)，对\(\mat{\mata,\vecb}\)做类似的初等变换，可得
+    \begin{equation*}
+        \mat{\mata,\vecb}\longrightarrow
+        \begin{bmatrix}
+            a & 2b & -3c \\
+            b & 2c & -3a \\
+            0 & 0  & 0
+        \end{bmatrix}\xrightarrow{aR_2-bR_1}
+        \begin{bmatrix}
+            a & 2b             & -3c            \\
+            0 & 2\spar{ac-b^2} & 3\spar{bc-a^2} \\
+            0 & 0              & 0
+        \end{bmatrix}
+    \end{equation*}
+    又因为\(ac-b^2=ac-\spar{a+c}^2=-\spar{a+c/2}^2-\spar{c/2}^2<0\)，所以\(\rank{\mat{\mata,\vecb}}=\rank{\mata}=2\)。方程组有唯一解。
 \end{proof}
 
 % 2.8
@@ -243,6 +311,61 @@
 试问\(a\)取何值时，该方程组有非零解，并求出其通解。
 \end{problem}
 \begin{proof}
+    设方程组对应的系数矩阵为\(\mata\)。当方程组有非零解时，\(\det{\mata}=0\)。又因为
+    \begin{align*}
+        \det{\mata} & =\spar{\frac{n\spar{n+1}}{2}+a}
+        \begin{vmatrix}
+            1+a    & 1      & \cdots & 1      \\
+            2      & 2+a    & \cdots & 2      \\
+            \vdots & \vdots &        & \vdots \\
+            1      & 1      & \cdots & 1
+        \end{vmatrix}                    \\
+                    & =\spar{\frac{n\spar{n+1}}{2}+a}a^{n-1}
+    \end{align*}
+    所以当方程组有非零解时，\(a\in\setof{-\frac{n\spar{n+1}}{2},0}\)。
+
+    当\(a=-\frac{n\spar{n+1}}{2}\)时，将其代入方程组，对应的系数矩阵为
+    \begin{small}
+        \begin{align*}
+             &
+            \begin{bmatrix}
+                1+a    & 1      & \cdots & 1      \\
+                2      & 2+a    & \cdots & 2      \\
+                \vdots & \vdots &        & \vdots \\
+                0      & 0      & \cdots & 0
+            \end{bmatrix}\xrightarrow[\spar{R_3-3R_1}/a,\dots]{\spar{R_2-2R_1}/a}
+            \begin{bmatrix}
+                1+a         & 1      & \cdots & 1      & 1      \\
+                -2          & 1      & \cdots & 0      & 0      \\
+                \vdots      & \vdots &        & \vdots & \vdots \\
+                -\spar{n-1} & 0      & \cdots & 1      & 0      \\
+                0           & 0      & \cdots & 0      & 0
+            \end{bmatrix}\xrightarrow{R_1-R_2-\dots-R_{n-1}} \\
+             &
+            \begin{bmatrix}
+                -n          & 0      & \cdots & 0      & 1      \\
+                -2          & 1      & \cdots & 0      & 0      \\
+                \vdots      & \vdots &        & \vdots & \vdots \\
+                -\spar{n-1} & 0      & \cdots & 1      & 0      \\
+                0           & 0      & \cdots & 0      & 0
+            \end{bmatrix}\xrightarrow[R_3-3R_1/n,\dots]{R_2-2R_1/n}
+            \begin{bmatrix}
+                -n     & 0      & \cdots & 0      & 1              \\
+                0      & 1      & \cdots & 0      & -\frac{2}{n}   \\
+                \vdots & \vdots &        & \vdots & \vdots         \\
+                0      & 0      & \cdots & 1      & -\frac{n-1}{n} \\
+                0      & 0      & \cdots & 0      & 0
+            \end{bmatrix}
+        \end{align*}
+    \end{small}
+    因此该方程组的解为
+    \begin{equation*}
+        \vecx^\top=\myvec{\frac{1}{n}t,\frac{2}{n}t,\dots,\frac{n-1}{n}t,t}
+    \end{equation*}
+    当\(a=0\)时，将其代入方程组，解得
+    \begin{equation*}
+        \vecx^\top=\myvec{\sum_{i=2}^{n}t_i,t_2,\dots,t_n}
+    \end{equation*}
 \end{proof}
 
 % 2.9
@@ -342,6 +465,12 @@
 \(k\)为常数，且\(\mata\matb=\mato\)，求线性方程组\(\mata\vecx=\veczero\)的通解。
 \end{problem}
 \begin{proof}
+    由\(\mata\matb=\mato\)可知\(\matb\)所有列向量均为\(\mata\vecx=\veczero\)的解。
+    注意到\(\myvec{1,2,3}\)与\(\myvec{2,4,6}\)线性相关，因此对该线性方程组的基础解系中解的个数进行分类讨论。
+
+    当线性方程组的基础解系中只有一个解时，\(\myvec{1,2,3}\)和\(\myvec{3,6,k}\)线性相关。此时\(k=9\)，方程组的通解为\(t_1\myvec{1,2,3}\)，\(t_1\in\rea\)。
+
+    当线性方程组的基础解系中有两个解时，\(k\neq9\)，\(\rank{\mata}=1\)。此时方程组等价于\(ax_1+bx_2+cx_3=0\)。将\(\vecx^\top=\myvec{1,2,3}\)代入可得\(a+2b+3c=0\)。因为\(a,b,c\)不全为零，不妨设\(a\neq0\)，易得此时方程组另一个解为\(\myvec{c,0,-a}\)。因此方程组的通解为\(t_1\myvec{1,2,3}+t_2\myvec{c,0,-a}\)，\(t_1,t_2\in\rea\)。
 \end{proof}
 
 % 2.15
@@ -353,6 +482,16 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{enumerate}
+        \item \begin{align*}
+                  \rank{\mata} & \leq\rank{\vecal\vecal^\top}+\rank{\vecbeta\vecbeta^\top} \\
+                               & \leq\rank{\vecal}+\rank{\vecbeta}\leq2
+              \end{align*}
+        \item 因为\(\vecal,\vecbeta\)线性相关，不妨设\(\vecbeta=k\vecal\)，\(k\neq0\)。因此有
+              \begin{equation*}
+                  \rank{\mata}=\rank{\spar{1+k^2}\vecal\vecal^\top}\leq\rank{\vecal}<2
+              \end{equation*}
+    \end{enumerate}
 \end{proof}
 
 % 2.16
@@ -436,6 +575,11 @@
 设\(\mata\)是\(s\times n\)矩阵，\(\matb\)是\(n\times m\)矩阵，\(n<m\)，证明：齐次线性方程组\(\spar{\mata\matb}\vecx=\veczero\)有非零解。
 \end{problem}
 \begin{proof}
+    由\(n<m\)可知
+    \begin{equation*}
+        \rank{\mata\matb}\leq\rank{\matb}\leq n<m
+    \end{equation*}
+    由定理2.1.1可知齐次线性方程组\(\spar{\mata\matb}\vecx=\veczero\)有非零解。
 \end{proof}
 
 % 2.22
@@ -443,6 +587,7 @@
 设\(\mata\)是\(m\times s\)矩阵，\(\matb\)是\(s\times n\)矩阵，\(\vecx\)是\(n\)元列向量。证明：若\(\spar{\mata\matb}\vecx=\veczero\)与\(\matb\vecx=\veczero\)是同解方程组，则\(\rank{\mata\matb}=\rank{\matb}\)。
 \end{problem}
 \begin{proof}
+    因为\(\spar{\mata\matb}\vecx=\veczero\)和\(\matb\vecx=\veczero\)是同解方程组，所以两个方程组的基础解系等价，即基础解系含有解的个数相同。由定理2.2.8可知\(\rank{\mata\matb}=\rank{\matb}\)。
 \end{proof}
 
 % 2.23
@@ -486,7 +631,26 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
-
+    \begin{enumerate}
+        \item[(3)] 对\(\mat{\vecal_{1},\vecal_{2},\vecal_{3},\vecal_{4}}\)进行初等行变换：
+              \begin{equation*}
+                  \begin{bmatrix}
+                      6  & 1  & 1   & 7  \\
+                      4  & 0  & 4   & 1  \\
+                      1  & 2  & -9  & 0  \\
+                      -1 & 3  & -16 & -1 \\
+                      2  & -4 & 22  & 3
+                  \end{bmatrix}\longrightarrow
+                  \begin{bmatrix}
+                      1 & 0 & 1  & 0 \\
+                      0 & 1 & -5 & 0 \\
+                      0 & 0 & 0  & 1 \\
+                      0 & 0 & 0  & 0 \\
+                      0 & 0 & 0  & 0
+                  \end{bmatrix}
+              \end{equation*}
+              所以向量组的秩为\(3\)，极大线性无关组为\(\setof{\vecal_{1},\vecal_{2},\vecal_{4}}\)，\(\setof{\vecal_{1},\vecal_{3},\vecal_{4}}\)，\(\setof{\vecal_{2},\vecal_{3},\vecal_{4}}\)。
+    \end{enumerate}
 \end{proof}
 
 % 2.27
@@ -518,6 +682,22 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{enumerate}
+        \item 对方程组对应的系数矩阵进行初等行变换：
+              \begin{equation*}
+                  \begin{bmatrix}
+                      1 & -2 & 4  & -7 \\
+                      2 & 1  & -2 & 1  \\
+                      3 & -1 & 2  & -4
+                  \end{bmatrix}\longrightarrow
+                  \begin{bmatrix}
+                      1 & 0 & 0  & 0 \\
+                      0 & 1 & -2 & 0 \\
+                      0 & 0 & 0  & 1
+                  \end{bmatrix}
+              \end{equation*}
+              所以该方程组的基础解系为\(\myvec{0,2,1,0}\)。
+    \end{enumerate}
 \end{proof}
 
 % 2.29
@@ -546,6 +726,24 @@
 \end{enumerate}
 \end{problem}
 \begin{proof}
+    \begin{enumerate}
+        \item 对方程组对应的系数矩阵进行初等行变换：
+              \begin{equation*}
+                  \begin{bmatrix}
+                      1 & -2 & -1 & -1 & 1  \\
+                      2 & 1  & -1 & 2  & -3 \\
+                      3 & -2 & -1 & 1  & -2 \\
+                      2 & -5 & 1  & -2 & 2
+                  \end{bmatrix}\longrightarrow
+                  \begin{bmatrix}
+                      1 & 0 & 0 & 0 & -\frac{1}{4} \\
+                      0 & 1 & 0 & 0 & 0            \\
+                      0 & 0 & 1 & 0 & 0            \\
+                      0 & 0 & 0 & 1 & -\frac{5}{4}
+                  \end{bmatrix}
+              \end{equation*}
+              所以该方程组的通解为\(t\myvec{1,0,0,5,4}\)，\(t\in\rea\)。
+    \end{enumerate}
 \end{proof}
 
 % 2.30
@@ -553,6 +751,9 @@
 已知：向量组I可用向量组II线性表出，向量组II可用向量组III线性表出。求证：向量组I可用向量组III线性表出。
 \end{problem}
 \begin{proof}
+    设向量组I，II，III对应的矩阵分别为\(\mata\in\rea^{n\times a}\)，\(\matb\in\rea^{n\times b}\)，\(\matc\in\rea^{n\times c}\)。
+
+    因为向量组I可由向量组II线性表出，所以存在\(\vecx\in\rea^{b\times a}\)，满足\(\mata=\matb\vecx\)。同理，存在\(\vecy\in\rea^{c\times b}\)，满足\(\matb=\matc\vecy\)。所以有\(\mata=\matb\vecx=\matc\vecy\vecx\)，即向量组I可由向量组III线性表出。
 \end{proof}
 
 % 2.31
@@ -560,6 +761,28 @@
 设向量组\(\enums{\vecal}{n}\)线性无关。证明：当且仅当\(n\)为奇数时，向量组\(\vecal_1+\vecal_2\)，\(\vecal_2+\vecal_3\)，\(\cdots\)，\(\vecal_{n-1}+\vecal_n\)，\(\vecal_n+\vecal_1\)也线性无关。
 \end{problem}
 \begin{proof}
+    考虑方程
+    \begin{equation*}
+        k_1\spar{\vecal_1+\vecal_2}+k_2\spar{\vecal_2+\vecal_3}+\cdots+k_n\spar{\vecal_n+\vecal_1}=\veczero
+    \end{equation*}
+    该方程可表示为
+    \begin{equation*}
+        \spar{k_n+k_1}\vecal_1+\spar{k_1+k_2}\vecal_2+\cdots+\spar{k_{n-1}+k_n}\vecal_n=0
+    \end{equation*}
+    又因为向量组\(\enums{\vecal}{n}\)线性无关，所以上述方程等价于线性方程组\(\mata\vecx=\veczero\)，其中
+    \begin{equation*}
+        \mata=
+        \begin{bmatrix}
+            1      & 1      & 0      & \cdots & 0      & 0      \\
+            0      & 1      & 1      & \cdots & 0      & 0      \\
+            \vdots & \vdots & \vdots &        & \vdots & \vdots \\
+            0      & 0      & 0      & \cdots & 1      & 1      \\
+            1      & 0      & 0      & \cdots & 0      & 1
+        \end{bmatrix}
+    \end{equation*}
+    将\(\det{\mata}\)按第一列展开，可得\(\det{\mata}=1+\spar{-1}^{n+1}\)。
+
+    当\(n\)为奇数时，\(\det{\mata}=2\)，即\(\mata\)满秩，方程组无非零解。所以上述向量组也线性无关；当\(n\)为偶数时，\(\det{\mata}=0\)，\(\rank{\mata}<n\)，方程组有非零解。所以上述向量组线性相关。
 \end{proof}
 
 % 2.32
@@ -567,6 +790,23 @@
 设向量组\(\enums{\vecal}{n}\)线性无关，而向量组\(\enums{\vecal}{n},\vecbeta,\vecgamma\)线性相关。证明：或者\(\vecbeta\)与\(\vecgamma\)中至少有一个可由\(\enums{\vecal}{n}\)线性表出，或者向量组\(\enums{\vecal}{n},\vecbeta\)与向量组\(\enums{\vecal}{n},\vecgamma\)可相互线性表出。
 \end{problem}
 \begin{proof}
+    考虑方程
+    \begin{equation*}
+        k_{1}\vecal_{1}+k_{2}\vecal_{2}+\cdots+k_{n}\vecal_{n}+k_{n+1}\vecbeta+k_{n+2}\vecgamma=\veczero
+    \end{equation*}
+    因为向量组\(\enums{\vecal}{n},\vecbeta,\vecgamma\)线性相关，所以\(k_i\)，\(i=1,2,\dots,n+2\)不全为零。
+
+    当\(k_{n+1}=k_{n+2}=0\)时，表明向量组\(\enums{\vecal}{n}\)线性相关，与题设矛盾；
+
+    当\(k_{n+1}\neq0\)，\(k_{n+2}=0\)时，有\(\vecbeta=-\frac{1}{k_{n+1}}\sum_{i=1}^{n}k_i\vecal_i\)，即\(\vecbeta\)可由\(\enums{\vecal}{n}\)线性表出。
+
+    当\(k_{n+1}=0\)，\(k_{n+2}\neq0\)时，同理可得\(\vecgamma\)可由\(\enums{\vecal}{n}\)线性表出。
+
+    当\(k_{n+1}\neq0\)，\(k_{n+2}\neq0\)时，有
+    \begin{equation*}
+        \vecbeta=-\frac{1}{k_{n+1}}\spar{k_{n+2}\vecgamma+\sum_{i=1}^{n}k_i\vecal_i},\vecgamma=-\frac{1}{k_{n+2}}\spar{k_{n+1}\vecbeta+\sum_{i=1}^{n}k_i\vecal_i}
+    \end{equation*}
+    所以向量组\(\enums{\vecal}{n},\vecbeta\)与向量组\(\enums{\vecal}{n},\vecgamma\)可相互线性表出。
 \end{proof}
 
 % 2.33
